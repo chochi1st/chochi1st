@@ -6,15 +6,20 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Archives: 2019 | chochi&#39;s workshop</title>
+  <title>ECMA5 数据格式 | chochi&#39;s workshop</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="chochi&#39;s workshop">
-<meta property="og:url" content="http://yoursite.com/archives/2019/index.html">
+  <meta name="description" content="1. null &amp;amp; undefined null表示空值，即该处的值为空 undefined 表示为定义，函数没有返回值时，默认返回undefined12345678910111213141516171819202122232425if(undefined)   //falseif(null)        //falseif(undefined == null)    //trueif(">
+<meta name="keywords" content="-JS">
+<meta property="og:type" content="article">
+<meta property="og:title" content="ECMA5 数据格式">
+<meta property="og:url" content="http://yoursite.com/2019/05/22/1 数据类型/index.html">
 <meta property="og:site_name" content="chochi&#39;s workshop">
+<meta property="og:description" content="1. null &amp;amp; undefined null表示空值，即该处的值为空 undefined 表示为定义，函数没有返回值时，默认返回undefined12345678910111213141516171819202122232425if(undefined)   //falseif(null)        //falseif(undefined == null)    //trueif(">
 <meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2019-05-22T14:13:19.614Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="chochi&#39;s workshop">
+<meta name="twitter:title" content="ECMA5 数据格式">
+<meta name="twitter:description" content="1. null &amp;amp; undefined null表示空值，即该处的值为空 undefined 表示为定义，函数没有返回值时，默认返回undefined12345678910111213141516171819202122232425if(undefined)   //falseif(null)        //falseif(undefined == null)    //trueif(">
   
     <link rel="alternative" href="/atom.xml" title="chochi&#39;s workshop" type="application/atom+xml">
   
@@ -138,36 +143,85 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-1 数据类型" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2019" class="archive-year">2019</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/05/22/1 数据类型/" class="archive-article-date">
-  	<time datetime="2019-05-22T14:13:19.650Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-05-22</time>
-</a>
-        </div>
-    	 
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/05/22/1 数据类型/">ECMA5 数据格式</a>
+    <h1 class="article-title" itemprop="name">
+      ECMA5 数据格式
     </h1>
   
 
-        <div class="article-info info-on-right">
-          
+        
+        <a href="/2019/05/22/1 数据类型/" class="archive-article-date">
+  	<time datetime="2019-05-22T14:13:19.650Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-05-22</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="1-null-amp-undefined"><a href="#1-null-amp-undefined" class="headerlink" title="1. null &amp; undefined"></a>1. null &amp; undefined</h1><ul>
+<li>null表示空值，即该处的值为空</li>
+<li>undefined 表示为定义，函数没有返回值时，默认返回undefined<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="keyword">if</span>(<span class="literal">undefined</span>)   <span class="comment">//false</span></span><br><span class="line"><span class="keyword">if</span>(<span class="literal">null</span>)        <span class="comment">//false</span></span><br><span class="line"><span class="keyword">if</span>(<span class="literal">undefined</span> == <span class="literal">null</span>)    <span class="comment">//true</span></span><br><span class="line"><span class="keyword">if</span>(<span class="literal">undefined</span> === <span class="literal">null</span>)  <span class="comment">//false</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">Boolean</span>([]) <span class="comment">//true</span></span><br><span class="line"><span class="built_in">Boolean</span>(&#123;&#125;) <span class="comment">//true</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">Boolean</span>(<span class="string">''</span>) <span class="comment">//false</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">Boolean</span>(<span class="literal">false</span>) <span class="comment">// false</span></span><br><span class="line"><span class="keyword">new</span> <span class="built_in">Boolean</span>(<span class="literal">false</span>) <span class="comment">//true</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">Boolean</span>(<span class="literal">null</span>) <span class="comment">//false</span></span><br><span class="line"><span class="keyword">new</span> <span class="built_in">Boolean</span>(<span class="literal">null</span>) <span class="comment">//true</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 转换为数值</span></span><br><span class="line"><span class="built_in">Number</span>(<span class="literal">null</span>) === <span class="number">0</span></span><br><span class="line"><span class="built_in">Number</span>(<span class="literal">undefined</span>) === <span class="literal">NaN</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 类型</span></span><br><span class="line"><span class="keyword">typeof</span> <span class="literal">null</span> === object </span><br><span class="line"><span class="keyword">typeof</span> <span class="literal">undefined</span> === <span class="literal">undefined</span></span><br><span class="line"><span class="keyword">typeof</span> <span class="literal">NaN</span> === number</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h1 id="2-布尔值"><a href="#2-布尔值" class="headerlink" title="2. 布尔值"></a>2. 布尔值</h1><ul>
+<li>除了以下六个值为转换为false ，其他都视为true<ul>
+<li>undefined</li>
+<li>null</li>
+<li>false</li>
+<li>0</li>
+<li>NaN</li>
+<li>‘’ or “”</li>
+</ul>
+</li>
+<li>空对象和空数组对应为 true</li>
+</ul>
+<h1 id="3-整数-amp-浮点数"><a href="#3-整数-amp-浮点数" class="headerlink" title="3. 整数 &amp; 浮点数"></a>3. 整数 &amp; 浮点数</h1><ul>
+<li>所有数值64位浮点数形式存储，故 1===1.0</li>
+<li>底层都是小数存储，但某些运算只有整数才能完成，会自动把64浮点数转为32整数。</li>
+<li>小数点前数字多于21位或者小数点后的零多于5个，则自动采用科学计数法<h3 id="3-1-进制，内部自动转化为十进制"><a href="#3-1-进制，内部自动转化为十进制" class="headerlink" title="3.1 进制，内部自动转化为十进制"></a>3.1 进制，内部自动转化为十进制</h3><ul>
+<li>0b 二进制</li>
+<li>0o 八进制</li>
+<li>0x 十六进制<h3 id="3-2-0-amp-0"><a href="#3-2-0-amp-0" class="headerlink" title="3.2 +0 &amp; -0"></a>3.2 +0 &amp; -0</h3></li>
+</ul>
+</li>
+<li>唯一不同，+0 和 -0 当分母时，一个得到+Infinity，一个得到-Infinity<h3 id="3-3-NaN-not-a-number"><a href="#3-3-NaN-not-a-number" class="headerlink" title="3.3 NaN  not a number"></a>3.3 NaN  not a number</h3></li>
+<li>typeof NaN =&gt; number</li>
+<li>NaN 不等于任何值 (NaN !== NaN) =&gt;true</li>
+<li>Boolean(NaN) =&gt; false</li>
+<li>与任何数运算都得到本身</li>
+<li>Infinity 与 NaN 做比较，任何情况都返回 false</li>
+</ul>
+<h3 id="3-4-与数值相关的全局方法"><a href="#3-4-与数值相关的全局方法" class="headerlink" title="3.4 与数值相关的全局方法"></a>3.4 与数值相关的全局方法</h3><h4 id="3-4-1-parseInt"><a href="#3-4-1-parseInt" class="headerlink" title="3.4.1 parseInt()"></a>3.4.1 parseInt()</h4><ul>
+<li><strong>将第一个参数转化为字符串</strong>，根据第二个参数（2-36，默认为10）的进制转化为整数</li>
+<li>每个字符依次转换，遇到不能转为数字的字符，不在进行，直接返回转好的部分，若整个字符串无法转换，返回NaN</li>
+<li>对于自动转换为科学计数法的数字会直接对科学计数法当做字符串转换</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">parseInt(&apos;567&apos;,2);//NaN</span><br><span class="line">parseInt(0x10,16);// 结果为22不是16，因为0x10被自动转换为字符串</span><br><span class="line">String(0x10);// 16</span><br><span class="line">parseInt(0x10,16) =&gt; parseInt( String(0x10), 16 ) =&gt; parseInt(‘16’,16)</span><br></pre></td></tr></table></figure>
+<h4 id="3-4-2-parseFloat"><a href="#3-4-2-parseFloat" class="headerlink" title="3.4.2 parseFloat()"></a>3.4.2 parseFloat()</h4><ul>
+<li>将一个字符串转为浮点数，接受科学计数法</li>
+<li>自动忽略前导零。</li>
+</ul>
+<h4 id="3-4-3-isNaN"><a href="#3-4-3-isNaN" class="headerlink" title="3.4.3 isNaN()"></a>3.4.3 isNaN()</h4><ul>
+<li>判断一个<strong>数值</strong>是否为NaN</li>
+<li>只对数值有效，其他传入值自动转为数值<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">function myIsNaN( value )&#123;</span><br><span class="line">    return value !== value;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h1 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h1><ul>
+<li>string number(NAN) boolean undefined object(NULL) function symbol</li>
+</ul>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
@@ -179,7 +233,7 @@
 		</ul>
 	</div>
 
-          
+      
 	<div class="article-category tagcloud">
 		<i class="icon-book icon"></i>
 		<ul class="article-tag-list">
@@ -192,44 +246,53 @@
 	</div>
 
 
-        </div>
-        <div class="clearfix"></div>
-    </header>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/05/22/hello-world/" class="archive-article-date">
-  	<time datetime="2019-05-22T12:55:46.832Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-05-22</time>
-</a>
+<nav id="article-nav">
+  
+  
+    <a href="/2019/05/22/hello-world/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Hello World</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
+        
+        
+    </div>
+</aside>
+
+
+
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/05/22/hello-world/">Hello World</a>
-    </h1>
+  
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
   
 
-    
+  
+
+  
 
 
           </div>
@@ -252,8 +315,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,
