@@ -43,7 +43,7 @@
 <div class="intrude-less">
 	<header id="header" class="inner">
 		<a href="/" class="profilepic">
-			<img src class="js-avatar">
+			<img src="/img/profile.jpg" class="js-avatar">
 		</a>
 		<hgroup>
 		  <h1 class="header-author"><a href="/">chochi</a></h1>
@@ -99,7 +99,7 @@
 	<div class="intrude-less">
 		<header id="header" class="inner">
 			<div class="profilepic">
-				<img src class="js-avatar">
+				<img src="/img/profile.jpg" class="js-avatar">
 			</div>
 			<hgroup>
 			  <h1 class="header-author js-header-author">chochi</h1>
@@ -148,68 +148,6 @@
           <div id="js-content" class="content-ll">
             
   
-    <article id="post-text" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/05/22/text/">&#39;text&#39;</a>
-    </h1>
-  
-
-        
-        <a href="/2019/05/22/text/" class="archive-article-date">
-  	<time datetime="2019-05-22T13:23:41.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-05-22</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/05/22/text/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
     <article id="post-hello-world" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -252,225 +190,6 @@
       
         <p class="article-more-link">
           <a class="article-more-a" href="/2019/05/22/hello-world/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-2018-04-10-reading1" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/04/10/2018-04-10-reading1/">论文笔记：NFV的映射与调度</a>
-    </h1>
-  
-
-        
-        <a href="/2018/04/10/2018-04-10-reading1/" class="archive-article-date">
-  	<time datetime="2018-04-09T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-04-10</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <blockquote>
-<p>This paper,proposes online mapping and scheduling algorithms of VNFs,<br>there of those besed on a greedy criterion, and the rest one is tatu search,<br>considers that we have virtual nodes already mapped onto physical nodes,<br>and allows a given VM to process multiple VNFs, one after another from a queue,<br>because each virtual node just can process at most one function at a time.</p>
-</blockquote>
-<h1 id="INTRODUCTION"><a href="#INTRODUCTION" class="headerlink" title="INTRODUCTION"></a>INTRODUCTION</h1><blockquote>
-<p>NFV的提出以及解决的问题</p>
-</blockquote>
-<h2 id="Background"><a href="#Background" class="headerlink" title="Background"></a>Background</h2><ul>
-<li><strong>Network</strong> operators have physical proprietary devices and equipment for each service, leads to increased capital expenditure for operator for purchasing,storing,and maintaining such equipment.</li>
-<li><strong>A</strong> way of building dynamic virtualized networks ,it allows for the decoupling of physical network equipment from the services or functions.<h2 id="Example"><a href="#Example" class="headerlink" title="Example"></a>Example</h2><img src="http://note.youdao.com/favicon.ico" alt="20180410-1"></li>
-<li><strong>This</strong> is a example of the changes that may be achieved by NFV.</li>
-</ul>
-<h4 id="FIG-1"><a href="#FIG-1" class="headerlink" title="FIG 1"></a>FIG 1</h4><ul>
-<li><strong>Fig</strong> 1 shows a implement(calls CPE) which is made up of those functions: <strong>DHCP, NAT, UPnP, routing, Modem, radio , switching</strong>. These functions may have <strong>precedence requirement</strong>.</li>
-<li><strong>If</strong> need to make changes to CPE,such as,by adding,removing or updating a function,it may be necessary for a technician from the ISP to individually talk to or go to each of the customers.</li>
-</ul>
-<h4 id="FIG-2"><a href="#FIG-2" class="headerlink" title="FIG 2"></a>FIG 2</h4><ul>
-<li><strong>Fig</strong> 2 , a implement based on NFV , some of the functions are transferred to a shared infrastructure at the ISP,which could also be a datacentre.</li>
-<li><strong>This</strong> makes the changes easier,operatoring the functions for all customers would only involve changes at the ISP or in a datecentre.</li>
-</ul>
-<h2 id="Advantage-of-NFV"><a href="#Advantage-of-NFV" class="headerlink" title="Advantage of NFV"></a>Advantage of NFV</h2><ul>
-<li>achieve fast,scalable,on-demand and dynamic .</li>
-<li>cheaper .</li>
-</ul>
-<h2 id="Questions"><a href="#Questions" class="headerlink" title="Questions"></a>Questions</h2><ul>
-<li>How to define and implement network services.</li>
-<li>How to efficiently map and schedule the VNFs of a given service onto physical network.</li>
-</ul>
-<hr>
-<h1 id="PROBLEM-DESCRIPTION"><a href="#PROBLEM-DESCRIPTION" class="headerlink" title="PROBLEM DESCRIPTION"></a>PROBLEM DESCRIPTION</h1><blockquote>
-<p>数学模型描述问题以及算法初步</p>
-</blockquote>
-<h3 id="Variables"><a href="#Variables" class="headerlink" title="Variables"></a>Variables</h3><ul>
-<li>define a binary variable<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">\beta_&#123;i,j&#125;= \begin&#123;cases&#125; 1, &amp; \text &#123;if node $j$ is able to process function $i$&#125; \\ 0, &amp; \text&#123;otherwise&#125; \end&#123;cases&#125;</span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">\gamma_&#123;i,j&#125;= \begin&#123;cases&#125; 1, &amp; \text &#123;if a function $i$ is mapped on node $j$&#125; \\ 0, &amp; \text&#123;otherwise&#125; \end&#123;cases&#125;</span><br></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">Function_i \begin&#123;cases&#125; </span><br><span class="line">            \rho_&#123;ij&#125; &gt; 0, &amp; \text &#123;the processing time&#125; </span><br><span class="line">            \\ \delta_i, &amp; \text&#123;a buffer from the virtual node&#125; </span><br><span class="line">            \\ N(i), &amp; \text&#123;a set of the candidate virtual nodes&#125;</span><br><span class="line">            \\ 0&lt;i&lt;m+1, &amp; \text&#123;the index&#125;</span><br><span class="line">            \end&#123;cases&#125;</span><br></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">VirtualNode_j \begin&#123;cases&#125; </span><br><span class="line">            \ B_j, &amp; \text &#123;available buffer size&#125; </span><br><span class="line">            \\ 0&lt;j&lt;n+1, &amp; \text&#123;the index&#125; </span><br><span class="line">            \\π_i , &amp; \text&#123;the expected completion time of the last function (in queue)&#125;</span><br><span class="line">            \end&#123;cases&#125;</span><br></pre></td></tr></table></figure>
-<ul>
-<li>set <strong>N = {1,…,n}</strong> of n virtual nodes. </li>
-<li>service S is made up of a sequence <strong>F = {1,…,m}</strong> of m VNFs.</li>
-<li>function i (0&lt;i&lt;m+1) must be processed on a set <strong>N(i)</strong>.</li>
-<li><p>the processing time(including function setup time) for function i on node j in N(i) :</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">\rho_&#123;ij&#125; &gt; 0</span><br></pre></td></tr></table></figure>
-<ul>
-<li>NOTES: a given function may require different setup time on different nodes.</li>
-</ul>
-</li>
-<li><p>a function i utilizes a buffer <strong>δi</strong> from the node onto which it is mapped.</p>
-</li>
-<li>node j has available buffer size <strong>Bj</strong>.</li>
-<li>for each VNF i and a virtual virtual node j ,we define a completion time <strong>ti</strong>.</li>
-<li>for given service S ,define deadline <strong>tl</strong>.</li>
-</ul>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span> 没看懂的一段话</span><br><span class="line">    The deadline can be used to define processing priority fro services.</span><br><span class="line">    Those services that require real time processing may have a deadline </span><br><span class="line">that only takes into consideration their processing and precedence requirements</span><br><span class="line">on the different virtual nodes,and zero waiting.</span><br></pre></td></tr></table></figure>
-<h3 id="Mapping-and-scheduling-example"><a href="#Mapping-and-scheduling-example" class="headerlink" title="Mapping and scheduling example"></a>Mapping and scheduling example</h3><p><img src="http://note.youdao.com/favicon.ico" alt="20180411-1"></p>
-<ul>
-<li>Figs 4 - 7，show two services S1 and S2.</li>
-<li>Fig 4  represented showing the different VNF processing capabilities of each node.</li>
-<li><strong>S1 = { f8  f2 f3 f6 f5}</strong>, at  a time T1 the service S1 arrives.</li>
-<li><strong>S2 = {f6 f8 f4}</strong> ,arrives at a time T4.</li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">- notes: To aviod a long queue at n1,it may be better to use node n7 instead of n1</span><br></pre></td></tr></table></figure>
-<ul>
-<li>Fig 6,the processing of S2 has to wait until the completion of function f6 from S1 at time T6.</li>
-<li>lead to inefficient resource utilization</li>
-</ul>
-<h3 id="Function-timing-restriction"><a href="#Function-timing-restriction" class="headerlink" title="Function timing restriction"></a>Function timing restriction</h3><p><img src="http://note.youdao.com/favicon.ico" alt="20180411-2"></p>
-<ul>
-<li><strong>There are three possibilities</strong>:<ul>
-<li>immediately after processing a function</li>
-<li>has to wait until the virtual node is available(S2 f6)</li>
-<li>the node starves while waiting fro the preceding function(Fig 7 n2)</li>
-</ul>
-</li>
-</ul>
-<h3 id="Mapping-and-scheduling-objectives"><a href="#Mapping-and-scheduling-objectives" class="headerlink" title="Mapping and scheduling objectives"></a>Mapping and scheduling objectives</h3><ul>
-<li><strong>Three objectives such as minimizing flow time,cost and revenue.</strong><ul>
-<li><strong>Flowtime</strong>: the entire time for processing a given service<br><img src="http://note.youdao.com/favicon.ico" alt="20180411-3"><ul>
-<li><strong>Revenue</strong>: R defined as the income from the total amout of physical network resources that are utilized by a given mapping and scheduling.<br><img src="http://note.youdao.com/favicon.ico" alt="20180411-4"></li>
-<li><strong>Cost</strong> : the cost C define as the total amount of physical network resources(Boston time and buffer)that are utilized by a given mapping and scheduling. <strong>The cost includes those time gaps.</strong></li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-<hr>
-<h1 id="Greedy-function-mapping-and-scheduling"><a href="#Greedy-function-mapping-and-scheduling" class="headerlink" title="Greedy function mapping and scheduling"></a>Greedy function mapping and scheduling</h1><blockquote>
-<p>This section proposes three greedy algorithms.</p>
-</blockquote>
-<ul>
-<li><p><strong>GFP</strong></p>
-<ul>
-<li><strong>greedy fast processing</strong>,functions map to those nodes that offer the best processing times.</li>
-</ul>
-</li>
-<li><p><strong>GBA</strong></p>
-<ul>
-<li><strong>greedy besst availability</strong>,map to those nodes whose function queue has the earliest completion time.</li>
-</ul>
-</li>
-<li><p><strong>GLL</strong></p>
-<ul>
-<li><strong>greedy leather loaded</strong>,map to those nodes with the  highest availabileather buffer capacity.</li>
-</ul>
-</li>
-</ul>
-<h2 id="Greedy-algorithmic-procedure"><a href="#Greedy-algorithmic-procedure" class="headerlink" title="Greedy algorithmic procedure"></a>Greedy algorithmic procedure</h2><ol>
-<li><strong>Pretreatment</strong>:nodes are ranked based on the greedy criterion</li>
-<li><strong>stopping condition</strong>: the algorithms ends until the completion time exceeds,or the function has no candidate node,and all the resources allocated to other functions in there service are rolled back.</li>
-</ol>
-<h2 id><a href="#" class="headerlink" title></a><img src="http://note.youdao.com/favicon.ico" alt="20180411-5"></h2><h1 id="Tabu-search-based-NFMS"><a href="#Tabu-search-based-NFMS" class="headerlink" title="Tabu search-based NFMS"></a>Tabu search-based NFMS</h1><blockquote>
-<p>The algorithm dose not consider moving routing same solution repeatedly,but worsening moves can be accepted if no improving move is available.Five compenents are determined: the initial solution,the neighborhood solutions,tabu list ,aspiration criterion and stopping condition.</p>
-</blockquote>
-<blockquote>
-<p>在短时间内访问的某一潜在解决方案，由于不符合某些规则被丢弃。<br>若被丢弃的方案比其他的搜索方案都优，虽然被标记为访问过，但还可以再次选取。<br>算法五元组，初始解，邻域解，已废弃潜在解列表，采纳标准和停止条件。</p>
-</blockquote>
-<ul>
-<li><strong>initial solution</strong><ul>
-<li>Z0 is determined randomly,for each function i is randomly mapped a candidate virtual node j which meets the requirements.</li>
-</ul>
-</li>
-<li><strong>neighborhood solutions</strong><ul>
-<li>N(Z),we restrict the neighborhood to be based on changes in the mapping of the<br>function with the biggest preceeding time gap.</li>
-<li>具有最大的 time gap 的函数，将作为首要需要迁移映射的目标，以确保最小的 flowtime。</li>
-</ul>
-</li>
-<li><strong>tatu list</strong><ul>
-<li>function i has been moved from node j1 to j2，so add j1 to tatu list,in order to avoid Visit j1 node in next m-1 iterations.</li>
-</ul>
-</li>
-<li><strong>aspiration criterion</strong><ul>
-<li>if all available moves are classified as tabu due tohaving a higher flow time than the best known solution, then we determine and select a “least tabu” move, which is themove with lowest flow time of all the tabu moves.</li>
-</ul>
-</li>
-<li><strong>stopping condition</strong><ul>
-<li>m次迭代找不到更少的 flowtime。</li>
-<li>所有的函数没有潜在的邻域解。</li>
-</ul>
-</li>
-</ul>
-<h2 id="Psuedocode"><a href="#Psuedocode" class="headerlink" title="Psuedocode"></a>Psuedocode</h2><p><img src="http://note.youdao.com/favicon.ico" alt="20180411-6"></p>
-<h1 id="Evaluations"><a href="#Evaluations" class="headerlink" title="Evaluations"></a>Evaluations</h1><blockquote>
-<p>何必为难自己  (⇀‸↼‶)  为什么要做英文的笔记！不想写了。直接截图。</p>
-</blockquote>
-<p><img src="http://note.youdao.com/favicon.ico" alt="20180411-7"></p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">reading</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2018/04/10/2018-04-10-reading1/">展开全文 >></a>
         </p>
       
 
@@ -591,10 +310,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
             <input type="checkbox" q-on="click:toggleTag(e)" q-attr="checked:showTags">
           </label>
           <ul class="article-tag-list" q-show="showTags">
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">reading</a>
-              </li>
             
             <div class="clearfix"></div>
           </ul>
