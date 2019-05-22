@@ -160,7 +160,7 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="一旦定义无法改变"><a href="#一旦定义无法改变" class="headerlink" title="一旦定义无法改变"></a>一旦定义无法改变</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">let str = &apos;hello&apos;;</span><br><span class="line">str[1] = &apos;!&apos;;</span><br><span class="line">console.log(str);// hello</span><br></pre></td></tr></table></figure>
+        <h1 id="一旦定义无法改变"><a href="#一旦定义无法改变" class="headerlink" title="一旦定义无法改变"></a>一旦定义无法改变</h1><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> str = <span class="string">'hello'</span>;</span><br><span class="line">str[<span class="number">1</span>] = <span class="string">'!'</span>;</span><br><span class="line"><span class="built_in">console</span>.log(str);<span class="comment">// hello</span></span><br></pre></td></tr></table></figure>
 <ul>
 <li>每个字符16位，即2个字节，UTF-16格式存储</li>
 <li>length长度放回的可能是不正确的，对于码点在U+1000 - U+10ffff之间的字符，js认为是两字符（es5）

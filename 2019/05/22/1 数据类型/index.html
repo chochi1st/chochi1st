@@ -16,7 +16,7 @@
 <meta property="og:site_name" content="chochi&#39;s workshop">
 <meta property="og:description" content="1. null &amp;amp; undefined null表示空值，即该处的值为空 undefined 表示为定义，函数没有返回值时，默认返回undefined">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-05-22T14:50:15.115Z">
+<meta property="og:updated_time" content="2019-05-22T14:51:59.748Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="ECMA5 数据格式">
 <meta name="twitter:description" content="1. null &amp;amp; undefined null表示空值，即该处的值为空 undefined 表示为定义，函数没有返回值时，默认返回undefined">
@@ -202,7 +202,7 @@
 <li>每个字符依次转换，遇到不能转为数字的字符，不在进行，直接返回转好的部分，若整个字符串无法转换，返回NaN</li>
 <li>对于自动转换为科学计数法的数字会直接对科学计数法当做字符串转换</li>
 </ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">parseInt(&apos;567&apos;,2);//NaN</span><br><span class="line">parseInt(0x10,16);// 结果为22不是16，因为0x10被自动转换为字符串</span><br><span class="line">String(0x10);// 16</span><br><span class="line">parseInt(0x10,16) =&gt; parseInt( String(0x10), 16 ) =&gt; parseInt(‘16’,16)</span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">parseInt</span>(<span class="string">'567'</span>,<span class="number">2</span>);<span class="comment">//NaN</span></span><br><span class="line"><span class="built_in">parseInt</span>(<span class="number">0x10</span>,<span class="number">16</span>);<span class="comment">// 结果为22不是16，因为0x10被自动转换为字符串</span></span><br><span class="line"><span class="built_in">String</span>(<span class="number">0x10</span>);<span class="comment">// 16</span></span><br><span class="line"><span class="built_in">parseInt</span>(<span class="number">0x10</span>,<span class="number">16</span>) =&gt; <span class="built_in">parseInt</span>( <span class="built_in">String</span>(<span class="number">0x10</span>), <span class="number">16</span> ) =&gt; <span class="built_in">parseInt</span>(‘<span class="number">16</span>’,<span class="number">16</span>)</span><br></pre></td></tr></table></figure>
 <h4 id="3-4-2-parseFloat"><a href="#3-4-2-parseFloat" class="headerlink" title="3.4.2 parseFloat()"></a>3.4.2 parseFloat()</h4><ul>
 <li>将一个字符串转为浮点数，接受科学计数法</li>
 <li>自动忽略前导零。</li>

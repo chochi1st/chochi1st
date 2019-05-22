@@ -8,18 +8,18 @@
   <link rel="dns-prefetch" href="http://yoursite.com">
   <title>ECMA5 对象 | chochi&#39;s workshop</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="1 键名 对象的所有键名都是字符串，若键名不符合标识符的条件，则必须加上引号。 如果使用方运算符，键名必须放在引号里，否则会被当做变量处理。 数字键可以不加引号，会自动转成字符串。123456let obj  = &amp;#123; flag: true &amp;#125;;obj[flag]       // undefinedobj.flag        // trueobj.[&amp;apos;flag&amp;a">
+  <meta name="description" content="1 键名 对象的所有键名都是字符串，若键名不符合标识符的条件，则必须加上引号。 如果使用方运算符，键名必须放在引号里，否则会被当做变量处理。 数字键可以不加引号，会自动转成字符串。123456let obj  = &amp;#123; flag: true &amp;#125;;obj[flag]       // undefinedobj.flag        // trueobj.[&apos;flag&apos;]    /">
 <meta name="keywords" content="-JS">
 <meta property="og:type" content="article">
 <meta property="og:title" content="ECMA5 对象">
 <meta property="og:url" content="http://yoursite.com/2019/05/22/3 对象/index.html">
 <meta property="og:site_name" content="chochi&#39;s workshop">
-<meta property="og:description" content="1 键名 对象的所有键名都是字符串，若键名不符合标识符的条件，则必须加上引号。 如果使用方运算符，键名必须放在引号里，否则会被当做变量处理。 数字键可以不加引号，会自动转成字符串。123456let obj  = &amp;#123; flag: true &amp;#125;;obj[flag]       // undefinedobj.flag        // trueobj.[&amp;apos;flag&amp;a">
+<meta property="og:description" content="1 键名 对象的所有键名都是字符串，若键名不符合标识符的条件，则必须加上引号。 如果使用方运算符，键名必须放在引号里，否则会被当做变量处理。 数字键可以不加引号，会自动转成字符串。123456let obj  = &amp;#123; flag: true &amp;#125;;obj[flag]       // undefinedobj.flag        // trueobj.[&apos;flag&apos;]    /">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-05-22T14:49:53.927Z">
+<meta property="og:updated_time" content="2019-05-22T14:52:44.830Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="ECMA5 对象">
-<meta name="twitter:description" content="1 键名 对象的所有键名都是字符串，若键名不符合标识符的条件，则必须加上引号。 如果使用方运算符，键名必须放在引号里，否则会被当做变量处理。 数字键可以不加引号，会自动转成字符串。123456let obj  = &amp;#123; flag: true &amp;#125;;obj[flag]       // undefinedobj.flag        // trueobj.[&amp;apos;flag&amp;a">
+<meta name="twitter:description" content="1 键名 对象的所有键名都是字符串，若键名不符合标识符的条件，则必须加上引号。 如果使用方运算符，键名必须放在引号里，否则会被当做变量处理。 数字键可以不加引号，会自动转成字符串。123456let obj  = &amp;#123; flag: true &amp;#125;;obj[flag]       // undefinedobj.flag        // trueobj.[&apos;flag&apos;]    /">
   
     <link rel="alternative" href="/atom.xml" title="chochi&#39;s workshop" type="application/atom+xml">
   
@@ -166,13 +166,13 @@
         <h1 id="1-键名"><a href="#1-键名" class="headerlink" title="1 键名"></a>1 键名</h1><ul>
 <li>对象的所有键名都是字符串，若键名不符合标识符的条件，则必须加上引号。</li>
 <li>如果使用方运算符，键名必须放在引号里，否则会被当做变量处理。</li>
-<li>数字键可以不加引号，会自动转成字符串。<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">let obj  = &#123; flag: true &#125;;</span><br><span class="line">obj[flag]       // undefined</span><br><span class="line">obj.flag        // true</span><br><span class="line">obj.[&apos;flag&apos;]    // true</span><br><span class="line">flag =&apos;flag&apos;;</span><br><span class="line">obj[flag]       // ture</span><br></pre></td></tr></table></figure>
+<li>数字键可以不加引号，会自动转成字符串。<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> obj  = &#123; <span class="attr">flag</span>: <span class="literal">true</span> &#125;;</span><br><span class="line">obj[flag]       <span class="comment">// undefined</span></span><br><span class="line">obj.flag        <span class="comment">// true</span></span><br><span class="line">obj.[<span class="string">'flag'</span>]    <span class="comment">// true</span></span><br><span class="line">flag =<span class="string">'flag'</span>;</span><br><span class="line">obj[flag]       <span class="comment">// ture</span></span><br></pre></td></tr></table></figure>
 </li>
 </ul>
 <a id="more"></a>
 <ul>
 <li>对象的每一个键名又称为属性 property，它的键值可以是任何数据类型。<h1 id="2-属性"><a href="#2-属性" class="headerlink" title="2 属性"></a>2 属性</h1><h3 id="2-1-属性的查看"><a href="#2-1-属性的查看" class="headerlink" title="2.1 属性的查看"></a>2.1 属性的查看</h3></li>
-<li>查看对象本身的所有可枚举属性<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Object.keys</span><br></pre></td></tr></table></figure>
+<li>查看对象本身的所有可枚举属性<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">Object</span>.keys</span><br></pre></td></tr></table></figure>
 </li>
 </ul>
 <h3 id="2-2-属性的删除"><a href="#2-2-属性的删除" class="headerlink" title="2.2 属性的删除"></a>2.2 属性的删除</h3><ul>
@@ -182,15 +182,15 @@
 <li>‘PropertyName’ <strong>in</strong> obj ：是否存在该属性，包括继承而来</li>
 <li><strong>hasOwnProperty</strong>(‘PropertyName’) :对象本身是拥有该属性<h3 id="2-4-属性的遍历"><a href="#2-4-属性的遍历" class="headerlink" title="2.4 属性的遍历"></a>2.4 属性的遍历</h3></li>
 <li><p>遍历所有可枚举的属性，包括继承而来的</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">for...in</span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span>...in</span><br></pre></td></tr></table></figure>
 </li>
 <li><p>遍历所有可枚举的本身属性(enumerable)</p>
 </li>
 </ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">// 遍历对象本身属性</span><br><span class="line">for( let key in obj)&#123;</span><br><span class="line">    if( obj.hasOwnProperty(key))&#123;</span><br><span class="line">        /* do some operations */</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 遍历对象本身属性</span></span><br><span class="line"><span class="keyword">for</span>( <span class="keyword">let</span> key <span class="keyword">in</span> obj)&#123;</span><br><span class="line">    <span class="keyword">if</span>( obj.hasOwnProperty(key))&#123;</span><br><span class="line">        <span class="comment">/* do some operations */</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <h3 id="2-5-with-语句"><a href="#2-5-with-语句" class="headerlink" title="2.5 with 语句"></a>2.5 with 语句</h3><ul>
 <li>with 语句内只能创建全局变量。</li>
-<li>with的绑定对象不明确所以弄临时变量代替with<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">with( obj )&#123;</span><br><span class="line">    /** do operations **/</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<li>with的绑定对象不明确所以弄临时变量代替with<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">with</span>( obj )&#123;</span><br><span class="line">    <span class="comment">/** do operations **/</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 </li>
 </ul>
 <h1 id="遍历总结"><a href="#遍历总结" class="headerlink" title="遍历总结"></a>遍历总结</h1><ul>
@@ -250,18 +250,18 @@
   
 <nav id="article-nav">
   
-    <a href="/2019/05/22/7 包装对象 wrapper/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2019/05/22/9 JavaScript Classes/" id="article-nav-newer" class="article-nav-link-wrap">
       <i class="icon-circle-left"></i>
       <div class="article-nav-title">
         
-          ECMA5 包装对象
+          ECMA6 类
         
       </div>
     </a>
   
   
-    <a href="/2019/05/22/4 函数/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">ECMA5 函数</div>
+    <a href="/2019/05/22/9 面向对象编程/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">ECMA5 面向对象编程</div>
       <i class="icon-circle-right"></i>
     </a>
   

@@ -16,7 +16,7 @@
 <meta property="og:site_name" content="chochi&#39;s workshop">
 <meta property="og:description" content="1 判断某个变量是否为函数123function isObject(value)&amp;#123;        return value === Object(value);    &amp;#125; 2 对象的键名">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-05-22T14:49:34.723Z">
+<meta property="og:updated_time" content="2019-05-22T14:53:23.277Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="ECMA5 标准库">
 <meta name="twitter:description" content="1 判断某个变量是否为函数123function isObject(value)&amp;#123;        return value === Object(value);    &amp;#125; 2 对象的键名">
@@ -163,12 +163,12 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="1-判断某个变量是否为函数"><a href="#1-判断某个变量是否为函数" class="headerlink" title="1 判断某个变量是否为函数"></a>1 判断某个变量是否为函数</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">function isObject(value)&#123;</span><br><span class="line">        return value === Object(value);</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+        <h1 id="1-判断某个变量是否为函数"><a href="#1-判断某个变量是否为函数" class="headerlink" title="1 判断某个变量是否为函数"></a>1 判断某个变量是否为函数</h1><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">isObject</span>(<span class="params">value</span>)</span>&#123;</span><br><span class="line">        <span class="keyword">return</span> value === <span class="built_in">Object</span>(value);</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
 <h1 id="2-对象的键名"><a href="#2-对象的键名" class="headerlink" title="2 对象的键名"></a>2 对象的键名</h1><a id="more"></a>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Object.keys // 返回对象本身（不包括继承）的可枚举属性</span><br><span class="line">Object.getOwnPropertyNames // 返回对象本身的所有属性（不包括继承）</span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">Object</span>.keys <span class="comment">// 返回对象本身（不包括继承）的可枚举属性</span></span><br><span class="line"><span class="built_in">Object</span>.getOwnPropertyNames <span class="comment">// 返回对象本身的所有属性（不包括继承）</span></span><br></pre></td></tr></table></figure>
 <h1 id="3-判断数据类型"><a href="#3-判断数据类型" class="headerlink" title="3 判断数据类型"></a>3 判断数据类型</h1><ul>
 <li>toString 返回对象的类型字符串，因此可以用来判断一个值的类型，返回的第一个值表示该值的构造函数。</li>
-<li>但由于实力对象可能会自定义该方法，所有调用原型上的方法。<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Object.prototype.toString.call(value)</span><br></pre></td></tr></table></figure>
+<li>但由于实力对象可能会自定义该方法，所有调用原型上的方法。<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">Object</span>.prototype.toString.call(value)</span><br></pre></td></tr></table></figure>
 </li>
 </ul>
 <h1 id="4-属性描述对象"><a href="#4-属性描述对象" class="headerlink" title="4 属性描述对象"></a>4 属性描述对象</h1><ul>
@@ -179,7 +179,7 @@
 <li>get</li>
 <li>set</li>
 </ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Object.getOwnPropertyDescriptor(obj,PropertyName) // 活动对象本身属性描述对象</span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">Object</span>.getOwnPropertyDescriptor(obj,PropertyName) <span class="comment">// 活动对象本身属性描述对象</span></span><br></pre></td></tr></table></figure>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 使用属性描述对象定义或修改一个属性</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> obj = <span class="built_in">Object</span>.defineProperty(&#123;&#125;,<span class="string">'p'</span>,&#123;</span><br><span class="line">    value:<span class="number">123</span>,</span><br><span class="line">    writable:<span class="literal">false</span>,</span><br><span class="line">    enumerable:<span class="literal">true</span>,</span><br><span class="line">    configurable:<span class="literal">false</span></span><br><span class="line">&#125;);</span><br><span class="line">obj.p=<span class="number">456</span>;</span><br><span class="line">obj.p;  <span class="comment">//123</span></span><br></pre></td></tr></table></figure>
 <ul>
 <li>若一个属性的enumerable为false，以下操作不会取到该属性<ul>
@@ -192,7 +192,7 @@
 <h1 id="6-控制对象的状态"><a href="#6-控制对象的状态" class="headerlink" title="6 控制对象的状态"></a>6 控制对象的状态</h1><ul>
 <li>冻结对象</li>
 </ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"> // 弱到强</span><br><span class="line">Object.preventExtensions(obj);// 无法添加新属性</span><br><span class="line">Object.seal(obj);// 无法添加or删除属性</span><br><span class="line">Object.freeze(obj);//无法添加or删除属性，无法改变属性的值，该对象实际上变成了常量</span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"> <span class="comment">// 弱到强</span></span><br><span class="line"><span class="built_in">Object</span>.preventExtensions(obj);<span class="comment">// 无法添加新属性</span></span><br><span class="line"><span class="built_in">Object</span>.seal(obj);<span class="comment">// 无法添加or删除属性</span></span><br><span class="line"><span class="built_in">Object</span>.freeze(obj);<span class="comment">//无法添加or删除属性，无法改变属性的值，该对象实际上变成了常量</span></span><br></pre></td></tr></table></figure>
 <ul>
 <li>以上方法，可以改变原型对象，来为对象增加属性</li>
 </ul>
@@ -239,18 +239,18 @@
   
 <nav id="article-nav">
   
-    <a href="/2019/05/22/9 面向对象编程/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2019/05/22/4 函数/" id="article-nav-newer" class="article-nav-link-wrap">
       <i class="icon-circle-left"></i>
       <div class="article-nav-title">
         
-          ECMA5 面向对象编程
+          ECMA5 函数
         
       </div>
     </a>
   
   
-    <a href="/2019/05/22/Call与Apply/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">ECMA5 CALL APPLY 模拟</div>
+    <a href="/2019/05/22/9 JavaScript Classes/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">ECMA6 类</div>
       <i class="icon-circle-right"></i>
     </a>
   
