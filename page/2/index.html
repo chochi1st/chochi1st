@@ -43,7 +43,7 @@
 <div class="intrude-less">
 	<header id="header" class="inner">
 		<a href="/" class="profilepic">
-			<img src="img/profile.jpg" class="js-avatar">
+			<img src="chochi1st.github.io/img/profile.jpg" class="js-avatar">
 		</a>
 		<hgroup>
 		  <h1 class="header-author"><a href="/">chochi</a></h1>
@@ -93,7 +93,7 @@
 	<div class="intrude-less">
 		<header id="header" class="inner">
 			<div class="profilepic">
-				<img src="img/profile.jpg" class="js-avatar">
+				<img src="chochi1st.github.io/img/profile.jpg" class="js-avatar">
 			</div>
 			<hgroup>
 			  <h1 class="header-author js-header-author">chochi</h1>
@@ -163,19 +163,14 @@
         <h1 id="一旦定义无法改变"><a href="#一旦定义无法改变" class="headerlink" title="一旦定义无法改变"></a>一旦定义无法改变</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">let str = &apos;hello&apos;;</span><br><span class="line">str[1] = &apos;!&apos;;</span><br><span class="line">console.log(str);// hello</span><br></pre></td></tr></table></figure>
 <ul>
 <li>每个字符16位，即2个字节，UTF-16格式存储</li>
-<li>length长度放回的可能是不正确的，对于码点在U+1000 - U+10ffff之间的字符，js认为是两字符（es5）</li>
-</ul>
-<h1 id="Base64-转码"><a href="#Base64-转码" class="headerlink" title="Base64 转码"></a>Base64 转码</h1><ul>
-<li>一种编码方法，可以将任意值（只适合ASCII码）转成0~9，A~Z，a~z，+和/这64个个字符组成的可打印字符</li>
-<li>主页目的，不是为了加密，而是为了不出现特殊字符，简化程序的处理</li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">btoa()// 任意值=》Base64</span><br><span class="line">atob()// Base64=》原值</span><br></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">// ES5 将 非ASCII码字符转为Base64</span><br><span class="line">function b63Encode(str)&#123;</span><br><span class="line">    return btoa( encodeURIComponent(str));</span><br><span class="line">    //非ASCII字符将被十六进制的转义序列进行替换</span><br><span class="line">&#125;</span><br><span class="line">function b64Decode(str)&#123;</span><br><span class="line">    return atob(decodeURIComponent(str));</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
+<li>length长度放回的可能是不正确的，对于码点在U+1000 - U+10ffff之间的字符，js认为是两字符（es5）
+        
+          <a class="article-more-a" href="/2019/05/22/2 字符串/#more">more >></a>
+        
       
 
       
-    </div>
+    </li></ul></div>
     <div class="article-info article-info-index">
       
       
@@ -257,60 +252,14 @@
       
         <h1 id="1-null-amp-undefined"><a href="#1-null-amp-undefined" class="headerlink" title="1. null &amp; undefined"></a>1. null &amp; undefined</h1><ul>
 <li>null表示空值，即该处的值为空</li>
-<li>undefined 表示为定义，函数没有返回值时，默认返回undefined<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="keyword">if</span>(<span class="literal">undefined</span>)   <span class="comment">//false</span></span><br><span class="line"><span class="keyword">if</span>(<span class="literal">null</span>)        <span class="comment">//false</span></span><br><span class="line"><span class="keyword">if</span>(<span class="literal">undefined</span> == <span class="literal">null</span>)    <span class="comment">//true</span></span><br><span class="line"><span class="keyword">if</span>(<span class="literal">undefined</span> === <span class="literal">null</span>)  <span class="comment">//false</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">Boolean</span>([]) <span class="comment">//true</span></span><br><span class="line"><span class="built_in">Boolean</span>(&#123;&#125;) <span class="comment">//true</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">Boolean</span>(<span class="string">''</span>) <span class="comment">//false</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">Boolean</span>(<span class="literal">false</span>) <span class="comment">// false</span></span><br><span class="line"><span class="keyword">new</span> <span class="built_in">Boolean</span>(<span class="literal">false</span>) <span class="comment">//true</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">Boolean</span>(<span class="literal">null</span>) <span class="comment">//false</span></span><br><span class="line"><span class="keyword">new</span> <span class="built_in">Boolean</span>(<span class="literal">null</span>) <span class="comment">//true</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 转换为数值</span></span><br><span class="line"><span class="built_in">Number</span>(<span class="literal">null</span>) === <span class="number">0</span></span><br><span class="line"><span class="built_in">Number</span>(<span class="literal">undefined</span>) === <span class="literal">NaN</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 类型</span></span><br><span class="line"><span class="keyword">typeof</span> <span class="literal">null</span> === object </span><br><span class="line"><span class="keyword">typeof</span> <span class="literal">undefined</span> === <span class="literal">undefined</span></span><br><span class="line"><span class="keyword">typeof</span> <span class="literal">NaN</span> === number</span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-<h1 id="2-布尔值"><a href="#2-布尔值" class="headerlink" title="2. 布尔值"></a>2. 布尔值</h1><ul>
-<li>除了以下六个值为转换为false ，其他都视为true<ul>
-<li>undefined</li>
-<li>null</li>
-<li>false</li>
-<li>0</li>
-<li>NaN</li>
-<li>‘’ or “”</li>
-</ul>
-</li>
-<li>空对象和空数组对应为 true</li>
-</ul>
-<h1 id="3-整数-amp-浮点数"><a href="#3-整数-amp-浮点数" class="headerlink" title="3. 整数 &amp; 浮点数"></a>3. 整数 &amp; 浮点数</h1><ul>
-<li>所有数值64位浮点数形式存储，故 1===1.0</li>
-<li>底层都是小数存储，但某些运算只有整数才能完成，会自动把64浮点数转为32整数。</li>
-<li>小数点前数字多于21位或者小数点后的零多于5个，则自动采用科学计数法<h3 id="3-1-进制，内部自动转化为十进制"><a href="#3-1-进制，内部自动转化为十进制" class="headerlink" title="3.1 进制，内部自动转化为十进制"></a>3.1 进制，内部自动转化为十进制</h3><ul>
-<li>0b 二进制</li>
-<li>0o 八进制</li>
-<li>0x 十六进制<h3 id="3-2-0-amp-0"><a href="#3-2-0-amp-0" class="headerlink" title="3.2 +0 &amp; -0"></a>3.2 +0 &amp; -0</h3></li>
-</ul>
-</li>
-<li>唯一不同，+0 和 -0 当分母时，一个得到+Infinity，一个得到-Infinity<h3 id="3-3-NaN-not-a-number"><a href="#3-3-NaN-not-a-number" class="headerlink" title="3.3 NaN  not a number"></a>3.3 NaN  not a number</h3></li>
-<li>typeof NaN =&gt; number</li>
-<li>NaN 不等于任何值 (NaN !== NaN) =&gt;true</li>
-<li>Boolean(NaN) =&gt; false</li>
-<li>与任何数运算都得到本身</li>
-<li>Infinity 与 NaN 做比较，任何情况都返回 false</li>
-</ul>
-<h3 id="3-4-与数值相关的全局方法"><a href="#3-4-与数值相关的全局方法" class="headerlink" title="3.4 与数值相关的全局方法"></a>3.4 与数值相关的全局方法</h3><h4 id="3-4-1-parseInt"><a href="#3-4-1-parseInt" class="headerlink" title="3.4.1 parseInt()"></a>3.4.1 parseInt()</h4><ul>
-<li><strong>将第一个参数转化为字符串</strong>，根据第二个参数（2-36，默认为10）的进制转化为整数</li>
-<li>每个字符依次转换，遇到不能转为数字的字符，不在进行，直接返回转好的部分，若整个字符串无法转换，返回NaN</li>
-<li>对于自动转换为科学计数法的数字会直接对科学计数法当做字符串转换</li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">parseInt(&apos;567&apos;,2);//NaN</span><br><span class="line">parseInt(0x10,16);// 结果为22不是16，因为0x10被自动转换为字符串</span><br><span class="line">String(0x10);// 16</span><br><span class="line">parseInt(0x10,16) =&gt; parseInt( String(0x10), 16 ) =&gt; parseInt(‘16’,16)</span><br></pre></td></tr></table></figure>
-<h4 id="3-4-2-parseFloat"><a href="#3-4-2-parseFloat" class="headerlink" title="3.4.2 parseFloat()"></a>3.4.2 parseFloat()</h4><ul>
-<li>将一个字符串转为浮点数，接受科学计数法</li>
-<li>自动忽略前导零。</li>
-</ul>
-<h4 id="3-4-3-isNaN"><a href="#3-4-3-isNaN" class="headerlink" title="3.4.3 isNaN()"></a>3.4.3 isNaN()</h4><ul>
-<li>判断一个<strong>数值</strong>是否为NaN</li>
-<li>只对数值有效，其他传入值自动转为数值<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">function myIsNaN( value )&#123;</span><br><span class="line">    return value !== value;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-<h1 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h1><ul>
-<li>string number(NAN) boolean undefined object(NULL) function symbol</li>
-</ul>
-
+<li>undefined 表示为定义，函数没有返回值时，默认返回undefined
+        
+          <a class="article-more-a" href="/2019/05/22/1 数据类型/#more">more >></a>
+        
       
 
       
-    </div>
+    </li></ul></div>
     <div class="article-info article-info-index">
       
       
@@ -476,7 +425,7 @@
 		toc_hide_index: true,
 		root: "/",
 		innerArchive: false,
-		showTags: true
+		showTags: false
 	}
 </script>
 

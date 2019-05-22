@@ -16,7 +16,7 @@
 <meta property="og:site_name" content="chochi&#39;s workshop">
 <meta property="og:description" content="1 概念 this 对象时运行时基于函数的执行环节绑定的，在全局函数中，this等于window，而当函数被作为某个对象的方法调用时，this等于那个对象。 匿名函数的执行环节具有全局性，因此this指针对象通常指向window   12345678910let obj = &amp;#123;   fun : function()&amp;#123;       console.log(this);//obj">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-05-22T14:36:33.143Z">
+<meta property="og:updated_time" content="2019-05-22T14:48:21.944Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="ECMA5 this指针">
 <meta name="twitter:description" content="1 概念 this 对象时运行时基于函数的执行环节绑定的，在全局函数中，this等于window，而当函数被作为某个对象的方法调用时，this等于那个对象。 匿名函数的执行环节具有全局性，因此this指针对象通常指向window   12345678910let obj = &amp;#123;   fun : function()&amp;#123;       console.log(this);//obj">
@@ -48,7 +48,7 @@
 <div class="intrude-less">
 	<header id="header" class="inner">
 		<a href="/" class="profilepic">
-			<img src="img/profile.jpg" class="js-avatar">
+			<img src="chochi1st.github.io/img/profile.jpg" class="js-avatar">
 		</a>
 		<hgroup>
 		  <h1 class="header-author"><a href="/">chochi</a></h1>
@@ -98,7 +98,7 @@
 	<div class="intrude-less">
 		<header id="header" class="inner">
 			<div class="profilepic">
-				<img src="img/profile.jpg" class="js-avatar">
+				<img src="chochi1st.github.io/img/profile.jpg" class="js-avatar">
 			</div>
 			<hgroup>
 			  <h1 class="header-author js-header-author">chochi</h1>
@@ -169,6 +169,7 @@
 <li></li>
 </ul>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">let obj = &#123;</span><br><span class="line">   fun : function()&#123;</span><br><span class="line">       console.log(this);//obj</span><br><span class="line"></span><br><span class="line">       return function()&#123;</span><br><span class="line"></span><br><span class="line">        console.log(this);//window 匿名函数有全局性</span><br><span class="line">       &#125;;  </span><br><span class="line">   &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<a id="more"></a>
 <ul>
 <li>每个函数在被调用的时候都被自动取得两个特殊的变量：this &amp; arguments 。</li>
 <li>内部函数在搜索这两个变量的时候，只会搜索到其活动对象位置，因此不可能直接访问外部函数中的这两个变量。</li>
@@ -217,11 +218,11 @@
   
 <nav id="article-nav">
   
-    <a href="/2019/05/22/4 函数/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2019/05/22/9 JavaScript Classes/" id="article-nav-newer" class="article-nav-link-wrap">
       <i class="icon-circle-left"></i>
       <div class="article-nav-title">
         
-          ECMA5 函数
+          ECMA6 类
         
       </div>
     </a>
@@ -292,7 +293,7 @@
 		toc_hide_index: true,
 		root: "/",
 		innerArchive: false,
-		showTags: true
+		showTags: false
 	}
 </script>
 

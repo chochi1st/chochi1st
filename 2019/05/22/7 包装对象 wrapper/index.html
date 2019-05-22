@@ -16,7 +16,7 @@
 <meta property="og:site_name" content="chochi&#39;s workshop">
 <meta property="og:description" content="1 定义 数值、字符串、布尔值这三种原型类型的值，在一听条件下也会自动转化为对象，也就是原始类型的包装对象。 Number String Boolean 包装对象的目的，是得对象模型覆盖js所优质，正门语言都有一个通用的数据模型，其次是得原始类型的值也有可以调动自己的方法。 原始类型的值会自动当做包装对象调用，即调用包装对象的属性和方法。JS引擎糊自动将原始类型的值转换为包装对象实例，并在使用后立">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-05-22T14:35:14.329Z">
+<meta property="og:updated_time" content="2019-05-22T14:49:12.973Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="ECMA5 包装对象">
 <meta name="twitter:description" content="1 定义 数值、字符串、布尔值这三种原型类型的值，在一听条件下也会自动转化为对象，也就是原始类型的包装对象。 Number String Boolean 包装对象的目的，是得对象模型覆盖js所优质，正门语言都有一个通用的数据模型，其次是得原始类型的值也有可以调动自己的方法。 原始类型的值会自动当做包装对象调用，即调用包装对象的属性和方法。JS引擎糊自动将原始类型的值转换为包装对象实例，并在使用后立">
@@ -48,7 +48,7 @@
 <div class="intrude-less">
 	<header id="header" class="inner">
 		<a href="/" class="profilepic">
-			<img src="img/profile.jpg" class="js-avatar">
+			<img src="chochi1st.github.io/img/profile.jpg" class="js-avatar">
 		</a>
 		<hgroup>
 		  <h1 class="header-author"><a href="/">chochi</a></h1>
@@ -98,7 +98,7 @@
 	<div class="intrude-less">
 		<header id="header" class="inner">
 			<div class="profilepic">
-				<img src="img/profile.jpg" class="js-avatar">
+				<img src="chochi1st.github.io/img/profile.jpg" class="js-avatar">
 			</div>
 			<hgroup>
 			  <h1 class="header-author js-header-author">chochi</h1>
@@ -171,6 +171,7 @@
 <li>自动转换生成的包装对象是只读的，无法修改。</li>
 </ul>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> str = <span class="string">'abc'</span>;</span><br><span class="line">str.length; <span class="comment">// 3</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 等同于</span></span><br><span class="line"><span class="keyword">var</span> strObj = <span class="keyword">new</span> <span class="built_in">String</span>(str);</span><br><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">    String&#123;</span></span><br><span class="line"><span class="comment">        0:"1",1:"b",2;"c",length:3[[PrimitiveValue]]:"abc"</span></span><br><span class="line"><span class="comment">    &#125;</span></span><br><span class="line"><span class="comment">    strObj.length;//3</span></span><br><span class="line"><span class="comment">*/</span></span><br></pre></td></tr></table></figure>
+<a id="more"></a>
 <h1 id="2-Boolean"><a href="#2-Boolean" class="headerlink" title="2 Boolean"></a>2 Boolean</h1><h4 id="2-1-if"><a href="#2-1-if" class="headerlink" title="2.1 if ()"></a>2.1 if ()</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> ( <span class="keyword">new</span> <span class="built_in">Boolean</span>(flase)) <span class="comment">// true 逻辑运算，所有对象为true</span></span><br><span class="line"><span class="keyword">if</span> ( <span class="keyword">new</span> <span class="built_in">Boolean</span>(<span class="literal">false</span>).valueOf())<span class="comment">//false 返回实例原始值</span></span><br></pre></td></tr></table></figure>
 <h1 id="3-正则表达式"><a href="#3-正则表达式" class="headerlink" title="3 正则表达式"></a>3 正则表达式</h1><h3 id="3-1-建立"><a href="#3-1-建立" class="headerlink" title="3.1 建立"></a>3.1 建立</h3><ul>
 <li>字面量方法在引擎编译代码的时候建立正则表达式，所以较为高效<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> regex = <span class="regexp">/xyz/</span>; <span class="comment">// 编译时建立</span></span><br><span class="line"><span class="keyword">var</span> regex = <span class="keyword">new</span> <span class="built_in">RegExp</span>(<span class="string">'xyz'</span>); <span class="comment">// 运行时建立</span></span><br></pre></td></tr></table></figure>
@@ -265,8 +266,8 @@
     </a>
   
   
-    <a href="/2019/05/22/6 Array/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">ECMA5 数组</div>
+    <a href="/2019/05/22/3 对象/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">ECMA5 对象</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -330,7 +331,7 @@
 		toc_hide_index: true,
 		root: "/",
 		innerArchive: false,
-		showTags: true
+		showTags: false
 	}
 </script>
 

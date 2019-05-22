@@ -8,18 +8,18 @@
   <link rel="dns-prefetch" href="http://yoursite.com">
   <title>ECMA5 字符串 | chochi&#39;s workshop</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="一旦定义无法改变123let str = &amp;apos;hello&amp;apos;;str[1] = &amp;apos;!&amp;apos;;console.log(str);// hello  每个字符16位，即2个字节，UTF-16格式存储 length长度放回的可能是不正确的，对于码点在U+1000 - U+10ffff之间的字符，js认为是两字符（es5）  Base64 转码 一种编码方法，可以将任意值（">
+  <meta name="description" content="一旦定义无法改变123let str = &amp;apos;hello&amp;apos;;str[1] = &amp;apos;!&amp;apos;;console.log(str);// hello  每个字符16位，即2个字节，UTF-16格式存储 length长度放回的可能是不正确的，对于码点在U+1000 - U+10ffff之间的字符，js认为是两字符（es5）">
 <meta name="keywords" content="-JS">
 <meta property="og:type" content="article">
 <meta property="og:title" content="ECMA5 字符串">
 <meta property="og:url" content="http://yoursite.com/2019/05/22/2 字符串/index.html">
 <meta property="og:site_name" content="chochi&#39;s workshop">
-<meta property="og:description" content="一旦定义无法改变123let str = &amp;apos;hello&amp;apos;;str[1] = &amp;apos;!&amp;apos;;console.log(str);// hello  每个字符16位，即2个字节，UTF-16格式存储 length长度放回的可能是不正确的，对于码点在U+1000 - U+10ffff之间的字符，js认为是两字符（es5）  Base64 转码 一种编码方法，可以将任意值（">
+<meta property="og:description" content="一旦定义无法改变123let str = &amp;apos;hello&amp;apos;;str[1] = &amp;apos;!&amp;apos;;console.log(str);// hello  每个字符16位，即2个字节，UTF-16格式存储 length长度放回的可能是不正确的，对于码点在U+1000 - U+10ffff之间的字符，js认为是两字符（es5）">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-05-22T14:33:57.912Z">
+<meta property="og:updated_time" content="2019-05-22T14:50:02.994Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="ECMA5 字符串">
-<meta name="twitter:description" content="一旦定义无法改变123let str = &amp;apos;hello&amp;apos;;str[1] = &amp;apos;!&amp;apos;;console.log(str);// hello  每个字符16位，即2个字节，UTF-16格式存储 length长度放回的可能是不正确的，对于码点在U+1000 - U+10ffff之间的字符，js认为是两字符（es5）  Base64 转码 一种编码方法，可以将任意值（">
+<meta name="twitter:description" content="一旦定义无法改变123let str = &amp;apos;hello&amp;apos;;str[1] = &amp;apos;!&amp;apos;;console.log(str);// hello  每个字符16位，即2个字节，UTF-16格式存储 length长度放回的可能是不正确的，对于码点在U+1000 - U+10ffff之间的字符，js认为是两字符（es5）">
   
     <link rel="alternative" href="/atom.xml" title="chochi&#39;s workshop" type="application/atom+xml">
   
@@ -48,7 +48,7 @@
 <div class="intrude-less">
 	<header id="header" class="inner">
 		<a href="/" class="profilepic">
-			<img src="img/profile.jpg" class="js-avatar">
+			<img src="chochi1st.github.io/img/profile.jpg" class="js-avatar">
 		</a>
 		<hgroup>
 		  <h1 class="header-author"><a href="/">chochi</a></h1>
@@ -98,7 +98,7 @@
 	<div class="intrude-less">
 		<header id="header" class="inner">
 			<div class="profilepic">
-				<img src="img/profile.jpg" class="js-avatar">
+				<img src="chochi1st.github.io/img/profile.jpg" class="js-avatar">
 			</div>
 			<hgroup>
 			  <h1 class="header-author js-header-author">chochi</h1>
@@ -166,9 +166,8 @@
         <h1 id="一旦定义无法改变"><a href="#一旦定义无法改变" class="headerlink" title="一旦定义无法改变"></a>一旦定义无法改变</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">let str = &apos;hello&apos;;</span><br><span class="line">str[1] = &apos;!&apos;;</span><br><span class="line">console.log(str);// hello</span><br></pre></td></tr></table></figure>
 <ul>
 <li>每个字符16位，即2个字节，UTF-16格式存储</li>
-<li>length长度放回的可能是不正确的，对于码点在U+1000 - U+10ffff之间的字符，js认为是两字符（es5）</li>
-</ul>
-<h1 id="Base64-转码"><a href="#Base64-转码" class="headerlink" title="Base64 转码"></a>Base64 转码</h1><ul>
+<li>length长度放回的可能是不正确的，对于码点在U+1000 - U+10ffff之间的字符，js认为是两字符（es5）<a id="more"></a>
+<h1 id="Base64-转码"><a href="#Base64-转码" class="headerlink" title="Base64 转码"></a>Base64 转码</h1></li>
 <li>一种编码方法，可以将任意值（只适合ASCII码）转成0~9，A~Z，a~z，+和/这64个个字符组成的可打印字符</li>
 <li>主页目的，不是为了加密，而是为了不出现特殊字符，简化程序的处理</li>
 </ul>
@@ -217,11 +216,11 @@
   
 <nav id="article-nav">
   
-    <a href="/2019/05/22/9 JavaScript Classes/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2019/05/22/Call与Apply/" id="article-nav-newer" class="article-nav-link-wrap">
       <i class="icon-circle-left"></i>
       <div class="article-nav-title">
         
-          ECMA6 类
+          ECMA5 CALL APPLY 模拟
         
       </div>
     </a>
@@ -292,7 +291,7 @@
 		toc_hide_index: true,
 		root: "/",
 		innerArchive: false,
-		showTags: true
+		showTags: false
 	}
 </script>
 

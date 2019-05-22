@@ -16,7 +16,7 @@
 <meta property="og:site_name" content="chochi&#39;s workshop">
 <meta property="og:description" content="概念 每个函数都包括两个非继承而来的方法 apply call 在特定的作用域中调用函数，实际上等于设置函数体内this对象的值 看出 call 和 apply 是为了动态改变 this 而出现的区别   apply() 接受两个参数，第一个是运行函数的作用域，第二个是参数数组，参数数组可以用arrar实例，也可以是arguments对象。   call() 参数必须逐个列出来    call 模">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-05-22T14:36:13.080Z">
+<meta property="og:updated_time" content="2019-05-22T14:48:38.966Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="ECMA5 CALL APPLY 模拟">
 <meta name="twitter:description" content="概念 每个函数都包括两个非继承而来的方法 apply call 在特定的作用域中调用函数，实际上等于设置函数体内this对象的值 看出 call 和 apply 是为了动态改变 this 而出现的区别   apply() 接受两个参数，第一个是运行函数的作用域，第二个是参数数组，参数数组可以用arrar实例，也可以是arguments对象。   call() 参数必须逐个列出来    call 模">
@@ -48,7 +48,7 @@
 <div class="intrude-less">
 	<header id="header" class="inner">
 		<a href="/" class="profilepic">
-			<img src="img/profile.jpg" class="js-avatar">
+			<img src="chochi1st.github.io/img/profile.jpg" class="js-avatar">
 		</a>
 		<hgroup>
 		  <h1 class="header-author"><a href="/">chochi</a></h1>
@@ -98,7 +98,7 @@
 	<div class="intrude-less">
 		<header id="header" class="inner">
 			<div class="profilepic">
-				<img src="img/profile.jpg" class="js-avatar">
+				<img src="chochi1st.github.io/img/profile.jpg" class="js-avatar">
 			</div>
 			<hgroup>
 			  <h1 class="header-author js-header-author">chochi</h1>
@@ -182,6 +182,7 @@
 <li>参数一一对应</li>
 </ul>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">Function.prototype.myCall = function(_context)&#123;</span><br><span class="line">    let context = _context || window;// null -&gt; window</span><br><span class="line">    context.fn = this;</span><br><span class="line">    let args = [].slice.call(arguments,1,arguments.length);</span><br><span class="line">    let result = !args ?context.fn():context.fn(...args); </span><br><span class="line">    delete context.fn;</span><br><span class="line">    return result;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<a id="more"></a>
 <ul>
 <li>参数是数组</li>
 </ul>
@@ -233,18 +234,18 @@
   
 <nav id="article-nav">
   
-    <a href="/2019/05/22/9 面向对象编程/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2019/05/22/5 标准库/" id="article-nav-newer" class="article-nav-link-wrap">
       <i class="icon-circle-left"></i>
       <div class="article-nav-title">
         
-          ECMA5 面向对象编程
+          ECMA5 标准库
         
       </div>
     </a>
   
   
-    <a href="/2019/05/22/9 JavaScript Classes/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">ECMA6 类</div>
+    <a href="/2019/05/22/2 字符串/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">ECMA5 字符串</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -308,7 +309,7 @@
 		toc_hide_index: true,
 		root: "/",
 		innerArchive: false,
-		showTags: true
+		showTags: false
 	}
 </script>
 

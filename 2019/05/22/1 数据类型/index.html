@@ -8,18 +8,18 @@
   <link rel="dns-prefetch" href="http://yoursite.com">
   <title>ECMA5 数据格式 | chochi&#39;s workshop</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="1. null &amp;amp; undefined null表示空值，即该处的值为空 undefined 表示为定义，函数没有返回值时，默认返回undefined12345678910111213141516171819202122232425if(undefined)   //falseif(null)        //falseif(undefined == null)    //trueif(">
+  <meta name="description" content="1. null &amp;amp; undefined null表示空值，即该处的值为空 undefined 表示为定义，函数没有返回值时，默认返回undefined">
 <meta name="keywords" content="-JS">
 <meta property="og:type" content="article">
 <meta property="og:title" content="ECMA5 数据格式">
 <meta property="og:url" content="http://yoursite.com/2019/05/22/1 数据类型/index.html">
 <meta property="og:site_name" content="chochi&#39;s workshop">
-<meta property="og:description" content="1. null &amp;amp; undefined null表示空值，即该处的值为空 undefined 表示为定义，函数没有返回值时，默认返回undefined12345678910111213141516171819202122232425if(undefined)   //falseif(null)        //falseif(undefined == null)    //trueif(">
+<meta property="og:description" content="1. null &amp;amp; undefined null表示空值，即该处的值为空 undefined 表示为定义，函数没有返回值时，默认返回undefined">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-05-22T14:13:19.614Z">
+<meta property="og:updated_time" content="2019-05-22T14:50:15.115Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="ECMA5 数据格式">
-<meta name="twitter:description" content="1. null &amp;amp; undefined null表示空值，即该处的值为空 undefined 表示为定义，函数没有返回值时，默认返回undefined12345678910111213141516171819202122232425if(undefined)   //falseif(null)        //falseif(undefined == null)    //trueif(">
+<meta name="twitter:description" content="1. null &amp;amp; undefined null表示空值，即该处的值为空 undefined 表示为定义，函数没有返回值时，默认返回undefined">
   
     <link rel="alternative" href="/atom.xml" title="chochi&#39;s workshop" type="application/atom+xml">
   
@@ -48,7 +48,7 @@
 <div class="intrude-less">
 	<header id="header" class="inner">
 		<a href="/" class="profilepic">
-			<img src="img/profile.jpg" class="js-avatar">
+			<img src="chochi1st.github.io/img/profile.jpg" class="js-avatar">
 		</a>
 		<hgroup>
 		  <h1 class="header-author"><a href="/">chochi</a></h1>
@@ -98,7 +98,7 @@
 	<div class="intrude-less">
 		<header id="header" class="inner">
 			<div class="profilepic">
-				<img src="img/profile.jpg" class="js-avatar">
+				<img src="chochi1st.github.io/img/profile.jpg" class="js-avatar">
 			</div>
 			<hgroup>
 			  <h1 class="header-author js-header-author">chochi</h1>
@@ -165,7 +165,8 @@
       
         <h1 id="1-null-amp-undefined"><a href="#1-null-amp-undefined" class="headerlink" title="1. null &amp; undefined"></a>1. null &amp; undefined</h1><ul>
 <li>null表示空值，即该处的值为空</li>
-<li>undefined 表示为定义，函数没有返回值时，默认返回undefined<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="keyword">if</span>(<span class="literal">undefined</span>)   <span class="comment">//false</span></span><br><span class="line"><span class="keyword">if</span>(<span class="literal">null</span>)        <span class="comment">//false</span></span><br><span class="line"><span class="keyword">if</span>(<span class="literal">undefined</span> == <span class="literal">null</span>)    <span class="comment">//true</span></span><br><span class="line"><span class="keyword">if</span>(<span class="literal">undefined</span> === <span class="literal">null</span>)  <span class="comment">//false</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">Boolean</span>([]) <span class="comment">//true</span></span><br><span class="line"><span class="built_in">Boolean</span>(&#123;&#125;) <span class="comment">//true</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">Boolean</span>(<span class="string">''</span>) <span class="comment">//false</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">Boolean</span>(<span class="literal">false</span>) <span class="comment">// false</span></span><br><span class="line"><span class="keyword">new</span> <span class="built_in">Boolean</span>(<span class="literal">false</span>) <span class="comment">//true</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">Boolean</span>(<span class="literal">null</span>) <span class="comment">//false</span></span><br><span class="line"><span class="keyword">new</span> <span class="built_in">Boolean</span>(<span class="literal">null</span>) <span class="comment">//true</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 转换为数值</span></span><br><span class="line"><span class="built_in">Number</span>(<span class="literal">null</span>) === <span class="number">0</span></span><br><span class="line"><span class="built_in">Number</span>(<span class="literal">undefined</span>) === <span class="literal">NaN</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 类型</span></span><br><span class="line"><span class="keyword">typeof</span> <span class="literal">null</span> === object </span><br><span class="line"><span class="keyword">typeof</span> <span class="literal">undefined</span> === <span class="literal">undefined</span></span><br><span class="line"><span class="keyword">typeof</span> <span class="literal">NaN</span> === number</span><br></pre></td></tr></table></figure>
+<li>undefined 表示为定义，函数没有返回值时，默认返回undefined<a id="more"></a>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="keyword">if</span>(<span class="literal">undefined</span>)   <span class="comment">//false</span></span><br><span class="line"><span class="keyword">if</span>(<span class="literal">null</span>)        <span class="comment">//false</span></span><br><span class="line"><span class="keyword">if</span>(<span class="literal">undefined</span> == <span class="literal">null</span>)    <span class="comment">//true</span></span><br><span class="line"><span class="keyword">if</span>(<span class="literal">undefined</span> === <span class="literal">null</span>)  <span class="comment">//false</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">Boolean</span>([]) <span class="comment">//true</span></span><br><span class="line"><span class="built_in">Boolean</span>(&#123;&#125;) <span class="comment">//true</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">Boolean</span>(<span class="string">''</span>) <span class="comment">//false</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">Boolean</span>(<span class="literal">false</span>) <span class="comment">// false</span></span><br><span class="line"><span class="keyword">new</span> <span class="built_in">Boolean</span>(<span class="literal">false</span>) <span class="comment">//true</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">Boolean</span>(<span class="literal">null</span>) <span class="comment">//false</span></span><br><span class="line"><span class="keyword">new</span> <span class="built_in">Boolean</span>(<span class="literal">null</span>) <span class="comment">//true</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 转换为数值</span></span><br><span class="line"><span class="built_in">Number</span>(<span class="literal">null</span>) === <span class="number">0</span></span><br><span class="line"><span class="built_in">Number</span>(<span class="literal">undefined</span>) === <span class="literal">NaN</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 类型</span></span><br><span class="line"><span class="keyword">typeof</span> <span class="literal">null</span> === object </span><br><span class="line"><span class="keyword">typeof</span> <span class="literal">undefined</span> === <span class="literal">undefined</span></span><br><span class="line"><span class="keyword">typeof</span> <span class="literal">NaN</span> === number</span><br></pre></td></tr></table></figure>
 </li>
 </ul>
 <h1 id="2-布尔值"><a href="#2-布尔值" class="headerlink" title="2. 布尔值"></a>2. 布尔值</h1><ul>
@@ -332,7 +333,7 @@
 		toc_hide_index: true,
 		root: "/",
 		innerArchive: false,
-		showTags: true
+		showTags: false
 	}
 </script>
 
