@@ -6,15 +6,20 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Archives | chochi&#39;s workshop</title>
+  <title>ECMA5 包装对象 | chochi&#39;s workshop</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="chochi&#39;s workshop">
-<meta property="og:url" content="http://yoursite.com/archives/index.html">
+  <meta name="description" content="1 定义 数值、字符串、布尔值这三种原型类型的值，在一听条件下也会自动转化为对象，也就是原始类型的包装对象。 Number String Boolean 包装对象的目的，是得对象模型覆盖js所优质，正门语言都有一个通用的数据模型，其次是得原始类型的值也有可以调动自己的方法。 原始类型的值会自动当做包装对象调用，即调用包装对象的属性和方法。JS引擎糊自动将原始类型的值转换为包装对象实例，并在使用后立">
+<meta name="keywords" content="-JS">
+<meta property="og:type" content="article">
+<meta property="og:title" content="ECMA5 包装对象">
+<meta property="og:url" content="http://yoursite.com/2019/05/22/7 包装对象 wrapper/index.html">
 <meta property="og:site_name" content="chochi&#39;s workshop">
+<meta property="og:description" content="1 定义 数值、字符串、布尔值这三种原型类型的值，在一听条件下也会自动转化为对象，也就是原始类型的包装对象。 Number String Boolean 包装对象的目的，是得对象模型覆盖js所优质，正门语言都有一个通用的数据模型，其次是得原始类型的值也有可以调动自己的方法。 原始类型的值会自动当做包装对象调用，即调用包装对象的属性和方法。JS引擎糊自动将原始类型的值转换为包装对象实例，并在使用后立">
 <meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2019-05-22T14:35:14.329Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="chochi&#39;s workshop">
+<meta name="twitter:title" content="ECMA5 包装对象">
+<meta name="twitter:description" content="1 定义 数值、字符串、布尔值这三种原型类型的值，在一听条件下也会自动转化为对象，也就是原始类型的包装对象。 Number String Boolean 包装对象的目的，是得对象模型覆盖js所优质，正门语言都有一个通用的数据模型，其次是得原始类型的值也有可以调动自己的方法。 原始类型的值会自动当做包装对象调用，即调用包装对象的属性和方法。JS引擎糊自动将原始类型的值转换为包装对象实例，并在使用后立">
   
     <link rel="alternative" href="/atom.xml" title="chochi&#39;s workshop" type="application/atom+xml">
   
@@ -138,36 +143,83 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-7 包装对象 wrapper" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      ECMA5 包装对象
+    </h1>
+  
+
+        
+        <a href="/2019/05/22/7 包装对象 wrapper/" class="archive-article-date">
+  	<time datetime="2019-05-22T14:38:04.268Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-05-22</time>
+</a>
+        
+      </header>
     
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="1-定义"><a href="#1-定义" class="headerlink" title="1 定义"></a>1 定义</h1><ul>
+<li>数值、字符串、布尔值这三种原型类型的值，在一听条件下也会自动转化为对象，也就是原始类型的包装对象。</li>
+<li>Number String Boolean</li>
+<li>包装对象的目的，是得对象模型覆盖js所优质，正门语言都有一个通用的数据模型，其次是得原始类型的值也有可以调动自己的方法。</li>
+<li>原始类型的值会自动当做包装对象调用，即调用包装对象的属性和方法。<strong>JS引擎糊自动将原始类型的值转换为包装对象实例，并在使用后立即销毁。</strong></li>
+<li>自动转换生成的包装对象是只读的，无法修改。</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> str = <span class="string">'abc'</span>;</span><br><span class="line">str.length; <span class="comment">// 3</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 等同于</span></span><br><span class="line"><span class="keyword">var</span> strObj = <span class="keyword">new</span> <span class="built_in">String</span>(str);</span><br><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">    String&#123;</span></span><br><span class="line"><span class="comment">        0:"1",1:"b",2;"c",length:3[[PrimitiveValue]]:"abc"</span></span><br><span class="line"><span class="comment">    &#125;</span></span><br><span class="line"><span class="comment">    strObj.length;//3</span></span><br><span class="line"><span class="comment">*/</span></span><br></pre></td></tr></table></figure>
+<h1 id="2-Boolean"><a href="#2-Boolean" class="headerlink" title="2 Boolean"></a>2 Boolean</h1><h4 id="2-1-if"><a href="#2-1-if" class="headerlink" title="2.1 if ()"></a>2.1 if ()</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> ( <span class="keyword">new</span> <span class="built_in">Boolean</span>(flase)) <span class="comment">// true 逻辑运算，所有对象为true</span></span><br><span class="line"><span class="keyword">if</span> ( <span class="keyword">new</span> <span class="built_in">Boolean</span>(<span class="literal">false</span>).valueOf())<span class="comment">//false 返回实例原始值</span></span><br></pre></td></tr></table></figure>
+<h1 id="3-正则表达式"><a href="#3-正则表达式" class="headerlink" title="3 正则表达式"></a>3 正则表达式</h1><h3 id="3-1-建立"><a href="#3-1-建立" class="headerlink" title="3.1 建立"></a>3.1 建立</h3><ul>
+<li>字面量方法在引擎编译代码的时候建立正则表达式，所以较为高效<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> regex = <span class="regexp">/xyz/</span>; <span class="comment">// 编译时建立</span></span><br><span class="line"><span class="keyword">var</span> regex = <span class="keyword">new</span> <span class="built_in">RegExp</span>(<span class="string">'xyz'</span>); <span class="comment">// 运行时建立</span></span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h3 id="3-2-实例属性"><a href="#3-2-实例属性" class="headerlink" title="3.2 实例属性"></a>3.2 实例属性</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//以下属性只读</span></span><br><span class="line">    <span class="comment">// 返回布尔值 是否有设置当前修饰</span></span><br><span class="line">    regex.ignoreCase;</span><br><span class="line">    regex.global;</span><br><span class="line">    regex.multiline;</span><br><span class="line">    <span class="comment">// 返回字符串，包含已经设置的所有修饰符，按字母排序</span></span><br><span class="line">    regex.flags;</span><br></pre></td></tr></table></figure>
+<h3 id="3-3-实例方法"><a href="#3-3-实例方法" class="headerlink" title="3.3 实例方法"></a>3.3 实例方法</h3><ul>
+<li><p>RegExp.prototype.test()</p>
+<ul>
+<li>从 lastIndex 位置向后匹配，找到当前模式能匹配的参数字符串则返回 true</li>
+<li>带有g修饰符，每次test()都从上一次结束的位置开始向后匹配<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">var regex = /r/g;</span><br><span class="line">var str = &apos;_x_x&apos;;</span><br><span class="line">regex.lastIndex ; // 0</span><br><span class="line">regex.test(s); //true</span><br><span class="line">regex.lastIndex; // 2 _</span><br><span class="line">regex.lastIdex = 4; // 可指定搜索位置，只对同一个正则表达式有效</span><br><span class="line">regex.test(s); //false</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+<li><p>RegExp.prototype.exec()</p>
+<ul>
+<li>返回匹配结果（数组）</li>
+<li>包含 input index 属性</li>
+</ul>
+</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> r = <span class="regexp">/a(b+)a/</span>;</span><br><span class="line"><span class="keyword">var</span> match = r.exec(<span class="string">'_abbbbba_aba_'</span>);</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(match);</span><br><span class="line"><span class="comment">/* </span></span><br><span class="line"><span class="comment">    Array(2) ["abbbbba", "bbbbb"]</span></span><br><span class="line"><span class="comment">    index:1                 整个匹配模式成功的开始位置</span></span><br><span class="line"><span class="comment">    input:"_abbbbba_aba_"   整个字符串</span></span><br><span class="line"><span class="comment">    length:2                第二个成员是组匹配结果</span></span><br><span class="line"><span class="comment">*/</span></span><br></pre></td></tr></table></figure>
+<h3 id="3-4-字符串的实例方法"><a href="#3-4-字符串的实例方法" class="headerlink" title="3.4 字符串的实例方法"></a>3.4 字符串的实例方法</h3><ul>
+<li><p>match()</p>
+<ul>
+<li>返回匹配结果</li>
+<li>若带 g 修饰，则一次性返回所有结果</li>
+<li>正则表达式的 lastIndex 属性不造成影响<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> s = <span class="string">'abba_aba_abaa'</span>;</span><br><span class="line"><span class="keyword">var</span> r = <span class="regexp">/a(b+)a/g</span>;</span><br><span class="line"><span class="keyword">var</span> results = s.match(r);<span class="comment">//Array(3) ["abba", "aba", "aba"]</span></span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+<li><p>search()</p>
+<ul>
+<li>返回第一个满足条件的匹配结果在整个字符串中的位置</li>
+</ul>
+</li>
+<li>replace(search,replacement)<ul>
+<li>若带 g 修饰符，则替换所有匹配成功的项 </li>
+</ul>
+</li>
+</ul>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
       
       
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2019" class="archive-year">2019</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/05/22/继承/" class="archive-article-date">
-  	<time datetime="2019-05-22T14:38:04.278Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-05-22</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/05/22/继承/">ECMA5 继承</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
@@ -179,7 +231,7 @@
 		</ul>
 	</div>
 
-          
+      
 	<div class="article-category tagcloud">
 		<i class="icon-book icon"></i>
 		<ul class="article-tag-list">
@@ -192,461 +244,61 @@
 	</div>
 
 
-        </div>
-        <div class="clearfix"></div>
-    </header>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/05/22/7 包装对象 wrapper/" class="archive-article-date">
-  	<time datetime="2019-05-22T14:38:04.268Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-05-22</time>
-</a>
+<nav id="article-nav">
+  
+    <a href="/2019/05/22/继承/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          ECMA5 继承
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2019/05/22/6 Array/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">ECMA5 数组</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/05/22/7 包装对象 wrapper/">ECMA5 包装对象</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">-JS</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/语言基础//" class="article-tag-list-link color5">语言基础</a>
-        		</li>
-      		
-		</ul>
-	</div>
+        
+        
+    </div>
+</aside>
 
 
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/05/22/6 Array/" class="archive-article-date">
-  	<time datetime="2019-05-22T14:38:04.268Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-05-22</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/05/22/6 Array/">ECMA5 数组</a>
-    </h1>
-  
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">-JS</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/语言基础//" class="article-tag-list-link color5">语言基础</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/05/22/3 对象/" class="archive-article-date">
-  	<time datetime="2019-05-22T14:38:04.268Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-05-22</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/05/22/3 对象/">ECMA5 对象</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">-JS</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/语言基础//" class="article-tag-list-link color5">语言基础</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/05/22/5 标准库/" class="archive-article-date">
-  	<time datetime="2019-05-22T14:38:04.268Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-05-22</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/05/22/5 标准库/">ECMA5 标准库</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">-JS</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/语言基础//" class="article-tag-list-link color5">语言基础</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/05/22/4 函数/" class="archive-article-date">
-  	<time datetime="2019-05-22T14:38:04.268Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-05-22</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/05/22/4 函数/">ECMA5 函数</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">-JS</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/语言基础//" class="article-tag-list-link color5">语言基础</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/05/22/关于 this 指针/" class="archive-article-date">
-  	<time datetime="2019-05-22T14:38:04.268Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-05-22</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/05/22/关于 this 指针/">ECMA5 this指针</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">-JS</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/语言基础//" class="article-tag-list-link color5">语言基础</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/05/22/9 面向对象编程/" class="archive-article-date">
-  	<time datetime="2019-05-22T14:38:04.268Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-05-22</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/05/22/9 面向对象编程/">ECMA5 面向对象编程</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">-JS</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/语言基础//" class="article-tag-list-link color5">语言基础</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/05/22/Call与Apply/" class="archive-article-date">
-  	<time datetime="2019-05-22T14:38:04.268Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-05-22</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/05/22/Call与Apply/">ECMA5 CALL APPLY 模拟</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">-JS</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/语言基础//" class="article-tag-list-link color5">语言基础</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/05/22/9 JavaScript Classes/" class="archive-article-date">
-  	<time datetime="2019-05-22T14:38:04.268Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-05-22</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/05/22/9 JavaScript Classes/">ECMA6 类</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">-JS</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/语言基础//" class="article-tag-list-link color5">语言基础</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
   
   
-    </div></section>
   
 
-    
-    <nav id="page-nav">
-      <span class="page-number current">1</span><a class="page-number" href="/archives/page/2/">2</a><a class="extend next" rel="next" href="/archives/page/2/">Next &raquo;</a>
-    </nav>
+  
+
+  
+
   
 
 
@@ -670,8 +322,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,

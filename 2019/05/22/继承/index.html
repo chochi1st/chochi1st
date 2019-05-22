@@ -6,15 +6,20 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Archives | chochi&#39;s workshop</title>
+  <title>ECMA5 继承 | chochi&#39;s workshop</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="chochi&#39;s workshop">
-<meta property="og:url" content="http://yoursite.com/archives/index.html">
+  <meta name="description" content="2 继承ECMAScript 只支持实现继承，不支持接口继承。  继承方法类型： 原型链继承 借用构造函数 组合继承 原型式继承 寄生式继承 寄生组合式继承2.1 原型链继承   基本思想：利用原型让一个引用类型继承另一个引用类型的属性和方法，实现的本质是重写原型对象，代之一个新类型的实例 原型对象可以算是是一个‘实例’，有用constructor指针，指向其构造函数 构造函数有prototype">
+<meta name="keywords" content="-JS">
+<meta property="og:type" content="article">
+<meta property="og:title" content="ECMA5 继承">
+<meta property="og:url" content="http://yoursite.com/2019/05/22/继承/index.html">
 <meta property="og:site_name" content="chochi&#39;s workshop">
+<meta property="og:description" content="2 继承ECMAScript 只支持实现继承，不支持接口继承。  继承方法类型： 原型链继承 借用构造函数 组合继承 原型式继承 寄生式继承 寄生组合式继承2.1 原型链继承   基本思想：利用原型让一个引用类型继承另一个引用类型的属性和方法，实现的本质是重写原型对象，代之一个新类型的实例 原型对象可以算是是一个‘实例’，有用constructor指针，指向其构造函数 构造函数有prototype">
 <meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2019-05-22T14:36:52.578Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="chochi&#39;s workshop">
+<meta name="twitter:title" content="ECMA5 继承">
+<meta name="twitter:description" content="2 继承ECMAScript 只支持实现继承，不支持接口继承。  继承方法类型： 原型链继承 借用构造函数 组合继承 原型式继承 寄生式继承 寄生组合式继承2.1 原型链继承   基本思想：利用原型让一个引用类型继承另一个引用类型的属性和方法，实现的本质是重写原型对象，代之一个新类型的实例 原型对象可以算是是一个‘实例’，有用constructor指针，指向其构造函数 构造函数有prototype">
   
     <link rel="alternative" href="/atom.xml" title="chochi&#39;s workshop" type="application/atom+xml">
   
@@ -138,36 +143,92 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
+            <article id="post-继承" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
   
+    <h1 class="article-title" itemprop="name">
+      ECMA5 继承
+    </h1>
   
-    
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2019" class="archive-year">2019</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/05/22/继承/" class="archive-article-date">
+
+        
+        <a href="/2019/05/22/继承/" class="archive-article-date">
   	<time datetime="2019-05-22T14:38:04.278Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-05-22</time>
 </a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/05/22/继承/">ECMA5 继承</a>
-    </h1>
-  
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="2-继承"><a href="#2-继承" class="headerlink" title="2 继承"></a>2 继承</h2><p>ECMAScript 只支持实现继承，不支持接口继承。</p>
+<ul>
+<li>继承方法类型：<ul>
+<li>原型链继承</li>
+<li>借用构造函数</li>
+<li>组合继承</li>
+<li>原型式继承</li>
+<li>寄生式继承</li>
+<li>寄生组合式继承<h3 id="2-1-原型链继承"><a href="#2-1-原型链继承" class="headerlink" title="2.1 原型链继承"></a>2.1 原型链继承</h3></li>
+</ul>
+</li>
+<li>基本思想：利用原型让一个引用类型继承另一个引用类型的属性和方法，实现的本质是重写原型对象，代之一个新类型的<strong>实例</strong><ul>
+<li>原型对象可以算是是一个‘实例’，有用constructor指针，指向其构造函数</li>
+<li>构造函数有prototype指针指向原型对象</li>
+<li>实例有<strong>proto</strong>指针执行其原型对象</li>
+<li>Father().prototype —&gt; Father.prototype [原型对象]</li>
+<li>Father.prototype.constructor –&gt; Father() [构造函数]</li>
+<li>InstanceOfFather.<strong> proto</strong> –&gt; Father.prototype</li>
+</ul>
+</li>
+<li>问题：<ul>
+<li><strong>引用类型的原型属性会被所有实例共享</strong></li>
+<li>注意代码块中原型链继承的tips</li>
+<li>在创建子类的实例时，不能像超类中的构造函数传递参数</li>
+<li></li>
+</ul>
+</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br></pre></td><td class="code"><pre><span class="line">    //构造函数</span><br><span class="line">    function Father()&#123;</span><br><span class="line">        this.name = &apos;Big Dady&apos;;</span><br><span class="line">        this.title = &apos;father&apos;;</span><br><span class="line">    &#125;</span><br><span class="line">    //实例方法</span><br><span class="line">    Father.prototype.sayName = function ()&#123;</span><br><span class="line">        console.log(this.name);</span><br><span class="line">    &#125;</span><br><span class="line">    //构造函数</span><br><span class="line">    function Son()&#123;</span><br><span class="line">        this.title = &apos;son&apos;;</span><br><span class="line">        this.age = 19;</span><br><span class="line">        this.objInSonInstance = &#123;</span><br><span class="line">            sister: &apos;chesnut&apos;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">//-------------------- tips 原型链继承 存疑中 -----------------------------------</span><br><span class="line">    // Son 继承 Father的一个实例</span><br><span class="line">    // Father() 中所有属性被衍生类共享</span><br><span class="line">    // 只不过普通属性被更改了binding，在实例中拥有了该属性，不会再像原型链搜素</span><br><span class="line">    // 引用属性除非是直接更改binding，否则是所有实例都共享了这个属性</span><br><span class="line">    Son.prototype = new Father();</span><br><span class="line">//-------------------------------------------------------------------------------</span><br><span class="line">    Son.prototype.objInSon=&#123;</span><br><span class="line">        brother: &apos;flag&apos;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    //Son的实例方法: !先继承再添加子类的实例方法，不然会被覆盖！</span><br><span class="line">    Son.prototype.sayTitle =  function()&#123;</span><br><span class="line">        console.log(this.title);</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    //在类上的静态方法</span><br><span class="line">    Son.staticMethod = function()&#123;</span><br><span class="line">        console.log(&apos;static!!!&apos;);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    //创建Son类的一个实例 instance</span><br><span class="line">    let instance = new Son();</span><br><span class="line">    let instance2 = new Son();</span><br><span class="line">    /**</span><br><span class="line">    instance 的属性搜索链：</span><br><span class="line">        instance properties:                age,title(son),objInSonInstance</span><br><span class="line">        以下为原型链层，所有引用的属性会被共享（函数也算对象，对象是引用类型，所有实例共享引用类型、函数）</span><br><span class="line">        __proto__ properties:               name,title(father),sayTitle,objInSon</span><br><span class="line">        __proto__.__proto__ properties:     sayName</span><br><span class="line">    **/</span><br><span class="line">    console.log(instance.hasOwnProperty(&apos;title&apos;));      //true</span><br><span class="line">    console.log(instance.__proto__.hasOwnProperty(&apos;title&apos;));    //true</span><br><span class="line">    console.log(instance.__proto__.__proto__.hasOwnProperty(&apos;sayName&apos;));    //true</span><br><span class="line">    console.log(instance.title,         instance.__proto__.title);   //son,father</span><br><span class="line">    console.log(Son.hasOwnProperty(&apos;staticMethod&apos;));    //true</span><br><span class="line"></span><br><span class="line">    // 实例引用属性，互不影响</span><br><span class="line">    instance.objInSonInstance.addInInstance = &apos;instance add&apos;;</span><br><span class="line">    console.log(instance.objInSonInstance,instance2.objInSonInstance);</span><br><span class="line"></span><br><span class="line">    //原型上引用属性被共享，instance2.objInSon 被更改</span><br><span class="line">    instance.objInSon.addInPrototype = &apos;prototype add&apos;;</span><br><span class="line">    console.log(instance.objInSon,instance2.objInSon);</span><br></pre></td></tr></table></figure>
+<h4 id="2-2-借用构造函数"><a href="#2-2-借用构造函数" class="headerlink" title="2.2 借用构造函数"></a>2.2 借用构造函数</h4><ul>
+<li>借用构造函数并无构成真正意义上的继承</li>
+<li>可以传参，引用类型不会被共享，但<strong>无法达到函数复用的目的</strong>。</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">//借用构造函数 </span><br><span class="line">function Super()&#123;</span><br><span class="line">    this.refType = [1,2,3];</span><br><span class="line">    this.basicType = &apos;Super basic type&apos;;</span><br><span class="line">&#125;</span><br><span class="line">//Sub不可用该方法</span><br><span class="line">Super.prototype.printData = function (property)&#123;</span><br><span class="line">    console.log(this[property]);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">// Sub的原型对象还是object</span><br><span class="line">function Sub()&#123;</span><br><span class="line">    Super.call(this);</span><br><span class="line">&#125;</span><br><span class="line">let in1 = new Sub();</span><br><span class="line">let in2 = new Sub();</span><br><span class="line">console.log(in1.__proto__,Sub.prototype);// object object</span><br><span class="line">in1.printData(&apos;refType&apos;);//error: not a function</span><br><span class="line">in1.refType.push(1);</span><br><span class="line">console.log(in2.refType);//1,2,3</span><br></pre></td></tr></table></figure>
+<h4 id="2-3-原型式继承"><a href="#2-3-原型式继承" class="headerlink" title="2.3 原型式继承"></a>2.3 原型式继承</h4><ul>
+<li>一个对象作为另外一个对象的继承，<strong>原型对象的所有属性被共享</strong>，故达到函数复用目的</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">// 一个对象实例，作为模板</span><br><span class="line">let Person = &#123;</span><br><span class="line">    name:&apos;chochi&apos;, // 子类赋值重写，所有看起来不被共享</span><br><span class="line">    habbits:[&apos;reading&apos;,&apos;speaking&apos;],</span><br><span class="line">    print: function()&#123;</span><br><span class="line">        console.log(this.name,this.habbits);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">//浅复制</span><br><span class="line">let chochi = Object.create(Person);</span><br><span class="line">let chesnut = Object.create(Person);</span><br><span class="line"></span><br><span class="line">chochi.habbits.push(&apos;eating&apos;);</span><br><span class="line">chesnut.print();//reading speaking eating</span><br><span class="line"></span><br><span class="line">console.log(chesnut.print===chochi.print);// true：函数复用</span><br></pre></td></tr></table></figure>
+<h4 id="2-4-组合继承"><a href="#2-4-组合继承" class="headerlink" title="2.4 组合继承"></a>2.4 组合继承</h4><ul>
+<li>概念：<ul>
+<li>使用原型链实现对需要共享的属性和方法的继承</li>
+<li>借用构造函数完成实例属性的继承</li>
+<li>实例属性屏蔽原型属性</li>
+<li>可被 instanceof , isPrototypeOf 识别</li>
+<li>融合优点，最常用</li>
+</ul>
+</li>
+<li>问题：<ul>
+<li><strong>调用两次构造函数，一次是创建子类原型，一次是子类构造函数内部</strong>。—》 解决：寄生组合式继承<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line">    function Father(_title)&#123;</span><br><span class="line">        this.refTitle =&#123;</span><br><span class="line">            title: _title</span><br><span class="line">        &#125;;</span><br><span class="line">    &#125;</span><br><span class="line">    Father.prototype.printProperty = function ()&#123;</span><br><span class="line">        console.log(this.refTitle);</span><br><span class="line">    &#125;</span><br><span class="line">    function Son(_title,_age)&#123;</span><br><span class="line">        // 借用构造函数：创建实例属性</span><br><span class="line">        Father.call(this,_title);</span><br><span class="line">        this.age = _age;</span><br><span class="line">        /* </span><br><span class="line">        实例属性</span><br><span class="line">        property: age, refTitle&#123;title&#125;</span><br><span class="line">        */</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    // 重写原型：共享方法</span><br><span class="line">    // 原型上也有了 refTitle 属性，虽然被实例属性屏蔽了，等于一个属性存在了两次</span><br><span class="line">    Son.prototype = new Father();</span><br><span class="line">//------------ tips --------------------------</span><br><span class="line">// 将指针值回来除了逻辑更加清晰其他的改变？</span><br><span class="line">    Son.prototype.constructor = Son;</span><br><span class="line">//--------------------------------------------</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+</ul>
+<h4 id="2-5-寄生组合继承"><a href="#2-5-寄生组合继承" class="headerlink" title="2.5 寄生组合继承"></a>2.5 寄生组合继承</h4><ul>
+<li>可以直接简化成下面 将组合继承的原型重写那一步改成以下：</li>
+<li>如此就不用call两次构造函数，属性也不会被重复</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Son.prototype = Father.prototype;</span><br></pre></td></tr></table></figure>
 
-        <div class="article-info info-on-right">
-          
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
@@ -179,7 +240,7 @@
 		</ul>
 	</div>
 
-          
+      
 	<div class="article-category tagcloud">
 		<i class="icon-book icon"></i>
 		<ul class="article-tag-list">
@@ -192,461 +253,52 @@
 	</div>
 
 
-        </div>
-        <div class="clearfix"></div>
-    </header>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/05/22/7 包装对象 wrapper/" class="archive-article-date">
-  	<time datetime="2019-05-22T14:38:04.268Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-05-22</time>
-</a>
+<nav id="article-nav">
+  
+  
+    <a href="/2019/05/22/7 包装对象 wrapper/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">ECMA5 包装对象</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/05/22/7 包装对象 wrapper/">ECMA5 包装对象</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">-JS</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/语言基础//" class="article-tag-list-link color5">语言基础</a>
-        		</li>
-      		
-		</ul>
-	</div>
+        
+        
+    </div>
+</aside>
 
 
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/05/22/6 Array/" class="archive-article-date">
-  	<time datetime="2019-05-22T14:38:04.268Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-05-22</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/05/22/6 Array/">ECMA5 数组</a>
-    </h1>
-  
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">-JS</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/语言基础//" class="article-tag-list-link color5">语言基础</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/05/22/3 对象/" class="archive-article-date">
-  	<time datetime="2019-05-22T14:38:04.268Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-05-22</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/05/22/3 对象/">ECMA5 对象</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">-JS</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/语言基础//" class="article-tag-list-link color5">语言基础</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/05/22/5 标准库/" class="archive-article-date">
-  	<time datetime="2019-05-22T14:38:04.268Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-05-22</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/05/22/5 标准库/">ECMA5 标准库</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">-JS</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/语言基础//" class="article-tag-list-link color5">语言基础</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/05/22/4 函数/" class="archive-article-date">
-  	<time datetime="2019-05-22T14:38:04.268Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-05-22</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/05/22/4 函数/">ECMA5 函数</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">-JS</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/语言基础//" class="article-tag-list-link color5">语言基础</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/05/22/关于 this 指针/" class="archive-article-date">
-  	<time datetime="2019-05-22T14:38:04.268Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-05-22</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/05/22/关于 this 指针/">ECMA5 this指针</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">-JS</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/语言基础//" class="article-tag-list-link color5">语言基础</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/05/22/9 面向对象编程/" class="archive-article-date">
-  	<time datetime="2019-05-22T14:38:04.268Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-05-22</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/05/22/9 面向对象编程/">ECMA5 面向对象编程</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">-JS</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/语言基础//" class="article-tag-list-link color5">语言基础</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/05/22/Call与Apply/" class="archive-article-date">
-  	<time datetime="2019-05-22T14:38:04.268Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-05-22</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/05/22/Call与Apply/">ECMA5 CALL APPLY 模拟</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">-JS</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/语言基础//" class="article-tag-list-link color5">语言基础</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/05/22/9 JavaScript Classes/" class="archive-article-date">
-  	<time datetime="2019-05-22T14:38:04.268Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-05-22</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/05/22/9 JavaScript Classes/">ECMA6 类</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">-JS</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/语言基础//" class="article-tag-list-link color5">语言基础</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
   
   
-    </div></section>
   
 
-    
-    <nav id="page-nav">
-      <span class="page-number current">1</span><a class="page-number" href="/archives/page/2/">2</a><a class="extend next" rel="next" href="/archives/page/2/">Next &raquo;</a>
-    </nav>
+  
+
+  
+
   
 
 
@@ -670,8 +322,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,
