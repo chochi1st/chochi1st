@@ -6,20 +6,29 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>ECMA5 字符串 | chochi&#39;s workshop</title>
+  <title>chochi&#39;s workshop</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="一旦定义无法改变123let str = &apos;hello&apos;;str[1] = &apos;!&apos;;console.log(str);// hello  每个字符16位，即2个字节，UTF-16格式存储 length长度放回的可能是不正确的，对于码点在U+1000 - U+10ffff之间的字符，js认为是两字符（es5）">
-<meta name="keywords" content="-JS">
-<meta property="og:type" content="article">
-<meta property="og:title" content="ECMA5 字符串">
-<meta property="og:url" content="http://yoursite.com/2019/05/22/2 字符串/index.html">
+  <meta name="description" content="Full screen image slider">
+<meta property="og:type" content="website">
+<meta property="og:title" content="chochi&#39;s workshop">
+<meta property="og:url" content="http://yoursite.com/showcase/works/IamgeSlider/IamgeSlider.html">
 <meta property="og:site_name" content="chochi&#39;s workshop">
-<meta property="og:description" content="一旦定义无法改变123let str = &apos;hello&apos;;str[1] = &apos;!&apos;;console.log(str);// hello  每个字符16位，即2个字节，UTF-16格式存储 length长度放回的可能是不正确的，对于码点在U+1000 - U+10ffff之间的字符，js认为是两字符（es5）">
+<meta property="og:description" content="Full screen image slider">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-05-22T14:52:15.971Z">
+<meta property="og:image" content="http://yoursite.com/showcase/works/IamgeSlider/img/5.jpg">
+<meta property="og:image" content="http://yoursite.com/showcase/works/IamgeSlider/img/1.jpg">
+<meta property="og:image" content="http://yoursite.com/showcase/works/IamgeSlider/img/2.jpg">
+<meta property="og:image" content="http://yoursite.com/showcase/works/IamgeSlider/img/3.jpg">
+<meta property="og:image" content="http://yoursite.com/showcase/works/IamgeSlider/img/4.jpg">
+<meta property="og:image" content="http://yoursite.com/showcase/works/IamgeSlider/img/5.jpg">
+<meta property="og:image" content="http://yoursite.com/showcase/works/IamgeSlider/img/1.jpg">
+<meta property="og:image" content="http://yoursite.com/showcase/works/IamgeSlider/img/left.png">
+<meta property="og:image" content="http://yoursite.com/showcase/works/IamgeSlider/img/right.png">
+<meta property="og:updated_time" content="2019-05-22T11:39:16.657Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="ECMA5 字符串">
-<meta name="twitter:description" content="一旦定义无法改变123let str = &apos;hello&apos;;str[1] = &apos;!&apos;;console.log(str);// hello  每个字符16位，即2个字节，UTF-16格式存储 length长度放回的可能是不正确的，对于码点在U+1000 - U+10ffff之间的字符，js认为是两字符（es5）">
+<meta name="twitter:title" content="chochi&#39;s workshop">
+<meta name="twitter:description" content="Full screen image slider">
+<meta name="twitter:image" content="http://yoursite.com/showcase/works/IamgeSlider/img/5.jpg">
   
     <link rel="alternative" href="/atom.xml" title="chochi&#39;s workshop" type="application/atom+xml">
   
@@ -143,36 +152,42 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-2 字符串" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="page-" class="article article-type-page " itemscope itemprop="blogPost">
   <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 class="article-title" itemprop="name">
-      ECMA5 字符串
-    </h1>
-  
-
-        
-        <a href="/2019/05/22/2 字符串/" class="archive-article-date">
-  	<time datetime="2019-05-22T14:38:04.258Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-05-22</time>
-</a>
-        
-      </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="一旦定义无法改变"><a href="#一旦定义无法改变" class="headerlink" title="一旦定义无法改变"></a>一旦定义无法改变</h1><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> str = <span class="string">'hello'</span>;</span><br><span class="line">str[<span class="number">1</span>] = <span class="string">'!'</span>;</span><br><span class="line"><span class="built_in">console</span>.log(str);<span class="comment">// hello</span></span><br></pre></td></tr></table></figure>
-<ul>
-<li>每个字符16位，即2个字节，UTF-16格式存储</li>
-<li>length长度放回的可能是不正确的，对于码点在U+1000 - U+10ffff之间的字符，js认为是两字符（es5）<a id="more"></a>
-<h1 id="Base64-转码"><a href="#Base64-转码" class="headerlink" title="Base64 转码"></a>Base64 转码</h1></li>
-<li>一种编码方法，可以将任意值（只适合ASCII码）转成0~9，A~Z，a~z，+和/这64个个字符组成的可打印字符</li>
-<li>主页目的，不是为了加密，而是为了不出现特殊字符，简化程序的处理</li>
-</ul>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">btoa()<span class="comment">// 任意值=》Base64</span></span><br><span class="line">atob()<span class="comment">// Base64=》原值</span></span><br></pre></td></tr></table></figure>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// ES5 将 非ASCII码字符转为Base64</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">b63Encode</span>(<span class="params">str</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">return</span> btoa( <span class="built_in">encodeURIComponent</span>(str));</span><br><span class="line">    <span class="comment">//非ASCII字符将被十六进制的转义序列进行替换</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">b64Decode</span>(<span class="params">str</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">return</span> atob(<span class="built_in">decodeURIComponent</span>(str));</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+        <!DOCTYPE html>
+<html lang="en">
+<head><meta name="generator" content="Hexo 3.8.0">
+    <meta charset="UTF-8">
+
+    <title>Full screen image slider</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+       
+        <div class="slider">
+            <img src="img/5.jpg" id="lastClone">
+            <img src="img/1.jpg">
+            <img src="img/2.jpg">
+            <img src="img/3.jpg">
+            <img src="img/4.jpg">
+            <img src="img/5.jpg">
+            <img src="img/1.jpg" id="firstClone">
+        </div>
+        <button id="prevBtn" class="btn"><img src="img/left.png"></button>
+        <button id="nextBtn" class="btn"><img src="img/right.png"></button>
+        <!-- end of slider -->
+    </div> 
+    <!-- end of container -->
+
+     
+
+    <script src="ImageSlider.js"></script>
+</body>
+</html> 
 
       
 
@@ -181,29 +196,7 @@
     <div class="article-info article-info-index">
       
       
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">-JS</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
       
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/语言基础//" class="article-tag-list-link color5">语言基础</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
 
       
 
@@ -214,25 +207,6 @@
 </article>
 
   
-<nav id="article-nav">
-  
-    <a href="/2019/05/22/Call与Apply/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          ECMA5 CALL APPLY 模拟
-        
-      </div>
-    </a>
-  
-  
-    <a href="/2019/05/22/1 数据类型/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">ECMA5 数据格式</div>
-      <i class="icon-circle-right"></i>
-    </a>
-  
-</nav>
-
 
 <aside class="wrap-side-operation">
     <div class="mod-side-operation">
@@ -283,7 +257,7 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: true,
+		isPost: false,
 		isArchive: false,
 		isTag: false,
 		isCategory: false,

@@ -1,0 +1,85 @@
+html,body{
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    width: 100%;
+    background-color: darkslategrey;
+}
+.header {
+    height: 100px;
+    text-align: center;
+}
+.header h1 {
+    margin-top: 50px;
+    color: aliceblue;
+    font-family: 'Times New Roman', Times, serif;
+}
+#parent {
+    padding: 10px;
+    margin: auto;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-flow: row wrap;
+    align-items: flex-start;
+    justify-content: center;
+    align-content: flex-start;
+    
+}
+#parent div {
+    margin: 10px;
+    padding: 10px;
+    height: 100px;
+    width: 100px;
+    background-color: aliceblue;
+    border-radius: 10%;
+    box-sizing: border-box;
+    box-shadow: 2px 2px 2px darkgray;
+}
+#parent span{
+    width: 20px;
+    height: 20px;
+    background-color: black;
+    border-radius: 50%;
+}
+.num1 {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+.num2 {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.num3 {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+.num3 .item:nth-child(2){
+    align-self: center;
+}
+.num3 .item:last-child{
+    align-self: flex-end;
+}
+
+#parent .num4 div {
+    margin: 0;
+    padding: 0;
+    width: 100px;
+    height: 100px;
+    box-shadow: none;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+#parent .num4 {
+    margin-top: 10px;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+}

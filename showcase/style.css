@@ -1,0 +1,52 @@
+
+a{
+    color: black;
+    text-decoration-line: none;
+}
+
+#myWorks{
+    display: flex;
+   /*  
+   align-items: flex-start; 
+   align-items: flex-end; 
+   align-items: center; 
+   align-items: stretch;
+   
+   */
+   flex-direction: column;
+   
+}
+
+#myWorks div{
+    border: 1px #cccccc solid;
+    padding: 10px;
+    border-radius: 8px;
+    margin: 8px;
+    height: 150px;
+    transition: width .4s ease-in-out;
+}
+#myWorks div:hover{
+    width: 80%;
+    background-color: #cccccc;
+
+}
+.box-1{
+    flex: 1;
+    width: 30%;
+}
+.box-2{
+    flex: 2;
+    width: 50%;
+}
+.box-3{
+    flex: 1;
+    width: 20%;
+}
+.box-4{
+    flex: 1;
+    width: 65%;
+}
+.footer{
+    margin-top: 50px;
+    text-align: center;
+}
