@@ -251,100 +251,6 @@
 
 
   
-    <article id="post-7 包装对象 wrapper" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/05/22/7 包装对象 wrapper/">ECMA5 包装对象</a>
-    </h1>
-  
-
-        
-        <a href="/2019/05/22/7 包装对象 wrapper/" class="archive-article-date">
-  	<time datetime="2019-05-22T14:38:04.268Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-05-22</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="1-定义"><a href="#1-定义" class="headerlink" title="1 定义"></a>1 定义</h1><ul>
-<li>数值、字符串、布尔值这三种原型类型的值，在一听条件下也会自动转化为对象，也就是原始类型的包装对象。</li>
-<li>Number String Boolean</li>
-<li>包装对象的目的，是得对象模型覆盖js所优质，正门语言都有一个通用的数据模型，其次是得原始类型的值也有可以调动自己的方法。</li>
-<li>原始类型的值会自动当做包装对象调用，即调用包装对象的属性和方法。<strong>JS引擎糊自动将原始类型的值转换为包装对象实例，并在使用后立即销毁。</strong></li>
-<li>自动转换生成的包装对象是只读的，无法修改。</li>
-</ul>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> str = <span class="string">'abc'</span>;</span><br><span class="line">str.length; <span class="comment">// 3</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 等同于</span></span><br><span class="line"><span class="keyword">var</span> strObj = <span class="keyword">new</span> <span class="built_in">String</span>(str);</span><br><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">    String&#123;</span></span><br><span class="line"><span class="comment">        0:"1",1:"b",2;"c",length:3[[PrimitiveValue]]:"abc"</span></span><br><span class="line"><span class="comment">    &#125;</span></span><br><span class="line"><span class="comment">    strObj.length;//3</span></span><br><span class="line"><span class="comment">*/</span></span><br></pre></td></tr></table></figure>
-        
-          <a class="article-more-a" href="/2019/05/22/7 包装对象 wrapper/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">-JS</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/语言基础//" class="article-tag-list-link color5">语言基础</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/05/22/7 包装对象 wrapper/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
     <article id="post-4 函数" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -406,6 +312,98 @@
       
         <p class="article-more-link">
           <a class="article-more-a" href="/2019/05/22/4 函数/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-关于 this 指针" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/05/22/关于 this 指针/">ECMA5 this指针</a>
+    </h1>
+  
+
+        
+        <a href="/2019/05/22/关于 this 指针/" class="archive-article-date">
+  	<time datetime="2019-05-22T14:38:04.268Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-05-22</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="1-概念"><a href="#1-概念" class="headerlink" title="1 概念"></a>1 概念</h1><ul>
+<li>this 对象时运行时基于函数的执行环节绑定的，在全局函数中，this等于window，而当函数被作为某个对象的方法调用时，this等于那个对象。</li>
+<li>匿名函数的执行环节具有全局性，因此this指针对象通常指向window</li>
+<li></li>
+</ul>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> obj = &#123;</span><br><span class="line">   fun : <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">       <span class="built_in">console</span>.log(<span class="keyword">this</span>);<span class="comment">//obj</span></span><br><span class="line"></span><br><span class="line">       <span class="keyword">return</span> <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line"></span><br><span class="line">        <span class="built_in">console</span>.log(<span class="keyword">this</span>);<span class="comment">//window 匿名函数有全局性</span></span><br><span class="line">       &#125;;  </span><br><span class="line">   &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+        
+          <a class="article-more-a" href="/2019/05/22/关于 this 指针/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">-JS</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/语言基础//" class="article-tag-list-link color5">语言基础</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/05/22/关于 this 指针/">展开全文 >></a>
         </p>
       
 
@@ -523,19 +521,19 @@
 
 
   
-    <article id="post-关于 this 指针" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-3 对象" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2019/05/22/关于 this 指针/">ECMA5 this指针</a>
+      <a class="article-title" href="/2019/05/22/3 对象/">ECMA5 对象</a>
     </h1>
   
 
         
-        <a href="/2019/05/22/关于 this 指针/" class="archive-article-date">
+        <a href="/2019/05/22/3 对象/" class="archive-article-date">
   	<time datetime="2019-05-22T14:38:04.268Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-05-22</time>
 </a>
         
@@ -543,14 +541,14 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="1-概念"><a href="#1-概念" class="headerlink" title="1 概念"></a>1 概念</h1><ul>
-<li>this 对象时运行时基于函数的执行环节绑定的，在全局函数中，this等于window，而当函数被作为某个对象的方法调用时，this等于那个对象。</li>
-<li>匿名函数的执行环节具有全局性，因此this指针对象通常指向window</li>
-<li></li>
+        <h1 id="1-键名"><a href="#1-键名" class="headerlink" title="1 键名"></a>1 键名</h1><ul>
+<li>对象的所有键名都是字符串，若键名不符合标识符的条件，则必须加上引号。</li>
+<li>如果使用方运算符，键名必须放在引号里，否则会被当做变量处理。</li>
+<li>数字键可以不加引号，会自动转成字符串。<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> obj  = &#123; <span class="attr">flag</span>: <span class="literal">true</span> &#125;;</span><br><span class="line">obj[flag]       <span class="comment">// undefined</span></span><br><span class="line">obj.flag        <span class="comment">// true</span></span><br><span class="line">obj.[<span class="string">'flag'</span>]    <span class="comment">// true</span></span><br><span class="line">flag =<span class="string">'flag'</span>;</span><br><span class="line">obj[flag]       <span class="comment">// ture</span></span><br></pre></td></tr></table></figure>
+</li>
 </ul>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> obj = &#123;</span><br><span class="line">   fun : <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">       <span class="built_in">console</span>.log(<span class="keyword">this</span>);<span class="comment">//obj</span></span><br><span class="line"></span><br><span class="line">       <span class="keyword">return</span> <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line"></span><br><span class="line">        <span class="built_in">console</span>.log(<span class="keyword">this</span>);<span class="comment">//window 匿名函数有全局性</span></span><br><span class="line">       &#125;;  </span><br><span class="line">   &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
         
-          <a class="article-more-a" href="/2019/05/22/关于 this 指针/#more">more >></a>
+          <a class="article-more-a" href="/2019/05/22/3 对象/#more">more >></a>
         
       
 
@@ -585,7 +583,188 @@
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2019/05/22/关于 this 指针/">展开全文 >></a>
+          <a class="article-more-a" href="/2019/05/22/3 对象/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-6 Array" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/05/22/6 Array/">ECMA5 数组</a>
+    </h1>
+  
+
+        
+        <a href="/2019/05/22/6 Array/" class="archive-article-date">
+  	<time datetime="2019-05-22T14:38:04.268Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-05-22</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="1-静态方法"><a href="#1-静态方法" class="headerlink" title="1 静态方法"></a>1 静态方法</h1><h3 id="1-1-判断是否为数组"><a href="#1-1-判断是否为数组" class="headerlink" title="1.1 判断是否为数组"></a>1.1 判断是否为数组</h3><ol>
+<li><p>使用Array的静态方法</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">Array</span>.isArray( array )</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>使用原型toString方法，返回的字符串第二个词表示构造函数</p>
+</li>
+</ol>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">Object</span>.prototype.toString.call( array ) <span class="comment">// [object array]</span></span><br></pre></td></tr></table></figure>
+        
+          <a class="article-more-a" href="/2019/05/22/6 Array/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">-JS</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/语言基础//" class="article-tag-list-link color5">语言基础</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/05/22/6 Array/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-9 JavaScript Classes" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/05/22/9 JavaScript Classes/">ECMA6 类</a>
+    </h1>
+  
+
+        
+        <a href="/2019/05/22/9 JavaScript Classes/" class="archive-article-date">
+  	<time datetime="2019-05-22T14:38:04.268Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-05-22</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="Classes"><a href="#Classes" class="headerlink" title="Classes"></a>Classes</h1><h2 id="1-Class-Like-structures-in-ecma5"><a href="#1-Class-Like-structures-in-ecma5" class="headerlink" title="1 Class-Like structures in ecma5"></a>1 Class-Like structures in ecma5</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// property</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">PersonType</span>(<span class="params">name</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">this</span>.name = name;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// methods: be assigned to the prototype </span></span><br><span class="line"><span class="comment">// all instances of the object share the same function</span></span><br><span class="line">PersonType.prototype.sayName = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="keyword">this</span>.name);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> person = <span class="keyword">new</span> PersonType(<span class="string">'chochi'</span>);</span><br><span class="line">person.sayName();</span><br><span class="line"><span class="comment">// person is a instance of obeject and PersonType</span></span><br></pre></td></tr></table></figure>
+        
+          <a class="article-more-a" href="/2019/05/22/9 JavaScript Classes/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">-JS</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/语言基础//" class="article-tag-list-link color5">语言基础</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/05/22/9 JavaScript Classes/">展开全文 >></a>
         </p>
       
 
@@ -710,279 +889,6 @@
 
 
   
-    <article id="post-3 对象" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/05/22/3 对象/">ECMA5 对象</a>
-    </h1>
-  
-
-        
-        <a href="/2019/05/22/3 对象/" class="archive-article-date">
-  	<time datetime="2019-05-22T14:38:04.268Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-05-22</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="1-键名"><a href="#1-键名" class="headerlink" title="1 键名"></a>1 键名</h1><ul>
-<li>对象的所有键名都是字符串，若键名不符合标识符的条件，则必须加上引号。</li>
-<li>如果使用方运算符，键名必须放在引号里，否则会被当做变量处理。</li>
-<li>数字键可以不加引号，会自动转成字符串。<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> obj  = &#123; <span class="attr">flag</span>: <span class="literal">true</span> &#125;;</span><br><span class="line">obj[flag]       <span class="comment">// undefined</span></span><br><span class="line">obj.flag        <span class="comment">// true</span></span><br><span class="line">obj.[<span class="string">'flag'</span>]    <span class="comment">// true</span></span><br><span class="line">flag =<span class="string">'flag'</span>;</span><br><span class="line">obj[flag]       <span class="comment">// ture</span></span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-        
-          <a class="article-more-a" href="/2019/05/22/3 对象/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">-JS</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/语言基础//" class="article-tag-list-link color5">语言基础</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/05/22/3 对象/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-9 JavaScript Classes" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/05/22/9 JavaScript Classes/">ECMA6 类</a>
-    </h1>
-  
-
-        
-        <a href="/2019/05/22/9 JavaScript Classes/" class="archive-article-date">
-  	<time datetime="2019-05-22T14:38:04.268Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-05-22</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="Classes"><a href="#Classes" class="headerlink" title="Classes"></a>Classes</h1><h2 id="1-Class-Like-structures-in-ecma5"><a href="#1-Class-Like-structures-in-ecma5" class="headerlink" title="1 Class-Like structures in ecma5"></a>1 Class-Like structures in ecma5</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// property</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">PersonType</span>(<span class="params">name</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">this</span>.name = name;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// methods: be assigned to the prototype </span></span><br><span class="line"><span class="comment">// all instances of the object share the same function</span></span><br><span class="line">PersonType.prototype.sayName = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="keyword">this</span>.name);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> person = <span class="keyword">new</span> PersonType(<span class="string">'chochi'</span>);</span><br><span class="line">person.sayName();</span><br><span class="line"><span class="comment">// person is a instance of obeject and PersonType</span></span><br></pre></td></tr></table></figure>
-        
-          <a class="article-more-a" href="/2019/05/22/9 JavaScript Classes/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">-JS</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/语言基础//" class="article-tag-list-link color5">语言基础</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/05/22/9 JavaScript Classes/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-6 Array" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/05/22/6 Array/">ECMA5 数组</a>
-    </h1>
-  
-
-        
-        <a href="/2019/05/22/6 Array/" class="archive-article-date">
-  	<time datetime="2019-05-22T14:38:04.268Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-05-22</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="1-静态方法"><a href="#1-静态方法" class="headerlink" title="1 静态方法"></a>1 静态方法</h1><h3 id="1-1-判断是否为数组"><a href="#1-1-判断是否为数组" class="headerlink" title="1.1 判断是否为数组"></a>1.1 判断是否为数组</h3><ol>
-<li><p>使用Array的静态方法</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">Array</span>.isArray( array )</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>使用原型toString方法，返回的字符串第二个词表示构造函数</p>
-</li>
-</ol>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">Object</span>.prototype.toString.call( array ) <span class="comment">// [object array]</span></span><br></pre></td></tr></table></figure>
-        
-          <a class="article-more-a" href="/2019/05/22/6 Array/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">-JS</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/语言基础//" class="article-tag-list-link color5">语言基础</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/05/22/6 Array/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
     <article id="post-Call与Apply" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -1059,6 +965,100 @@
       
         <p class="article-more-link">
           <a class="article-more-a" href="/2019/05/22/Call与Apply/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-7 包装对象 wrapper" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/05/22/7 包装对象 wrapper/">ECMA5 包装对象</a>
+    </h1>
+  
+
+        
+        <a href="/2019/05/22/7 包装对象 wrapper/" class="archive-article-date">
+  	<time datetime="2019-05-22T14:38:04.268Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-05-22</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="1-定义"><a href="#1-定义" class="headerlink" title="1 定义"></a>1 定义</h1><ul>
+<li>数值、字符串、布尔值这三种原型类型的值，在一听条件下也会自动转化为对象，也就是原始类型的包装对象。</li>
+<li>Number String Boolean</li>
+<li>包装对象的目的，是得对象模型覆盖js所优质，正门语言都有一个通用的数据模型，其次是得原始类型的值也有可以调动自己的方法。</li>
+<li>原始类型的值会自动当做包装对象调用，即调用包装对象的属性和方法。<strong>JS引擎糊自动将原始类型的值转换为包装对象实例，并在使用后立即销毁。</strong></li>
+<li>自动转换生成的包装对象是只读的，无法修改。</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> str = <span class="string">'abc'</span>;</span><br><span class="line">str.length; <span class="comment">// 3</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 等同于</span></span><br><span class="line"><span class="keyword">var</span> strObj = <span class="keyword">new</span> <span class="built_in">String</span>(str);</span><br><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">    String&#123;</span></span><br><span class="line"><span class="comment">        0:"1",1:"b",2;"c",length:3[[PrimitiveValue]]:"abc"</span></span><br><span class="line"><span class="comment">    &#125;</span></span><br><span class="line"><span class="comment">    strObj.length;//3</span></span><br><span class="line"><span class="comment">*/</span></span><br></pre></td></tr></table></figure>
+        
+          <a class="article-more-a" href="/2019/05/22/7 包装对象 wrapper/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">-JS</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/语言基础//" class="article-tag-list-link color5">语言基础</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/05/22/7 包装对象 wrapper/">展开全文 >></a>
         </p>
       
 
