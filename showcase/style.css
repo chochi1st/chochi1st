@@ -12,6 +12,8 @@
     display: block;
     font-family: Arial, Helvetica, sans-serif;
     position: absolute;
+    
+    margin: auto;
     margin-top: 120px;
 }
 
@@ -65,6 +67,6 @@
 
 }
 .chochi-footer{
-    margin-top: 50px;
+    margin-top: 400px;
     text-align: center;
 }
