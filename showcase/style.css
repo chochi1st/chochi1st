@@ -1,10 +1,10 @@
 
-a{
+.chochi-container a{
     color: black;
     text-decoration-line: none;
 }
 
-#myWorks{
+#chochi-Works{
     display: flex;
    /*  
    align-items: flex-start; 
@@ -13,40 +13,42 @@ a{
    align-items: stretch;
    
    */
-   flex-direction: column;
+   flex-direction: row;
    
 }
 
-#myWorks div{
+#chochi-Works div{
     border: 1px #cccccc solid;
     padding: 10px;
     border-radius: 8px;
     margin: 8px;
-    height: 150px;
+    height: 50px;
+    width: 70px;
     transition: width .4s ease-in-out;
 }
 #myWorks div:hover{
-    width: 80%;
+    width: 100px;
+    border-radius: 10px;
     background-color: #cccccc;
 
 }
-.box-1{
+.chochi-box-1{
     flex: 1;
     width: 30%;
 }
-.box-2{
+.chochi-box-2{
     flex: 2;
     width: 50%;
 }
-.box-3{
+.chochi-box-3{
     flex: 1;
     width: 20%;
 }
-.box-4{
+.chochi-box-4{
     flex: 1;
     width: 65%;
 }
-.footer{
+.chochi-chochi-footer{
     margin-top: 50px;
     text-align: center;
 }

@@ -1,17 +1,17 @@
 
 
-header{
+#chochi-header{
     display: -webkit-flex;
     display: flex;
     flex-flow: row nowrap;
     justify-content: flex-start;
     align-items: center;
 }
-header h1{
+#chochi-header h1{
     font-family: 'Times New Roman', Times, serif;
     margin: 20px;
 }
-header button{
+#chochi-header button{
 
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     background-color: cadetblue;
