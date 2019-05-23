@@ -53,17 +53,17 @@
 }
 .chochi-box-1{
     flex: 1;
-    max-width: 200px;
+    width: 200px;
 }
 .chochi-box-2{
     flex: 1;
-    max-width: 180px;
+    width: 180px;
 }
 .chochi-box-3{
     flex: 1;
-    max-width: 140px;
+    width: 140px;
 }
 .chochi-box-4{
     flex: 1;
-    max-width: 220px;
+    width: 220px;
 }
