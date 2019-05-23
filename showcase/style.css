@@ -1,8 +1,17 @@
 
+.chochi-container {
+    position: relative;
+}
 .chochi-container a{
     color: black;
     text-decoration-line: none;
+}
+.chochi-container h2{
+    display: block;
+    font-family: Arial, Helvetica, sans-serif;
     position: relative;
+    top:20px;
+    margin: auto;
 }
 .chochi-Works {
     position: absolute;
