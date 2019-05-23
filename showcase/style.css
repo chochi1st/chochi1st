@@ -2,8 +2,13 @@
 .chochi-container a{
     color: black;
     text-decoration-line: none;
+    position: relative;
 }
-
+.chochi-Works {
+    position: absolute;
+    top: 100px;
+    margin: auto;
+}
 #chochi-Works{
     display: flex;
    /*  
