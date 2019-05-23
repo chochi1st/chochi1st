@@ -338,98 +338,6 @@
 
 
   
-    <article id="post-关于 this 指针" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/05/22/关于 this 指针/">ECMA5 this指针</a>
-    </h1>
-  
-
-        
-        <a href="/2019/05/22/关于 this 指针/" class="archive-article-date">
-  	<time datetime="2019-05-22T14:38:04.268Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-05-22</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="1-概念"><a href="#1-概念" class="headerlink" title="1 概念"></a>1 概念</h1><ul>
-<li>this 对象时运行时基于函数的执行环节绑定的，在全局函数中，this等于window，而当函数被作为某个对象的方法调用时，this等于那个对象。</li>
-<li>匿名函数的执行环节具有全局性，因此this指针对象通常指向window</li>
-<li></li>
-</ul>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> obj = &#123;</span><br><span class="line">   fun : <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">       <span class="built_in">console</span>.log(<span class="keyword">this</span>);<span class="comment">//obj</span></span><br><span class="line"></span><br><span class="line">       <span class="keyword">return</span> <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line"></span><br><span class="line">        <span class="built_in">console</span>.log(<span class="keyword">this</span>);<span class="comment">//window 匿名函数有全局性</span></span><br><span class="line">       &#125;;  </span><br><span class="line">   &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-        
-          <a class="article-more-a" href="/2019/05/22/关于 this 指针/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">-JS</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/语言基础//" class="article-tag-list-link color5">语言基础</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/05/22/关于 this 指针/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
     <article id="post-3 对象" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -493,6 +401,96 @@
       
         <p class="article-more-link">
           <a class="article-more-a" href="/2019/05/22/3 对象/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-4 函数" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/05/22/4 函数/">ECMA5 函数</a>
+    </h1>
+  
+
+        
+        <a href="/2019/05/22/4 函数/" class="archive-article-date">
+  	<time datetime="2019-05-22T14:38:04.268Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-05-22</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="1-概述"><a href="#1-概述" class="headerlink" title="1 概述"></a>1 概述</h1><h2 id="1-1-重复声明"><a href="#1-1-重复声明" class="headerlink" title="1.1 重复声明"></a>1.1 重复声明</h2><ul>
+<li>函数的声明会提升到函数定义时所在的作用域的头部。故同名函数会被后来的函数替代。</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">f</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">'one'</span>);</span><br><span class="line">&#125;</span><br><span class="line">f();    <span class="comment">//two</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">f</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">'two'</span>);</span><br><span class="line">&#125;</span><br><span class="line">f();    <span class="comment">//two</span></span><br></pre></td></tr></table></figure>
+        
+          <a class="article-more-a" href="/2019/05/22/4 函数/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">-JS</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/语言基础//" class="article-tag-list-link color5">语言基础</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/05/22/4 函数/">展开全文 >></a>
         </p>
       
 
@@ -704,19 +702,19 @@
 
 
   
-    <article id="post-4 函数" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-关于 this 指针" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2019/05/22/4 函数/">ECMA5 函数</a>
+      <a class="article-title" href="/2019/05/22/关于 this 指针/">ECMA5 this指针</a>
     </h1>
   
 
         
-        <a href="/2019/05/22/4 函数/" class="archive-article-date">
+        <a href="/2019/05/22/关于 this 指针/" class="archive-article-date">
   	<time datetime="2019-05-22T14:38:04.268Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-05-22</time>
 </a>
         
@@ -724,12 +722,14 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="1-概述"><a href="#1-概述" class="headerlink" title="1 概述"></a>1 概述</h1><h2 id="1-1-重复声明"><a href="#1-1-重复声明" class="headerlink" title="1.1 重复声明"></a>1.1 重复声明</h2><ul>
-<li>函数的声明会提升到函数定义时所在的作用域的头部。故同名函数会被后来的函数替代。</li>
+        <h1 id="1-概念"><a href="#1-概念" class="headerlink" title="1 概念"></a>1 概念</h1><ul>
+<li>this 对象时运行时基于函数的执行环节绑定的，在全局函数中，this等于window，而当函数被作为某个对象的方法调用时，this等于那个对象。</li>
+<li>匿名函数的执行环节具有全局性，因此this指针对象通常指向window</li>
+<li></li>
 </ul>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">f</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">'one'</span>);</span><br><span class="line">&#125;</span><br><span class="line">f();    <span class="comment">//two</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">f</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">'two'</span>);</span><br><span class="line">&#125;</span><br><span class="line">f();    <span class="comment">//two</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> obj = &#123;</span><br><span class="line">   fun : <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">       <span class="built_in">console</span>.log(<span class="keyword">this</span>);<span class="comment">//obj</span></span><br><span class="line"></span><br><span class="line">       <span class="keyword">return</span> <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line"></span><br><span class="line">        <span class="built_in">console</span>.log(<span class="keyword">this</span>);<span class="comment">//window 匿名函数有全局性</span></span><br><span class="line">       &#125;;  </span><br><span class="line">   &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
         
-          <a class="article-more-a" href="/2019/05/22/4 函数/#more">more >></a>
+          <a class="article-more-a" href="/2019/05/22/关于 this 指针/#more">more >></a>
         
       
 
@@ -764,7 +764,7 @@
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2019/05/22/4 函数/">展开全文 >></a>
+          <a class="article-more-a" href="/2019/05/22/关于 this 指针/">展开全文 >></a>
         </p>
       
 
