@@ -16,7 +16,7 @@
 <meta property="og:site_name" content="chochi&#39;s workshop">
 <meta property="og:description" content="Ajax1 基础个人demo地址 1.1 概念 作用 Read data from a web server - after the page has loaded Update a web page without reloading the page Send data to a web server - in the background AJAX allows web pages to b">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-05-24T14:15:58.373Z">
+<meta property="og:updated_time" content="2019-05-24T14:20:39.462Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="ECMA5 AJAX">
 <meta name="twitter:description" content="Ajax1 基础个人demo地址 1.1 概念 作用 Read data from a web server - after the page has loaded Update a web page without reloading the page Send data to a web server - in the background AJAX allows web pages to b">
@@ -253,31 +253,32 @@
 </table>
 <h4 id="1-2-4-编码模板"><a href="#1-2-4-编码模板" class="headerlink" title="1.2.4 编码模板"></a>1.2.4 编码模板</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span>( myRequset.readyState === <span class="number">4</span>)&#123;</span><br><span class="line">    <span class="keyword">if</span> ( (myRequest.status &gt;= <span class="number">200</span> &amp;&amp; myRquest.status&lt;<span class="number">300</span>)|| myRequst.status == <span class="number">304</span> )&#123;</span><br><span class="line">        <span class="comment">//successful or use local version</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <hr>
-<h2 id="2-请求"><a href="#2-请求" class="headerlink" title="2 请求"></a>2 请求</h2><h4 id="2-1-URL-格式"><a href="#2-1-URL-格式" class="headerlink" title="2.1 URL 格式"></a>2.1 URL 格式</h4><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">"name=value&amp;anothername="+encodeURIComponent(myVar)+"&amp;so=on"</span><br></pre></td></tr></table></figure>
-<p>:question:  get、post，适用场景与异同</p>
-<ol>
+<h2 id="2-请求"><a href="#2-请求" class="headerlink" title="2 请求"></a>2 请求</h2><h4 id="2-1-URL-格式"><a href="#2-1-URL-格式" class="headerlink" title="2.1 URL 格式"></a>2.1 URL 格式</h4><figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">"name=value&amp;anothername="</span>+<span class="built_in">encodeURIComponent</span>(myVar)+<span class="string">"&amp;so=on"</span></span><br></pre></td></tr></table></figure>
+<h4 id="2-2-get、post，适用场景与异同"><a href="#2-2-get、post，适用场景与异同" class="headerlink" title="2.2 get、post，适用场景与异同"></a>2.2 get、post，适用场景与异同</h4><ol>
 <li><p>get请求数据会负载URL之后，把数据放置在HTTP协议头中。</p>
 <pre><code>- GET在浏览器回退时是无害的
-   - GET请求会被浏览器主动cache
-      - GET 请求可被收藏为书签
-         - 产生一个TCP数据包
-            - 提交的数据量限制于整个URL长度。URL长度根据不同的游览器有不同限制，IE为2083KB。
-               - 如果数据是英文字母/数字，原样发送，如果是空格，转换为+，如果是中文/其他字符，则直接把字符串用BASE64加密。
-</code></pre></li>
+</code></pre><ul>
+<li>GET请求会被浏览器主动cache</li>
+<li>GET 请求可被收藏为书签</li>
+<li>产生一个TCP数据包</li>
+<li>提交的数据量限制于整个URL长度。URL长度根据不同的游览器有不同限制，IE为2083KB。</li>
+<li>如果数据是英文字母/数字，原样发送，如果是空格，转换为+，如果是中文/其他字符，则直接把字符串用BASE64加密。</li>
+</ul>
+</li>
 <li><p>POST把提交的数据则放置在是HTTP包的包体中。</p>
 <pre><code>- 游览器回退POST再次提交请求
-   - POST 请求不会被缓存
-      - POST 请求不会保留在浏览器历史记录中
-         - POST产生两个TCP数据包
-            - POST是没有大小限制的，HTTP协议规范也没有进行大小限制。起限制作用的是服务器的处理程序的处理能力。
-</code></pre></li>
+</code></pre><ul>
+<li>POST 请求不会被缓存</li>
+<li>POST 请求不会保留在浏览器历史记录中</li>
+<li>POST产生两个TCP数据包</li>
+<li>POST是没有大小限制的，HTTP协议规范也没有进行大小限制。起限制作用的是服务器的处理程序的处理能力。</li>
+</ul>
+</li>
 <li><p>POST的安全性要比GET的安全性高</p>
 </li>
-<li><p>对于GET方式的请求，浏览器会把<code>http header</code>和<code>data</code>一并发送出去，服务器响应200（返回数据）；</p>
-<p>而对于POST，浏览器先发送<code>http header</code>，服务器响应100 continue，浏览器再发送<code>data</code>，服务器响应200 ok（返回数据）。</p>
-</li>
+<li>对于GET方式的请求，浏览器会把<code>http header</code>和<code>data</code>一并发送出去，服务器响应200（返回数据）；而对于POST，浏览器先发送<code>http header</code>，服务器响应100 continue，浏览器再发送<code>data</code>，服务器响应200 ok（返回数据）。</li>
 </ol>
-<h2 id="关于异步操作问题"><a href="#关于异步操作问题" class="headerlink" title="关于异步操作问题"></a>关于异步操作问题</h2><h4 id="如果页面中有两个异步ajax的操作-因为不确定这两个异步操作的执行顺序，怎么在这两个操作都执行完再执行一个新的操作"><a href="#如果页面中有两个异步ajax的操作-因为不确定这两个异步操作的执行顺序，怎么在这两个操作都执行完再执行一个新的操作" class="headerlink" title="如果页面中有两个异步ajax的操作,因为不确定这两个异步操作的执行顺序，怎么在这两个操作都执行完再执行一个新的操作"></a>如果页面中有两个异步ajax的操作,因为不确定这两个异步操作的执行顺序，怎么在这两个操作都执行完再执行一个新的操作</h4><ul>
+<h2 id="3-关于异步操作问题"><a href="#3-关于异步操作问题" class="headerlink" title="3 关于异步操作问题"></a>3 关于异步操作问题</h2><h4 id="Q-如果页面中有两个异步ajax的操作-因为不确定这两个异步操作的执行顺序，怎么在这两个操作都执行完再执行一个新的操作"><a href="#Q-如果页面中有两个异步ajax的操作-因为不确定这两个异步操作的执行顺序，怎么在这两个操作都执行完再执行一个新的操作" class="headerlink" title="Q: 如果页面中有两个异步ajax的操作,因为不确定这两个异步操作的执行顺序，怎么在这两个操作都执行完再执行一个新的操作"></a>Q: 如果页面中有两个异步ajax的操作,因为不确定这两个异步操作的执行顺序，怎么在这两个操作都执行完再执行一个新的操作</h4><ul>
 <li>1.Promise 包装异步ajax操作，</li>
 <li>2.定义async 函数，</li>
 <li>3.用await等待promise数据异步获取完成</li>
