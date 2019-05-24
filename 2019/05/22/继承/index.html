@@ -8,18 +8,18 @@
   <link rel="dns-prefetch" href="http://yoursite.com">
   <title>ECMA5 继承 | chochi&#39;s workshop</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="2 继承ECMAScript 只支持实现继承，不支持接口继承。  继承方法类型：  原型链继承  借用构造函数  组合继承  原型式继承  寄生式继承  寄生组合式继承 :blue_heart:  2.1 原型链继承   基本思想：利用原型让一个引用类型继承另一个引用类型的属性和方法，实现的本质是重写原型对象，代之一个新类型的实例 原型对象可以算是是一个‘实例’，有用constructor指针，指">
+  <meta name="description" content="2 继承ECMAScript 只支持实现继承，不支持接口继承。  继承方法类型：  原型链继承  借用构造函数  组合继承  原型式继承  寄生式继承  寄生组合式继承">
 <meta name="keywords" content="ECMA5">
 <meta property="og:type" content="article">
 <meta property="og:title" content="ECMA5 继承">
 <meta property="og:url" content="http://yoursite.com/2019/05/22/继承/index.html">
 <meta property="og:site_name" content="chochi&#39;s workshop">
-<meta property="og:description" content="2 继承ECMAScript 只支持实现继承，不支持接口继承。  继承方法类型：  原型链继承  借用构造函数  组合继承  原型式继承  寄生式继承  寄生组合式继承 :blue_heart:  2.1 原型链继承   基本思想：利用原型让一个引用类型继承另一个引用类型的属性和方法，实现的本质是重写原型对象，代之一个新类型的实例 原型对象可以算是是一个‘实例’，有用constructor指针，指">
+<meta property="og:description" content="2 继承ECMAScript 只支持实现继承，不支持接口继承。  继承方法类型：  原型链继承  借用构造函数  组合继承  原型式继承  寄生式继承  寄生组合式继承">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-05-23T09:21:42.533Z">
+<meta property="og:updated_time" content="2019-05-24T14:23:45.552Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="ECMA5 继承">
-<meta name="twitter:description" content="2 继承ECMAScript 只支持实现继承，不支持接口继承。  继承方法类型：  原型链继承  借用构造函数  组合继承  原型式继承  寄生式继承  寄生组合式继承 :blue_heart:  2.1 原型链继承   基本思想：利用原型让一个引用类型继承另一个引用类型的属性和方法，实现的本质是重写原型对象，代之一个新类型的实例 原型对象可以算是是一个‘实例’，有用constructor指针，指">
+<meta name="twitter:description" content="2 继承ECMAScript 只支持实现继承，不支持接口继承。  继承方法类型：  原型链继承  借用构造函数  组合继承  原型式继承  寄生式继承  寄生组合式继承">
   
     <link rel="alternative" href="/atom.xml" title="chochi&#39;s workshop" type="application/atom+xml">
   
@@ -178,10 +178,12 @@
 <li><p>寄生式继承</p>
 </li>
 <li><p>寄生组合式继承</p>
-<p>:blue_heart: </p>
-<h3 id="2-1-原型链继承"><a href="#2-1-原型链继承" class="headerlink" title="2.1 原型链继承"></a>2.1 原型链继承</h3></li>
+</li>
 </ul>
 </li>
+</ul>
+<a id="more"></a>
+<h3 id="2-1-原型链继承"><a href="#2-1-原型链继承" class="headerlink" title="2.1 原型链继承"></a>2.1 原型链继承</h3><ul>
 <li>基本思想：利用原型让一个引用类型继承另一个引用类型的属性和方法，实现的本质是重写原型对象，代之一个新类型的<strong>实例</strong><ul>
 <li>原型对象可以算是是一个‘实例’，有用constructor指针，指向其构造函数</li>
 <li>构造函数有prototype指针指向原型对象</li>
@@ -195,12 +197,10 @@
 <li><strong>引用类型的原型属性会被所有实例共享</strong></li>
 <li>注意代码块中原型链继承的tips</li>
 <li>在创建子类的实例时，不能像超类中的构造函数传递参数</li>
-<li><a id="more"></a>
+</ul>
+</li>
+</ul>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br></pre></td><td class="code"><pre><span class="line">    <span class="comment">//构造函数</span></span><br><span class="line">    <span class="function"><span class="keyword">function</span> <span class="title">Father</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.name = <span class="string">'Big Dady'</span>;</span><br><span class="line">        <span class="keyword">this</span>.title = <span class="string">'father'</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">//实例方法</span></span><br><span class="line">    Father.prototype.sayName = <span class="function"><span class="keyword">function</span> (<span class="params"></span>)</span>&#123;</span><br><span class="line">        <span class="built_in">console</span>.log(<span class="keyword">this</span>.name);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">//构造函数</span></span><br><span class="line">    <span class="function"><span class="keyword">function</span> <span class="title">Son</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.title = <span class="string">'son'</span>;</span><br><span class="line">        <span class="keyword">this</span>.age = <span class="number">19</span>;</span><br><span class="line">        <span class="keyword">this</span>.objInSonInstance = &#123;</span><br><span class="line">            sister: <span class="string">'chesnut'</span></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"><span class="comment">//-------------------- tips 原型链继承 存疑中 -----------------------------------</span></span><br><span class="line">    <span class="comment">// Son 继承 Father的一个实例</span></span><br><span class="line">    <span class="comment">// Father() 中所有属性被衍生类共享</span></span><br><span class="line">    <span class="comment">// 只不过普通属性被更改了binding，在实例中拥有了该属性，不会再像原型链搜素</span></span><br><span class="line">    <span class="comment">// 引用属性除非是直接更改binding，否则是所有实例都共享了这个属性</span></span><br><span class="line">    Son.prototype = <span class="keyword">new</span> Father();</span><br><span class="line"><span class="comment">//-------------------------------------------------------------------------------</span></span><br><span class="line">    Son.prototype.objInSon=&#123;</span><br><span class="line">        brother: <span class="string">'flag'</span></span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="comment">//Son的实例方法: !先继承再添加子类的实例方法，不然会被覆盖！</span></span><br><span class="line">    Son.prototype.sayTitle =  <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">        <span class="built_in">console</span>.log(<span class="keyword">this</span>.title);</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="comment">//在类上的静态方法</span></span><br><span class="line">    Son.staticMethod = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">        <span class="built_in">console</span>.log(<span class="string">'static!!!'</span>);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//创建Son类的一个实例 instance</span></span><br><span class="line">    <span class="keyword">let</span> instance = <span class="keyword">new</span> Son();</span><br><span class="line">    <span class="keyword">let</span> instance2 = <span class="keyword">new</span> Son();</span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">    instance 的属性搜索链：</span></span><br><span class="line"><span class="comment">        instance properties:                age,title(son),objInSonInstance</span></span><br><span class="line"><span class="comment">        以下为原型链层，所有引用的属性会被共享（函数也算对象，对象是引用类型，所有实例共享引用类型、函数）</span></span><br><span class="line"><span class="comment">        __proto__ properties:               name,title(father),sayTitle,objInSon</span></span><br><span class="line"><span class="comment">        __proto__.__proto__ properties:     sayName</span></span><br><span class="line"><span class="comment">    **/</span></span><br><span class="line">    <span class="built_in">console</span>.log(instance.hasOwnProperty(<span class="string">'title'</span>));      <span class="comment">//true</span></span><br><span class="line">    <span class="built_in">console</span>.log(instance.__proto__.hasOwnProperty(<span class="string">'title'</span>));    <span class="comment">//true</span></span><br><span class="line">    <span class="built_in">console</span>.log(instance.__proto__.__proto__.hasOwnProperty(<span class="string">'sayName'</span>));    <span class="comment">//true</span></span><br><span class="line">    <span class="built_in">console</span>.log(instance.title,         instance.__proto__.title);   <span class="comment">//son,father</span></span><br><span class="line">    <span class="built_in">console</span>.log(Son.hasOwnProperty(<span class="string">'staticMethod'</span>));    <span class="comment">//true</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">// 实例引用属性，互不影响</span></span><br><span class="line">    instance.objInSonInstance.addInInstance = <span class="string">'instance add'</span>;</span><br><span class="line">    <span class="built_in">console</span>.log(instance.objInSonInstance,instance2.objInSonInstance);</span><br><span class="line"></span><br><span class="line">    <span class="comment">//原型上引用属性被共享，instance2.objInSon 被更改</span></span><br><span class="line">    instance.objInSon.addInPrototype = <span class="string">'prototype add'</span>;</span><br><span class="line">    <span class="built_in">console</span>.log(instance.objInSon,instance2.objInSon);</span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-</li>
-</ul>
 <h4 id="2-2-借用构造函数"><a href="#2-2-借用构造函数" class="headerlink" title="2.2 借用构造函数"></a>2.2 借用构造函数</h4><ul>
 <li>借用构造函数并无构成真正意义上的继承</li>
 <li>可以传参，引用类型不会被共享，但<strong>无法达到函数复用的目的</strong>。</li>
@@ -283,8 +283,8 @@
     </a>
   
   
-    <a href="/2019/05/22/7 包装对象 wrapper/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">ECMA5 包装对象</div>
+    <a href="/2019/05/22/6 Array/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">ECMA5 数组</div>
       <i class="icon-circle-right"></i>
     </a>
   

@@ -140,19 +140,19 @@
           <div id="js-content" class="content-ll">
             
   
-    <article id="post-9 JavaScript Classes" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-Call与Apply" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2019/05/22/9 JavaScript Classes/">ECMA6 类</a>
+      <a class="article-title" href="/2019/05/22/Call与Apply/">ECMA5 CALL APPLY 模拟</a>
     </h1>
   
 
         
-        <a href="/2019/05/22/9 JavaScript Classes/" class="archive-article-date">
+        <a href="/2019/05/22/Call与Apply/" class="archive-article-date">
   	<time datetime="2019-05-22T14:38:04.268Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-05-22</time>
 </a>
         
@@ -160,9 +160,27 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="Classes"><a href="#Classes" class="headerlink" title="Classes"></a>Classes</h1><h2 id="1-Class-Like-structures-in-ecma5"><a href="#1-Class-Like-structures-in-ecma5" class="headerlink" title="1 Class-Like structures in ecma5"></a>1 Class-Like structures in ecma5</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// property</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">PersonType</span>(<span class="params">name</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">this</span>.name = name;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// methods: be assigned to the prototype </span></span><br><span class="line"><span class="comment">// all instances of the object share the same function</span></span><br><span class="line">PersonType.prototype.sayName = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="keyword">this</span>.name);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> person = <span class="keyword">new</span> PersonType(<span class="string">'chochi'</span>);</span><br><span class="line">person.sayName();</span><br><span class="line"><span class="comment">// person is a instance of obeject and PersonType</span></span><br></pre></td></tr></table></figure>
+        <h1 id="概念"><a href="#概念" class="headerlink" title="概念"></a>概念</h1><ul>
+<li>每个函数都包括两个非继承而来的方法 apply call</li>
+<li>在特定的作用域中调用函数，实际上等于设置函数体内this对象的值</li>
+<li>看出 call 和 apply 是为了动态改变 this 而出现的<h4 id="区别"><a href="#区别" class="headerlink" title="区别"></a>区别</h4></li>
+</ul>
+<ol>
+<li>apply()<ul>
+<li>接受两个参数，第一个是运行函数的作用域，第二个是参数数组，参数数组可以用arrar实例，也可以是arguments对象。</li>
+</ul>
+</li>
+<li>call()<ul>
+<li>参数必须逐个列出来</li>
+</ul>
+</li>
+</ol>
+<h1 id="call-模拟"><a href="#call-模拟" class="headerlink" title="call 模拟"></a>call 模拟</h1><ul>
+<li>参数一一对应</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">Function</span>.prototype.myCall = <span class="function"><span class="keyword">function</span>(<span class="params">_context</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">let</span> context = _context || <span class="built_in">window</span>;<span class="comment">// null -&gt; window</span></span><br><span class="line">    context.fn = <span class="keyword">this</span>;</span><br><span class="line">    <span class="keyword">let</span> args = [].slice.call(<span class="built_in">arguments</span>,<span class="number">1</span>,<span class="built_in">arguments</span>.length);</span><br><span class="line">    <span class="keyword">let</span> result = !args ?context.fn():context.fn(...args); </span><br><span class="line">    <span class="keyword">delete</span> context.fn;</span><br><span class="line">    <span class="keyword">return</span> result;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
         
-          <a class="article-more-a" href="/2019/05/22/9 JavaScript Classes/#more">more >></a>
+          <a class="article-more-a" href="/2019/05/22/Call与Apply/#more">more >></a>
         
       
 
@@ -197,7 +215,7 @@
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2019/05/22/9 JavaScript Classes/">展开全文 >></a>
+          <a class="article-more-a" href="/2019/05/22/Call与Apply/">展开全文 >></a>
         </p>
       
 
