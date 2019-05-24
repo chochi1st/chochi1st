@@ -16,7 +16,7 @@
 <meta property="og:site_name" content="chochi&#39;s workshop">
 <meta property="og:description" content="Ajax1 基础个人demo地址 1.1 概念 作用 Read data from a web server - after the page has loaded Update a web page without reloading the page Send data to a web server - in the background AJAX allows web pages to b">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-05-24T14:23:04.866Z">
+<meta property="og:updated_time" content="2019-05-24T14:28:33.806Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="ECMA5 AJAX">
 <meta name="twitter:description" content="Ajax1 基础个人demo地址 1.1 概念 作用 Read data from a web server - after the page has loaded Update a web page without reloading the page Send data to a web server - in the background AJAX allows web pages to b">
@@ -255,8 +255,8 @@
 <h2 id="2-请求"><a href="#2-请求" class="headerlink" title="2 请求"></a>2 请求</h2><h4 id="2-1-URL-格式"><a href="#2-1-URL-格式" class="headerlink" title="2.1 URL 格式"></a>2.1 URL 格式</h4><figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">"name=value&amp;anothername="</span>+<span class="built_in">encodeURIComponent</span>(myVar)+<span class="string">"&amp;so=on"</span></span><br></pre></td></tr></table></figure>
 <h4 id="2-2-get、post，适用场景与异同"><a href="#2-2-get、post，适用场景与异同" class="headerlink" title="2.2 get、post，适用场景与异同"></a>2.2 get、post，适用场景与异同</h4><ol>
 <li><p>get请求数据会负载URL之后，把数据放置在HTTP协议头中。</p>
-<pre><code>- GET在浏览器回退时是无害的
-</code></pre><ul>
+<ul>
+<li>GET在浏览器回退时是无害的</li>
 <li>GET请求会被浏览器主动cache</li>
 <li>GET 请求可被收藏为书签</li>
 <li>产生一个TCP数据包</li>
@@ -265,8 +265,8 @@
 </ul>
 </li>
 <li><p>POST把提交的数据则放置在是HTTP包的包体中。</p>
-<pre><code>- 游览器回退POST再次提交请求
-</code></pre><ul>
+<ul>
+<li>游览器回退POST再次提交请求</li>
 <li>POST 请求不会被缓存</li>
 <li>POST 请求不会保留在浏览器历史记录中</li>
 <li>POST产生两个TCP数据包</li>
