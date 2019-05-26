@@ -8,18 +8,18 @@
   <link rel="dns-prefetch" href="http://yoursite.com">
   <title>React state更新 | chochi&#39;s workshop</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="state修改1 state组件 私有组件  正确的修改方式是使用setState()，触发render函数刷新   12// 正确this.setState(&amp;#123;title: &apos;React&apos;&amp;#125;); 2 state更新2.1 state 更新 setState 只在合成事件和钩子函数中是“异步”的，在原生事件和 setTimeout 中都是同步的。setState的“异步”并不是">
+  <meta name="description" content="1 state组件 私有组件 正确的修改方式是使用setState()，触发render函数刷新12// 正确this.setState(&amp;#123;title: &apos;React&apos;&amp;#125;);   2 state更新2.1 state 更新 setState 只在合成事件和钩子函数中是“异步”的，在原生事件和 setTimeout 中都是同步的。setState的“异步”并不是说内部由异步代码实">
 <meta name="keywords" content="React">
 <meta property="og:type" content="article">
 <meta property="og:title" content="React state更新">
 <meta property="og:url" content="http://yoursite.com/2019/05/26/001react_state_update/index.html">
 <meta property="og:site_name" content="chochi&#39;s workshop">
-<meta property="og:description" content="state修改1 state组件 私有组件  正确的修改方式是使用setState()，触发render函数刷新   12// 正确this.setState(&amp;#123;title: &apos;React&apos;&amp;#125;); 2 state更新2.1 state 更新 setState 只在合成事件和钩子函数中是“异步”的，在原生事件和 setTimeout 中都是同步的。setState的“异步”并不是">
+<meta property="og:description" content="1 state组件 私有组件 正确的修改方式是使用setState()，触发render函数刷新12// 正确this.setState(&amp;#123;title: &apos;React&apos;&amp;#125;);   2 state更新2.1 state 更新 setState 只在合成事件和钩子函数中是“异步”的，在原生事件和 setTimeout 中都是同步的。setState的“异步”并不是说内部由异步代码实">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-05-26T13:39:00.348Z">
+<meta property="og:updated_time" content="2019-05-26T13:43:30.103Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="React state更新">
-<meta name="twitter:description" content="state修改1 state组件 私有组件  正确的修改方式是使用setState()，触发render函数刷新   12// 正确this.setState(&amp;#123;title: &apos;React&apos;&amp;#125;); 2 state更新2.1 state 更新 setState 只在合成事件和钩子函数中是“异步”的，在原生事件和 setTimeout 中都是同步的。setState的“异步”并不是">
+<meta name="twitter:description" content="1 state组件 私有组件 正确的修改方式是使用setState()，触发render函数刷新12// 正确this.setState(&amp;#123;title: &apos;React&apos;&amp;#125;);   2 state更新2.1 state 更新 setState 只在合成事件和钩子函数中是“异步”的，在原生事件和 setTimeout 中都是同步的。setState的“异步”并不是说内部由异步代码实">
   
     <link rel="alternative" href="/atom.xml" title="chochi&#39;s workshop" type="application/atom+xml">
   
@@ -163,15 +163,13 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="state修改"><a href="#state修改" class="headerlink" title="state修改"></a>state修改</h1><h2 id="1-state组件"><a href="#1-state组件" class="headerlink" title="1 state组件"></a>1 state组件</h2><ul>
-<li><p>私有组件</p>
-</li>
-<li><p>正确的修改方式是使用<code>setState()</code>，触发<code>render</code>函数刷新</p>
+        <h2 id="1-state组件"><a href="#1-state组件" class="headerlink" title="1 state组件"></a>1 state组件</h2><ul>
+<li>私有组件</li>
+<li>正确的修改方式是使用<code>setState()</code>，触发<code>render</code>函数刷新<figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 正确</span></span><br><span class="line"><span class="keyword">this</span>.setState(&#123;<span class="attr">title</span>: <span class="string">'React'</span>&#125;);</span><br></pre></td></tr></table></figure>
 </li>
 </ul>
-<figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 正确</span></span><br><span class="line"><span class="keyword">this</span>.setState(&#123;<span class="attr">title</span>: <span class="string">'React'</span>&#125;);</span><br></pre></td></tr></table></figure>
 <h2 id="2-state更新"><a href="#2-state更新" class="headerlink" title="2 state更新"></a>2 state更新</h2><h3 id="2-1-state-更新"><a href="#2-1-state-更新" class="headerlink" title="2.1 state 更新"></a>2.1 state 更新</h3><ol>
-<li><code>setState</code> 只在合成事件和钩子函数中是“异步”的，在原生事件和 <code>setTimeout</code> 中都是同步的。<br><code>setState</code>的“异步”并不是说内部由异步代码实现，其实本身执行的过程和代码都是同步的，只是合成事件和钩子函数的调用顺序在更新之前，导致在合成事件和钩子函数中没法立马拿到更新后的值，形式了所谓的“异步”，当然可以通过第二个参数 setState(partialState, callback) 中的callback拿到更新后的结果。</li>
+<li><code>setState</code> 只在合成事件和钩子函数中是“异步”的，在原生事件和 <code>setTimeout</code> 中都是同步的。<br><code>setState</code>的“异步”并不是说内部由异步代码实现，其实本身执行的过程和代码都是同步的，只是合成事件和钩子函数的调用顺序在更新之前，导致在合成事件和钩子函数中没法立马拿到更新后的值，形式了所谓的“异步”，当然可以通过第二个参数 setState(partialState, callback) 中的callback拿到更新后的结果。<a id="more"></a></li>
 <li><code>setState</code> 的批量更新优化也是建立在“异步”（合成事件、钩子函数）之上的，在原生事件和<code>setTimeout</code> 中不会批量更新，在“异步”中如果对同一个值进行多次 <code>setState</code> ， <code>setState</code> 的批量更新策略会对其进行覆盖，取最后一次的执行，如果是同时 <code>setState</code> 多个不同的值，在更新时会对其进行合并批量更新。</li>
 <li>React中会去维护一个标识（<code>isBatchingUpdates</code>），判断是直接更新还是先暂存state进队列。<code>setTimeout</code>以及原生事件都会直接去更新state，因此可以立即得到最新state。而合成事件和React生命周期函数中，是受React控制的，其会将<code>isBatchingUpdates</code>设置为 <code>true</code>，从而走的是类似异步的那一套。</li>
 <li><a href="https://juejin.im/post/5bf1444cf265da614a3a1660" target="_blank" rel="noopener">setState真的是异步吗</a></li>
