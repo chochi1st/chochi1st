@@ -140,19 +140,19 @@
           <div id="js-content" class="content-ll">
             
   
-    <article id="post-9 面向对象编程" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-9 JavaScript Classes" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2019/05/22/9 面向对象编程/">ECMA5 面向对象编程</a>
+      <a class="article-title" href="/2019/05/22/9 JavaScript Classes/">ECMA6 类</a>
     </h1>
   
 
         
-        <a href="/2019/05/22/9 面向对象编程/" class="archive-article-date">
+        <a href="/2019/05/22/9 JavaScript Classes/" class="archive-article-date">
   	<time datetime="2019-05-22T14:38:04.268Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-05-22</time>
 </a>
         
@@ -160,17 +160,9 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="1-实例对象与new-命令"><a href="#1-实例对象与new-命令" class="headerlink" title="1 实例对象与new 命令"></a>1 实例对象与new 命令</h1><h2 id="1-1-构造函数"><a href="#1-1-构造函数" class="headerlink" title="1.1 构造函数"></a>1.1 构造函数</h2><ul>
-<li>函数体内部使用了 this 关键字，代表了所要生成的对象实例。</li>
-<li>生成对象的时候，必须使用 new 命令</li>
-<li>函数名首字母大写，以示区别。</li>
-</ul>
-<h2 id="1-2-new-命令"><a href="#1-2-new-命令" class="headerlink" title="1.2 new 命令"></a>1.2 new 命令</h2><ul>
-<li>执行构造函数，返回一个对象实例。</li>
-</ul>
-<h3 id="1-2-1-new-原理"><a href="#1-2-1-new-原理" class="headerlink" title="1.2.1 new 原理"></a>1.2.1 new 原理</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">graph TB</span><br><span class="line">    A[1.创建一个空对象作为将要返回的对象实例]--&gt; B[2.将这个空对象的原型指向构造函数的prototype属性]</span><br><span class="line">    B--&gt;C[3.将空对象赋值给函数内部的this关键字]</span><br><span class="line">    C--&gt;D[4.开始执行构造函数内部的代码]</span><br></pre></td></tr></table></figure>
+        <h1 id="Classes"><a href="#Classes" class="headerlink" title="Classes"></a>Classes</h1><h2 id="1-Class-Like-structures-in-ecma5"><a href="#1-Class-Like-structures-in-ecma5" class="headerlink" title="1 Class-Like structures in ecma5"></a>1 Class-Like structures in ecma5</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// property</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">PersonType</span>(<span class="params">name</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">this</span>.name = name;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// methods: be assigned to the prototype </span></span><br><span class="line"><span class="comment">// all instances of the object share the same function</span></span><br><span class="line">PersonType.prototype.sayName = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="keyword">this</span>.name);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> person = <span class="keyword">new</span> PersonType(<span class="string">'chochi'</span>);</span><br><span class="line">person.sayName();</span><br><span class="line"><span class="comment">// person is a instance of obeject and PersonType</span></span><br></pre></td></tr></table></figure>
         
-          <a class="article-more-a" href="/2019/05/22/9 面向对象编程/#more">more >></a>
+          <a class="article-more-a" href="/2019/05/22/9 JavaScript Classes/#more">more >></a>
         
       
 
@@ -205,7 +197,7 @@
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2019/05/22/9 面向对象编程/">展开全文 >></a>
+          <a class="article-more-a" href="/2019/05/22/9 JavaScript Classes/">展开全文 >></a>
         </p>
       
 
@@ -235,19 +227,19 @@
 
 
   
-    <article id="post-Call与Apply" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-6 Array" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2019/05/22/Call与Apply/">ECMA5 CALL APPLY 模拟</a>
+      <a class="article-title" href="/2019/05/22/6 Array/">ECMA5 数组</a>
     </h1>
   
 
         
-        <a href="/2019/05/22/Call与Apply/" class="archive-article-date">
+        <a href="/2019/05/22/6 Array/" class="archive-article-date">
   	<time datetime="2019-05-22T14:38:04.268Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-05-22</time>
 </a>
         
@@ -255,32 +247,19 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="概念"><a href="#概念" class="headerlink" title="概念"></a>概念</h1><ul>
-<li>每个函数都包括两个非继承而来的方法 apply call</li>
-<li>在特定的作用域中调用函数，实际上等于设置函数体内this对象的值</li>
-<li>看出 call 和 apply 是为了动态改变 this 而出现的<h4 id="区别"><a href="#区别" class="headerlink" title="区别"></a>区别</h4></li>
-</ul>
-<ol>
-<li>apply()<ul>
-<li>接受两个参数，第一个是运行函数的作用域，第二个是参数数组，参数数组可以用arrar实例，也可以是arguments对象。</li>
-</ul>
-</li>
-<li>call()<ul>
-<li>参数必须逐个列出来</li>
-</ul>
-</li>
+        <h1 id="1-静态方法"><a href="#1-静态方法" class="headerlink" title="1 静态方法"></a>1 静态方法</h1><h3 id="1-1-判断是否为数组"><a href="#1-1-判断是否为数组" class="headerlink" title="1.1 判断是否为数组"></a>1.1 判断是否为数组</h3><ol>
+<li>使用Array的静态方法</li>
 </ol>
-<h1 id="call-模拟"><a href="#call-模拟" class="headerlink" title="call 模拟"></a>call 模拟</h1><ul>
-<li>参数一一对应</li>
-</ul>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">Function</span>.prototype.myCall = <span class="function"><span class="keyword">function</span>(<span class="params">_context</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">let</span> context = _context || <span class="built_in">window</span>;<span class="comment">// null -&gt; window</span></span><br><span class="line">    context.fn = <span class="keyword">this</span>;</span><br><span class="line">    <span class="keyword">let</span> args = [].slice.call(<span class="built_in">arguments</span>,<span class="number">1</span>,<span class="built_in">arguments</span>.length);</span><br><span class="line">    <span class="keyword">let</span> result = !args ?context.fn():context.fn(...args); </span><br><span class="line">    <span class="keyword">delete</span> context.fn;</span><br><span class="line">    <span class="keyword">return</span> result;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">Array</span>.isArray( array )</span><br></pre></td></tr></table></figure>
+<ol start="2">
+<li>使用原型toString方法，返回的字符串第二个词表示构造函数
         
-          <a class="article-more-a" href="/2019/05/22/Call与Apply/#more">more >></a>
+          <a class="article-more-a" href="/2019/05/22/6 Array/#more">more >></a>
         
       
 
       
-    </div>
+    </li></ol></div>
     <div class="article-info article-info-index">
       
       
@@ -310,7 +289,7 @@
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2019/05/22/Call与Apply/">展开全文 >></a>
+          <a class="article-more-a" href="/2019/05/22/6 Array/">展开全文 >></a>
         </p>
       
 
@@ -561,6 +540,167 @@
       
         <p class="article-more-link">
           <a class="article-more-a" href="/2019/05/22/hello-world/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-002set_weakset_map" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/05/05/002set_weakset_map/">ECMA6 set weakset map</a>
+    </h1>
+  
+
+        
+        <a href="/2019/05/05/002set_weakset_map/" class="archive-article-date">
+  	<time datetime="2019-05-05T15:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-05-05</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="1-set"><a href="#1-set" class="headerlink" title="1 set"></a>1 set</h1><h2 id="1-1-set-存值"><a href="#1-1-set-存值" class="headerlink" title="1.1 set 存值"></a>1.1 set 存值</h2><ul>
+<li><p>向 Set 加入值的时候，不会发生类型转换，所以<code>5</code>和<code>&quot;5&quot;</code>是两个不同的值。</p>
+</li>
+<li><p>Set 内部判断两个值是否不同，使用的算法叫做“Same-value-zero equality”，它类似于精确相等运算符（<code>===</code>），主要的区别是<code>NaN</code>等于自身，而精确相等运算符认为<code>NaN</code>不等于自身。</p>
+</li>
+<li><h2 id="1-2-实例属性和方法"><a href="#1-2-实例属性和方法" class="headerlink" title="1.2 实例属性和方法"></a>1.2 实例属性和方法</h2></li>
+<li>实例属性<ul>
+<li>Set.prototype.constructor：构造函数，默认就是Set函数。</li>
+<li>Set.prototype.size：返回Set实例的成员总数。</li>
+</ul>
+</li>
+<li>实例方法 | 操作<ul>
+<li>add(value)：添加某个值，返回 Set 结构本身。</li>
+<li>delete(value)：删除某个值，返回一个布尔值，表示删除是否成功。</li>
+<li>has(value)：返回一个布尔值，表示该值是否为Set的成员。</li>
+<li>clear()：清除所有成员，没有返回值。</li>
+</ul>
+</li>
+<li>实例方法 | 遍历<ul>
+<li>keys()：返回键名的遍历器</li>
+<li>values()：返回键值的遍历器</li>
+<li>entries()：返回键值对的遍历器</li>
+<li>forEach()：使用回调函数遍历每个成员 </li>
+<li>ps: 由于 Set 结构没有键名，只有键值（或者说键名和键值是同一个值），所以keys方法和values方法的行为完全一致。</li>
+<li><strong><code>Set</code>的遍历顺序就是插入顺序</strong><h2 id="1-3-数组去重"><a href="#1-3-数组去重" class="headerlink" title="1.3 数组去重"></a>1.3 数组去重</h2></li>
+</ul>
+</li>
+</ul>
+<p><code>Array.from</code>方法可以将 Set 结构转为数组。</p>
+<p><a href="https://www.cnblogs.com/kongxianghai/p/7417210.html" target="_blank" rel="noopener">array from方法</a></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> items = <span class="keyword">new</span> <span class="built_in">Set</span>([<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>]);</span><br><span class="line"><span class="keyword">const</span> array = <span class="built_in">Array</span>.from(items);</span><br></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">dedupe</span>(<span class="params">array</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> <span class="built_in">Array</span>.from(<span class="keyword">new</span> <span class="built_in">Set</span>(array));</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">dedupe([<span class="number">1</span>, <span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>]) <span class="comment">// [1, 2, 3]</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 去除数组的重复成员</span></span><br><span class="line">[...new <span class="built_in">Set</span>(array)]</span><br></pre></td></tr></table></figure>
+<h2 id="1-4-遍历操作"><a href="#1-4-遍历操作" class="headerlink" title="1.4 遍历操作"></a>1.4 遍历操作</h2><ul>
+<li><code>Set</code>的遍历顺序就是插入顺序。</li>
+<li>使用 Set 保存一个回调函数列表，调用时就能保证按照添加顺序调用。</li>
+<li>Set 结构的实例默认可遍历，它的默认遍历器生成函数就是它的<code>values</code>方法。可以省略<code>values</code>方法，直接用<code>for...of</code>循环遍历 Set。</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> <span class="keyword">set</span> = new Set(['red', 'green', 'blue']);</span><br><span class="line"></span><br><span class="line">for (let x of <span class="keyword">set</span>) &#123;</span><br><span class="line">  <span class="built_in">console</span>.log(x);</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// red</span></span><br><span class="line"><span class="comment">// green</span></span><br><span class="line"><span class="comment">// blue</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li>使用 Set 可实现并集（Union）、交集（Intersect）和差集（Difference）</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> a = <span class="keyword">new</span> <span class="built_in">Set</span>([<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>]);</span><br><span class="line"><span class="keyword">let</span> b = <span class="keyword">new</span> <span class="built_in">Set</span>([<span class="number">4</span>, <span class="number">3</span>, <span class="number">2</span>]);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 并集</span></span><br><span class="line"><span class="keyword">let</span> union = <span class="keyword">new</span> <span class="built_in">Set</span>([...a, ...b]);</span><br><span class="line"><span class="comment">// Set &#123;1, 2, 3, 4&#125;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 交集</span></span><br><span class="line"><span class="keyword">let</span> intersect = <span class="keyword">new</span> <span class="built_in">Set</span>([...a].filter(<span class="function"><span class="params">x</span> =&gt;</span> b.has(x)));</span><br><span class="line"><span class="comment">// set &#123;2, 3&#125;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 差集</span></span><br><span class="line"><span class="keyword">let</span> difference = <span class="keyword">new</span> <span class="built_in">Set</span>([...a].filter(<span class="function"><span class="params">x</span> =&gt;</span> !b.has(x)));</span><br><span class="line"><span class="comment">// Set &#123;1&#125;</span></span><br></pre></td></tr></table></figure>
+<h2 id="1-4-WeakSet"><a href="#1-4-WeakSet" class="headerlink" title="1.4 WeakSet"></a>1.4 WeakSet</h2><ul>
+<li>WeakSet 的成员只能是对象，而不能是其他类型的值。</li>
+<li>WeakSet <strong>不可遍历</strong>，（即没有<code>keys()</code>、<code>values()</code>和<code>entries()</code>方法），也没有<code>size</code>属性。无法清空，即不支持<code>clear</code>方法。</li>
+<li><code>WeakMap</code>只有四个方法可用：<code>get()</code>、<code>set()</code>、<code>has()</code>、<code>delete()</code>。</li>
+<li>WeakSet 适合临时存放一组对象，以及存放跟对象绑定的信息。只要这些对象在外部消失，它在 WeakSet 里面的引用就会自动消失。</li>
+<li>WeakSet 中的对象都是弱引用，即垃圾回收机制不考虑 WeakSet 对该对象的引用，也就是说，如果其他对象都不再引用该对象，那么垃圾回收机制会自动回收该对象所占用的内存，不考虑该对象还存在于 WeakSet 之中。（ WeakMap <strong>弱引用的只是键名，而不是键值。键值依然是正常引用</strong>。）</li>
+<li>如果你要往对象上添加数据，又不想干扰垃圾回收机制，就可以使用 WeakMap。一个典型应用场景是，在网页的 DOM 元素上添加数据，就可以使用<code>WeakMap</code>结构。当该 DOM 元素被清除，其所对应的<code>WeakMap</code>记录就会自动被移除。</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> foos = <span class="keyword">new</span> <span class="built_in">WeakSet</span>()</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Foo</span> </span>&#123;</span><br><span class="line">  <span class="keyword">constructor</span>() &#123;</span><br><span class="line">    foos.add(<span class="keyword">this</span>)</span><br><span class="line">  &#125;</span><br><span class="line">  method () &#123;</span><br><span class="line">    <span class="keyword">if</span> (!foos.has(<span class="keyword">this</span>)) &#123;</span><br><span class="line">      <span class="keyword">throw</span> <span class="keyword">new</span> <span class="built_in">TypeError</span>(<span class="string">'Foo.prototype.method 只能在Foo的实例上调用！'</span>);</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>上面代码保证了<code>Foo</code>的实例方法，只能在<code>Foo</code>的实例上调用。这里使用 WeakSet 的好处是，<code>foos</code>对实例的引用，不会被计入内存回收机制，所以删除实例的时候，不用考虑<code>foos</code>，也不会出现内存泄漏。</li>
+</ul>
+<h1 id="2-Map"><a href="#2-Map" class="headerlink" title="2 Map"></a>2 Map</h1><ul>
+<li><p>Object 结构提供了“字符串—值”的对应，Map 结构提供了“值—值”的对应</p>
+</li>
+<li><p>任何具有 Iterator 接口、且每个成员都是一个双元素的数组的数据结构（都可以当作<code>Map</code>构造函数的参数。这就是说，<code>Set</code>和<code>Map</code>都可以用来生成新的 Map。</p>
+</li>
+<li><p>如果对同一个键多次赋值，后面的值将覆盖前面的值。</p>
+</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> map = <span class="keyword">new</span> <span class="built_in">Map</span>();</span><br><span class="line"></span><br><span class="line">map</span><br><span class="line">.set(<span class="number">1</span>, <span class="string">'aaa'</span>)</span><br><span class="line">.set(<span class="number">1</span>, <span class="string">'bbb'</span>);</span><br><span class="line"></span><br><span class="line">map.get(<span class="number">1</span>) <span class="comment">// "bbb"</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li><p>只有对同一个对象的引用，Map 结构才将其视为同一个键。这一点要非常小心。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> map = <span class="keyword">new</span> <span class="built_in">Map</span>();</span><br><span class="line"></span><br><span class="line">map.set([<span class="string">'a'</span>], <span class="number">555</span>);</span><br><span class="line">map.get([<span class="string">'a'</span>]) <span class="comment">// undefined</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li>上面代码的<code>set</code>和<code>get</code>方法，表面是针对同一个键，但实际上这是两个值，内存地址是不一样的，因此<code>get</code>方法无法读取该键，返回<code>undefined</code>。</li>
+<li><strong>Map 的键实际上是跟内存地址绑定</strong>的，只要内存地址不一样，就视为两个键。这就解决了同名属性碰撞（clash）的问题，我们扩展别人的库的时候，如果使用对象作为键名，就不用担心自己的属性与原作者的属性同名。</li>
+</ul>
+</li>
+</ul>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">JS</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/语言基础//" class="article-tag-list-link color5">语言基础</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/语言基础/ECMA6//" class="article-tag-list-link color1">ECMA6</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/05/05/002set_weakset_map/">展开全文 >></a>
         </p>
       
 
