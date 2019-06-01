@@ -16,7 +16,7 @@
 <meta property="og:site_name" content="chochi&#39;s workshop">
 <meta property="og:description" content="1 静态方法1.1 判断是否为数组 使用Array的静态方法  1Array.isArray( array )  使用原型toString方法，返回的字符串第二个词表示构造函数">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-06-01T04:36:26.736Z">
+<meta property="og:updated_time" content="2019-06-01T05:14:52.083Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="ECMA5 数组">
 <meta name="twitter:description" content="1 静态方法1.1 判断是否为数组 使用Array的静态方法  1Array.isArray( array )  使用原型toString方法，返回的字符串第二个词表示构造函数">
@@ -363,6 +363,21 @@
 </tr>
 </tbody>
 </table>
+<h1 id="3-example"><a href="#3-example" class="headerlink" title="3 example"></a>3 example</h1><h2 id="3-1-sort"><a href="#3-1-sort" class="headerlink" title="3.1 sort"></a>3.1 sort</h2><ul>
+<li>a should be front of b <ul>
+<li>return -1</li>
+</ul>
+</li>
+<li>a is equivalent of b<ul>
+<li>return 0</li>
+</ul>
+</li>
+<li>a should be after of b<ul>
+<li>return 1  </li>
+</ul>
+</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> nums = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">11</span>,<span class="number">12</span>];</span><br><span class="line">nums.sort(); <span class="comment">// Array(5) [1, 11, 12, 2, 3]</span></span><br><span class="line">nums.sort(<span class="function">(<span class="params">a,b</span>)=&gt;</span> a-b ); <span class="comment">// Array(5) [1, 2, 3, 11, 12]</span></span><br></pre></td></tr></table></figure>
 
       
 
@@ -406,18 +421,18 @@
   
 <nav id="article-nav">
   
-    <a href="/2019/05/22/Call与Apply/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2019/05/22/关于 this 指针/" id="article-nav-newer" class="article-nav-link-wrap">
       <i class="icon-circle-left"></i>
       <div class="article-nav-title">
         
-          ECMA5 CALL APPLY 模拟
+          ECMA5 this指针
         
       </div>
     </a>
   
   
-    <a href="/2019/05/22/9 面向对象编程/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">ECMA5 面向对象编程</div>
+    <a href="/2019/05/22/4 函数/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">ECMA5 函数</div>
       <i class="icon-circle-right"></i>
     </a>
   
