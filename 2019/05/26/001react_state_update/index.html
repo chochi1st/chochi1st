@@ -16,7 +16,7 @@
 <meta property="og:site_name" content="chochi&#39;s workshop">
 <meta property="og:description" content="1 state组件 私有组件 正确的修改方式是使用setState()，触发render函数刷新12// 正确this.setState(&amp;#123;title: &apos;React&apos;&amp;#125;);   2 state更新2.1 state 更新 setState 只在合成事件和钩子函数中是“异步”的，在原生事件和 setTimeout 中都是同步的。setState的“异步”并不是说内部由异步代码实">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-05-26T13:43:30.103Z">
+<meta property="og:updated_time" content="2019-06-01T03:32:10.767Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="React state更新">
 <meta name="twitter:description" content="1 state组件 私有组件 正确的修改方式是使用setState()，触发render函数刷新12// 正确this.setState(&amp;#123;title: &apos;React&apos;&amp;#125;);   2 state更新2.1 state 更新 setState 只在合成事件和钩子函数中是“异步”的，在原生事件和 setTimeout 中都是同步的。setState的“异步”并不是说内部由异步代码实">
@@ -180,7 +180,7 @@
 <h3 id="2-3-demo-说明-个人理解有错就改！"><a href="#2-3-demo-说明-个人理解有错就改！" class="headerlink" title="2.3 demo 说明 | 个人理解有错就改！"></a>2.3 demo 说明 | 个人理解有错就改！</h3><ul>
 <li><p><code>setState</code>只是把要修改的状态放入一个队列中，React会优化真正的执行时机，并且React会出于性能原因，<strong>可能</strong>会将多次<code>setState</code>的状态修改合并成一次状态修改。</p>
 </li>
-<li><p>JS的eventloop简单的来说可以划分执行顺序为 同步-&gt; 异步-&gt;回调</p>
+<li><p>JS的顺序简单的来说可以划分执行顺序为 同步-&gt; 异步-&gt;回调</p>
 </li>
 </ul>
 <figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">this</span>.setState(&#123; <span class="attr">count</span>: <span class="keyword">this</span>.state.count + <span class="number">1</span> &#125;); <span class="comment">// 异步1</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">"console: "</span> + <span class="keyword">this</span>.state.count); <span class="comment">// 同步1</span></span><br><span class="line"><span class="keyword">this</span>.setState(</span><br><span class="line">    &#123; <span class="attr">count</span>: <span class="keyword">this</span>.state.count + <span class="number">1</span> &#125;,<span class="comment">//异步2</span></span><br><span class="line">    () =&gt; &#123;<span class="built_in">console</span>.log(<span class="string">"console from callback: "</span> + <span class="keyword">this</span>.state.count); <span class="comment">//回调1</span></span><br><span class="line">&#125;);</span><br><span class="line"><span class="keyword">this</span>.setState(</span><br><span class="line">   prevState =&gt; &#123;<span class="built_in">console</span>.log(<span class="string">"console from func: "</span> + prevState.count); </span><br><span class="line">   <span class="keyword">return</span> &#123;<span class="attr">count</span>: prevState.count + <span class="number">1</span>&#125;;</span><br><span class="line">&#125;,<span class="comment">//异步3</span></span><br><span class="line">   ()=&gt;&#123;<span class="built_in">console</span>.log(<span class="string">'last console: '</span>+ <span class="keyword">this</span>.state.count)</span><br><span class="line">&#125;);<span class="comment">// 回调2</span></span><br></pre></td></tr></table></figure>

@@ -245,6 +245,7 @@
         <h1 id="1-position"><a href="#1-position" class="headerlink" title="1 position"></a>1 position</h1><ul>
 <li><strong>position</strong> 的可选值有四个：<strong>static</strong>、<strong>relative</strong>、<strong>absolute</strong>、<strong>fixed</strong>，<strong>tricky</strong></li>
 <li>是被定位的元素层次(z-index)会得到提高</li>
+<li>元素脱离文档流后不会撑开父元素高度</li>
 </ul>
 <h2 id="1-1-static"><a href="#1-1-static" class="headerlink" title="1.1 static"></a>1.1 static</h2><ul>
 <li>如果元素 <strong>position</strong> 属性值为 <strong>static</strong>（或者未设 <strong>position</strong> 属性），该元素出现在正常的流中（忽略 <strong>top</strong>, <strong>bottom</strong>, <strong>left</strong>, <strong>right</strong> 或者 <strong>z-index</strong> 声明）。</li>
@@ -880,19 +881,19 @@
 
 
   
-    <article id="post-9 JavaScript Classes" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-关于 this 指针" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2019/05/22/9 JavaScript Classes/">ECMA6 类</a>
+      <a class="article-title" href="/2019/05/22/关于 this 指针/">ECMA5 this指针</a>
     </h1>
   
 
         
-        <a href="/2019/05/22/9 JavaScript Classes/" class="archive-article-date">
+        <a href="/2019/05/22/关于 this 指针/" class="archive-article-date">
   	<time datetime="2019-05-22T14:38:04.268Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-05-22</time>
 </a>
         
@@ -900,9 +901,14 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="Classes"><a href="#Classes" class="headerlink" title="Classes"></a>Classes</h1><h2 id="1-Class-Like-structures-in-ecma5"><a href="#1-Class-Like-structures-in-ecma5" class="headerlink" title="1 Class-Like structures in ecma5"></a>1 Class-Like structures in ecma5</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// property</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">PersonType</span>(<span class="params">name</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">this</span>.name = name;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// methods: be assigned to the prototype </span></span><br><span class="line"><span class="comment">// all instances of the object share the same function</span></span><br><span class="line">PersonType.prototype.sayName = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="keyword">this</span>.name);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> person = <span class="keyword">new</span> PersonType(<span class="string">'chochi'</span>);</span><br><span class="line">person.sayName();</span><br><span class="line"><span class="comment">// person is a instance of obeject and PersonType</span></span><br></pre></td></tr></table></figure>
+        <h1 id="1-概念"><a href="#1-概念" class="headerlink" title="1 概念"></a>1 概念</h1><ul>
+<li>this 对象时运行时基于函数的执行环节绑定的，在全局函数中，this等于window，而当函数被作为某个对象的方法调用时，this等于那个对象。</li>
+<li>匿名函数的执行环节具有全局性，因此this指针对象通常指向window</li>
+<li></li>
+</ul>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> obj = &#123;</span><br><span class="line">   fun : <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">       <span class="built_in">console</span>.log(<span class="keyword">this</span>);<span class="comment">//obj</span></span><br><span class="line"></span><br><span class="line">       <span class="keyword">return</span> <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line"></span><br><span class="line">        <span class="built_in">console</span>.log(<span class="keyword">this</span>);<span class="comment">//window 匿名函数有全局性</span></span><br><span class="line">       &#125;;  </span><br><span class="line">   &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
         
-          <a class="article-more-a" href="/2019/05/22/9 JavaScript Classes/#more">more >></a>
+          <a class="article-more-a" href="/2019/05/22/关于 this 指针/#more">more >></a>
         
       
 
@@ -937,7 +943,7 @@
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2019/05/22/9 JavaScript Classes/">展开全文 >></a>
+          <a class="article-more-a" href="/2019/05/22/关于 this 指针/">展开全文 >></a>
         </p>
       
 
