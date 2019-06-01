@@ -791,19 +791,19 @@
 
 
   
-    <article id="post-5 标准库" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-4 函数" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2019/05/22/5 标准库/">ECMA5 标准库</a>
+      <a class="article-title" href="/2019/05/22/4 函数/">ECMA5 函数</a>
     </h1>
   
 
         
-        <a href="/2019/05/22/5 标准库/" class="archive-article-date">
+        <a href="/2019/05/22/4 函数/" class="archive-article-date">
   	<time datetime="2019-05-22T14:38:04.268Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-05-22</time>
 </a>
         
@@ -811,10 +811,12 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="1-判断某个变量是否为函数"><a href="#1-判断某个变量是否为函数" class="headerlink" title="1 判断某个变量是否为函数"></a>1 判断某个变量是否为函数</h1><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">isObject</span>(<span class="params">value</span>)</span>&#123;</span><br><span class="line">        <span class="keyword">return</span> value === <span class="built_in">Object</span>(value);</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
-<h1 id="2-对象的键名"><a href="#2-对象的键名" class="headerlink" title="2 对象的键名"></a>2 对象的键名</h1>
+        <h1 id="1-概述"><a href="#1-概述" class="headerlink" title="1 概述"></a>1 概述</h1><h2 id="1-1-重复声明"><a href="#1-1-重复声明" class="headerlink" title="1.1 重复声明"></a>1.1 重复声明</h2><ul>
+<li>函数的声明会提升到函数定义时所在的作用域的头部。故同名函数会被后来的函数替代。</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">f</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">'one'</span>);</span><br><span class="line">&#125;</span><br><span class="line">f();    <span class="comment">//two</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">f</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">'two'</span>);</span><br><span class="line">&#125;</span><br><span class="line">f();    <span class="comment">//two</span></span><br></pre></td></tr></table></figure>
         
-          <a class="article-more-a" href="/2019/05/22/5 标准库/#more">more >></a>
+          <a class="article-more-a" href="/2019/05/22/4 函数/#more">more >></a>
         
       
 
@@ -849,7 +851,7 @@
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2019/05/22/5 标准库/">展开全文 >></a>
+          <a class="article-more-a" href="/2019/05/22/4 函数/">展开全文 >></a>
         </p>
       
 
