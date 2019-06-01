@@ -8,18 +8,18 @@
   <link rel="dns-prefetch" href="http://yoursite.com">
   <title>ECMA5 包装对象 | chochi&#39;s workshop</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="1 定义 数值、字符串、布尔值这三种原型类型的值，在一听条件下也会自动转化为对象，也就是原始类型的包装对象。 Number String Boolean 包装对象的目的，是得对象模型覆盖js所优质，正门语言都有一个通用的数据模型，其次是得原始类型的值也有可以调动自己的方法。 原始类型的值会自动当做包装对象调用，即调用包装对象的属性和方法。JS引擎糊自动将原始类型的值转换为包装对象实例，并在使用后立">
+  <meta name="description" content="1 定义 数值、字符串、布尔值这三种原型类型的值，在一定条件下也会自动转化为对象，也就是原始类型的包装对象。 Number String Boolean 包装对象的目的，使得语言都有一个通用的数据模型，其次是得原始类型的值也有可以调动自己的方法。 原始类型的值会自动当做包装对象调用，即调用包装对象的属性和方法。JS引擎糊自动将原始类型的值转换为包装对象实例，并在使用后立即销毁。 自动转换生成的包装">
 <meta name="keywords" content="-JS">
 <meta property="og:type" content="article">
 <meta property="og:title" content="ECMA5 包装对象">
 <meta property="og:url" content="http://yoursite.com/2019/05/22/7 包装对象 wrapper/index.html">
 <meta property="og:site_name" content="chochi&#39;s workshop">
-<meta property="og:description" content="1 定义 数值、字符串、布尔值这三种原型类型的值，在一听条件下也会自动转化为对象，也就是原始类型的包装对象。 Number String Boolean 包装对象的目的，是得对象模型覆盖js所优质，正门语言都有一个通用的数据模型，其次是得原始类型的值也有可以调动自己的方法。 原始类型的值会自动当做包装对象调用，即调用包装对象的属性和方法。JS引擎糊自动将原始类型的值转换为包装对象实例，并在使用后立">
+<meta property="og:description" content="1 定义 数值、字符串、布尔值这三种原型类型的值，在一定条件下也会自动转化为对象，也就是原始类型的包装对象。 Number String Boolean 包装对象的目的，使得语言都有一个通用的数据模型，其次是得原始类型的值也有可以调动自己的方法。 原始类型的值会自动当做包装对象调用，即调用包装对象的属性和方法。JS引擎糊自动将原始类型的值转换为包装对象实例，并在使用后立即销毁。 自动转换生成的包装">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-05-22T14:49:12.973Z">
+<meta property="og:updated_time" content="2019-06-01T04:27:10.071Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="ECMA5 包装对象">
-<meta name="twitter:description" content="1 定义 数值、字符串、布尔值这三种原型类型的值，在一听条件下也会自动转化为对象，也就是原始类型的包装对象。 Number String Boolean 包装对象的目的，是得对象模型覆盖js所优质，正门语言都有一个通用的数据模型，其次是得原始类型的值也有可以调动自己的方法。 原始类型的值会自动当做包装对象调用，即调用包装对象的属性和方法。JS引擎糊自动将原始类型的值转换为包装对象实例，并在使用后立">
+<meta name="twitter:description" content="1 定义 数值、字符串、布尔值这三种原型类型的值，在一定条件下也会自动转化为对象，也就是原始类型的包装对象。 Number String Boolean 包装对象的目的，使得语言都有一个通用的数据模型，其次是得原始类型的值也有可以调动自己的方法。 原始类型的值会自动当做包装对象调用，即调用包装对象的属性和方法。JS引擎糊自动将原始类型的值转换为包装对象实例，并在使用后立即销毁。 自动转换生成的包装">
   
     <link rel="alternative" href="/atom.xml" title="chochi&#39;s workshop" type="application/atom+xml">
   
@@ -164,9 +164,9 @@
     <div class="article-entry" itemprop="articleBody">
       
         <h1 id="1-定义"><a href="#1-定义" class="headerlink" title="1 定义"></a>1 定义</h1><ul>
-<li>数值、字符串、布尔值这三种原型类型的值，在一听条件下也会自动转化为对象，也就是原始类型的包装对象。</li>
+<li>数值、字符串、布尔值这三种原型类型的值，在一定条件下也会自动转化为对象，也就是原始类型的包装对象。</li>
 <li>Number String Boolean</li>
-<li>包装对象的目的，是得对象模型覆盖js所优质，正门语言都有一个通用的数据模型，其次是得原始类型的值也有可以调动自己的方法。</li>
+<li>包装对象的目的，使得语言都有一个通用的数据模型，其次是得原始类型的值也有可以调动自己的方法。</li>
 <li>原始类型的值会自动当做包装对象调用，即调用包装对象的属性和方法。<strong>JS引擎糊自动将原始类型的值转换为包装对象实例，并在使用后立即销毁。</strong></li>
 <li>自动转换生成的包装对象是只读的，无法修改。</li>
 </ul>
@@ -182,7 +182,7 @@
 <li><p>RegExp.prototype.test()</p>
 <ul>
 <li>从 lastIndex 位置向后匹配，找到当前模式能匹配的参数字符串则返回 true</li>
-<li>带有g修饰符，每次test()都从上一次结束的位置开始向后匹配<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">var regex = /r/g;</span><br><span class="line">var str = &apos;_x_x&apos;;</span><br><span class="line">regex.lastIndex ; // 0</span><br><span class="line">regex.test(s); //true</span><br><span class="line">regex.lastIndex; // 2 _</span><br><span class="line">regex.lastIdex = 4; // 可指定搜索位置，只对同一个正则表达式有效</span><br><span class="line">regex.test(s); //false</span><br></pre></td></tr></table></figure>
+<li>带有g修饰符，每次test()都从上一次结束的位置开始向后匹配<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> regex = <span class="regexp">/x/g</span>;</span><br><span class="line"><span class="keyword">var</span> str = <span class="string">'_x_x__x_'</span>;</span><br><span class="line"><span class="built_in">console</span>.log(regex.lastIndex,    regex.test(str));<span class="comment">// 0 true</span></span><br><span class="line"><span class="built_in">console</span>.log(regex.lastIndex,    regex.test(str));<span class="comment">// 2 true</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// set the value of lastIndex directly</span></span><br><span class="line">regex.lastIndex = str.length - <span class="number">1</span>;</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(regex.lastIndex,    regex.test(str));<span class="comment">// 7 false</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> num = <span class="string">'1234x'</span>;</span><br><span class="line"><span class="built_in">console</span>.log(regex.lastIndex,    regex.test(num));<span class="comment">// 0 true</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(regex.lastIndex);<span class="comment">// 5</span></span><br></pre></td></tr></table></figure>
 </li>
 </ul>
 </li>
@@ -193,7 +193,7 @@
 </ul>
 </li>
 </ul>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> r = <span class="regexp">/a(b+)a/</span>;</span><br><span class="line"><span class="keyword">var</span> match = r.exec(<span class="string">'_abbbbba_aba_'</span>);</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(match);</span><br><span class="line"><span class="comment">/* </span></span><br><span class="line"><span class="comment">    Array(2) ["abbbbba", "bbbbb"]</span></span><br><span class="line"><span class="comment">    index:1                 整个匹配模式成功的开始位置</span></span><br><span class="line"><span class="comment">    input:"_abbbbba_aba_"   整个字符串</span></span><br><span class="line"><span class="comment">    length:2                第二个成员是组匹配结果</span></span><br><span class="line"><span class="comment">*/</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> r = <span class="regexp">/a(b+)a/</span>;</span><br><span class="line"><span class="keyword">var</span> match = r.exec(<span class="string">'_abbbbba_aba_'</span>);</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(match);</span><br><span class="line"><span class="comment">/* </span></span><br><span class="line"><span class="comment">    Array(2) ["abbbbba", "bbbbb"]</span></span><br><span class="line"><span class="comment">    index:1                 整个匹配模式成功的开始位置</span></span><br><span class="line"><span class="comment">    input:"_abbbbba_aba_"   整个字符串</span></span><br><span class="line"><span class="comment">    length:2                第二个成员是捕获组匹配结果</span></span><br><span class="line"><span class="comment">*/</span></span><br></pre></td></tr></table></figure>
 <h3 id="3-4-字符串的实例方法"><a href="#3-4-字符串的实例方法" class="headerlink" title="3.4 字符串的实例方法"></a>3.4 字符串的实例方法</h3><ul>
 <li><p>match()</p>
 <ul>
@@ -256,18 +256,18 @@
   
 <nav id="article-nav">
   
-    <a href="/2019/05/22/继承/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2019/05/22/5 标准库/" id="article-nav-newer" class="article-nav-link-wrap">
       <i class="icon-circle-left"></i>
       <div class="article-nav-title">
         
-          ECMA5 继承
+          ECMA5 标准库
         
       </div>
     </a>
   
   
-    <a href="/2019/05/22/4 函数/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">ECMA5 函数</div>
+    <a href="/2019/05/22/3 对象/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">ECMA5 对象</div>
       <i class="icon-circle-right"></i>
     </a>
   
