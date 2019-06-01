@@ -9,14 +9,14 @@
   <title>ECMA5 标准库 | chochi&#39;s workshop</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description" content="1 判断某个变量是否为对象123function isObject(value)&amp;#123;        return value === Object(value);    &amp;#125; 2 对象的键名">
-<meta name="keywords" content="-JS">
+<meta name="keywords" content="JS">
 <meta property="og:type" content="article">
 <meta property="og:title" content="ECMA5 标准库">
 <meta property="og:url" content="http://yoursite.com/2019/05/22/5 标准库/index.html">
 <meta property="og:site_name" content="chochi&#39;s workshop">
 <meta property="og:description" content="1 判断某个变量是否为对象123function isObject(value)&amp;#123;        return value === Object(value);    &amp;#125; 2 对象的键名">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-06-01T06:10:11.362Z">
+<meta property="og:updated_time" content="2019-06-01T06:26:23.123Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="ECMA5 标准库">
 <meta name="twitter:description" content="1 判断某个变量是否为对象123function isObject(value)&amp;#123;        return value === Object(value);    &amp;#125; 2 对象的键名">
@@ -183,8 +183,8 @@
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 使用属性描述对象定义或修改一个属性</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> obj = <span class="built_in">Object</span>.defineProperty(&#123;&#125;,<span class="string">'p'</span>,&#123;</span><br><span class="line">    value:<span class="number">123</span>,</span><br><span class="line">    writable:<span class="literal">false</span>,</span><br><span class="line">    enumerable:<span class="literal">true</span>,</span><br><span class="line">    configurable:<span class="literal">false</span></span><br><span class="line">&#125;);</span><br><span class="line">obj.p=<span class="number">456</span>;</span><br><span class="line">obj.p;  <span class="comment">//123</span></span><br></pre></td></tr></table></figure>
 <ul>
 <li>若一个属性的enumerable为false，以下操作不会取到该属性<ul>
-<li>for … in</li>
-<li>Object.keys</li>
+<li><code>for ... in</code></li>
+<li><code>Object.keys()</code></li>
 </ul>
 </li>
 </ul>
@@ -209,7 +209,7 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">-JS</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">JS</a>
         		</li>
       		
 		</ul>
@@ -239,18 +239,18 @@
   
 <nav id="article-nav">
   
-    <a href="/2019/05/22/关于 this 指针/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2019/05/22/9 JavaScript Classes/" id="article-nav-newer" class="article-nav-link-wrap">
       <i class="icon-circle-left"></i>
       <div class="article-nav-title">
         
-          ECMA5 this指针
+          ECMA6 类
         
       </div>
     </a>
   
   
-    <a href="/2019/05/22/6 Array/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">ECMA5 数组</div>
+    <a href="/2019/05/22/3 对象/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">ECMA5 对象</div>
       <i class="icon-circle-right"></i>
     </a>
   

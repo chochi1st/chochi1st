@@ -8,18 +8,18 @@
   <link rel="dns-prefetch" href="http://yoursite.com">
   <title>ECMA5 CALL APPLY 模拟 | chochi&#39;s workshop</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="概念 每个函数都包括两个非继承而来的方法 apply call 在特定的作用域中调用函数，实际上等于设置函数体内this对象的值 看出 call 和 apply 是为了动态改变 this 而出现的区别   apply() 接受两个参数，第一个是运行函数的作用域，第二个是参数数组，参数数组可以用arrar实例，也可以是arguments对象。   call() 参数必须逐个列出来    call 模">
-<meta name="keywords" content="-JS">
+  <meta name="description" content="概念 每个函数都包括两个非继承而来的方法 apply call 在特定的作用域中调用函数，实际上等于设置函数体内this对象的值 看出 call 和 apply 是为了动态改变 this 而出现的区别   apply() 接受两个参数，第一个是运行函数的作用域，第二个是参数数组，参数数组可以用arrary实例，也可以是arguments对象。   call() 参数必须逐个列出来    call">
+<meta name="keywords" content="JS">
 <meta property="og:type" content="article">
 <meta property="og:title" content="ECMA5 CALL APPLY 模拟">
 <meta property="og:url" content="http://yoursite.com/2019/05/22/Call与Apply/index.html">
 <meta property="og:site_name" content="chochi&#39;s workshop">
-<meta property="og:description" content="概念 每个函数都包括两个非继承而来的方法 apply call 在特定的作用域中调用函数，实际上等于设置函数体内this对象的值 看出 call 和 apply 是为了动态改变 this 而出现的区别   apply() 接受两个参数，第一个是运行函数的作用域，第二个是参数数组，参数数组可以用arrar实例，也可以是arguments对象。   call() 参数必须逐个列出来    call 模">
+<meta property="og:description" content="概念 每个函数都包括两个非继承而来的方法 apply call 在特定的作用域中调用函数，实际上等于设置函数体内this对象的值 看出 call 和 apply 是为了动态改变 this 而出现的区别   apply() 接受两个参数，第一个是运行函数的作用域，第二个是参数数组，参数数组可以用arrary实例，也可以是arguments对象。   call() 参数必须逐个列出来    call">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-05-22T14:54:34.598Z">
+<meta property="og:updated_time" content="2019-06-01T06:53:45.963Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="ECMA5 CALL APPLY 模拟">
-<meta name="twitter:description" content="概念 每个函数都包括两个非继承而来的方法 apply call 在特定的作用域中调用函数，实际上等于设置函数体内this对象的值 看出 call 和 apply 是为了动态改变 this 而出现的区别   apply() 接受两个参数，第一个是运行函数的作用域，第二个是参数数组，参数数组可以用arrar实例，也可以是arguments对象。   call() 参数必须逐个列出来    call 模">
+<meta name="twitter:description" content="概念 每个函数都包括两个非继承而来的方法 apply call 在特定的作用域中调用函数，实际上等于设置函数体内this对象的值 看出 call 和 apply 是为了动态改变 this 而出现的区别   apply() 接受两个参数，第一个是运行函数的作用域，第二个是参数数组，参数数组可以用arrary实例，也可以是arguments对象。   call() 参数必须逐个列出来    call">
   
     <link rel="alternative" href="/atom.xml" title="chochi&#39;s workshop" type="application/atom+xml">
   
@@ -170,7 +170,7 @@
 </ul>
 <ol>
 <li>apply()<ul>
-<li>接受两个参数，第一个是运行函数的作用域，第二个是参数数组，参数数组可以用arrar实例，也可以是arguments对象。</li>
+<li>接受两个参数，第一个是运行函数的作用域，第二个是参数数组，参数数组可以用arrary实例，也可以是arguments对象。</li>
 </ul>
 </li>
 <li>call()<ul>
@@ -179,9 +179,9 @@
 </li>
 </ol>
 <h1 id="call-模拟"><a href="#call-模拟" class="headerlink" title="call 模拟"></a>call 模拟</h1><ul>
-<li>参数一一对应</li>
+<li>参数一一对应(没有做一些错误机制的判断处理)</li>
 </ul>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">Function</span>.prototype.myCall = <span class="function"><span class="keyword">function</span>(<span class="params">_context</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">let</span> context = _context || <span class="built_in">window</span>;<span class="comment">// null -&gt; window</span></span><br><span class="line">    context.fn = <span class="keyword">this</span>;</span><br><span class="line">    <span class="keyword">let</span> args = [].slice.call(<span class="built_in">arguments</span>,<span class="number">1</span>,<span class="built_in">arguments</span>.length);</span><br><span class="line">    <span class="keyword">let</span> result = !args ?context.fn():context.fn(...args); </span><br><span class="line">    <span class="keyword">delete</span> context.fn;</span><br><span class="line">    <span class="keyword">return</span> result;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">Function</span>.prototype.myCall = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">   </span><br><span class="line">    <span class="keyword">let</span> args = <span class="built_in">Array</span>.from(<span class="built_in">arguments</span>);</span><br><span class="line"></span><br><span class="line">    <span class="keyword">const</span> context = args.shift() || <span class="built_in">window</span>;  <span class="comment">// null -&gt; window</span></span><br><span class="line">    context.callFun = <span class="keyword">this</span>; <span class="comment">// 将函数设置为该对象的一个属性</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">let</span> result = !args ?context.callFun() : context.callFun(...args); </span><br><span class="line">    <span class="keyword">delete</span> context.callFun;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> result;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <a id="more"></a>
 <ul>
 <li>参数是数组</li>
@@ -204,7 +204,7 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">-JS</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">JS</a>
         		</li>
       		
 		</ul>
@@ -234,18 +234,18 @@
   
 <nav id="article-nav">
   
-    <a href="/2019/05/22/6 Array/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2019/05/22/3 对象/" id="article-nav-newer" class="article-nav-link-wrap">
       <i class="icon-circle-left"></i>
       <div class="article-nav-title">
         
-          ECMA5 数组
+          ECMA5 对象
         
       </div>
     </a>
   
   
-    <a href="/2019/05/22/9 JavaScript Classes/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">ECMA6 类</div>
+    <a href="/2019/05/22/4 函数/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">ECMA5 函数</div>
       <i class="icon-circle-right"></i>
     </a>
   
