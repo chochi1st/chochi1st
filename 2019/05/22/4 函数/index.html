@@ -69,6 +69,8 @@
     			
             
     			
+    			<a q-on="click: openSlider(e, 'friends')" href="javascript:void(0)">true</a>
+    			
             
     			
     			<a q-on="click: openSlider(e, 'aboutme')" href="javascript:void(0)">ME</a>
@@ -265,18 +267,18 @@
   
 <nav id="article-nav">
   
-    <a href="/2019/05/22/3 对象/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2019/05/22/关于 this 指针/" id="article-nav-newer" class="article-nav-link-wrap">
       <i class="icon-circle-left"></i>
       <div class="article-nav-title">
         
-          ECMA5 对象
+          ECMA5 this指针
         
       </div>
     </a>
   
   
-    <a href="/2019/05/22/Call与Apply/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">ECMA5 CALL APPLY 模拟</div>
+    <a href="/2019/05/22/5 标准库/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">ECMA5 标准库</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -358,6 +360,8 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
       
     
       
+      
+      
     
       
       
@@ -371,9 +375,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
       
         
       
+      <li style="width: 50%" q-on="click: openSlider(e, 'friends')"><a href="javascript:void(0)" q-class="active:friends">true</a></li>
+      
         
       
-      <li style="width: 100%" q-on="click: openSlider(e, 'aboutme')"><a href="javascript:void(0)" q-class="active:aboutme">ME</a></li>
+      <li style="width: 50%" q-on="click: openSlider(e, 'aboutme')"><a href="javascript:void(0)" q-class="active:aboutme">ME</a></li>
       
         
     </ul>
@@ -381,6 +387,18 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
   <div class="tools-wrap">
     
 
+    
+    	<section class="tools-section tools-section-friends" q-show="friends">
+  		
+        <ul class="search-ul">
+          
+            <li class="search-li">
+              <a href="https://www.zcplayground.cc" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>ZCplayground</a>
+            </li>
+          
+        </ul>
+  		
+    	</section>
     
 
     

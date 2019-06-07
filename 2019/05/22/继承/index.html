@@ -69,6 +69,8 @@
     			
             
     			
+    			<a q-on="click: openSlider(e, 'friends')" href="javascript:void(0)">true</a>
+    			
             
     			
     			<a q-on="click: openSlider(e, 'aboutme')" href="javascript:void(0)">ME</a>
@@ -275,8 +277,8 @@
     </a>
   
   
-    <a href="/2019/05/22/7 包装对象 wrapper/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">ECMA5 包装对象</div>
+    <a href="/2019/05/22/Call与Apply/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">ECMA5 CALL APPLY 模拟</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -358,6 +360,8 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
       
     
       
+      
+      
     
       
       
@@ -371,9 +375,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
       
         
       
+      <li style="width: 50%" q-on="click: openSlider(e, 'friends')"><a href="javascript:void(0)" q-class="active:friends">true</a></li>
+      
         
       
-      <li style="width: 100%" q-on="click: openSlider(e, 'aboutme')"><a href="javascript:void(0)" q-class="active:aboutme">ME</a></li>
+      <li style="width: 50%" q-on="click: openSlider(e, 'aboutme')"><a href="javascript:void(0)" q-class="active:aboutme">ME</a></li>
       
         
     </ul>
@@ -381,6 +387,18 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
   <div class="tools-wrap">
     
 
+    
+    	<section class="tools-section tools-section-friends" q-show="friends">
+  		
+        <ul class="search-ul">
+          
+            <li class="search-li">
+              <a href="https://www.zcplayground.cc" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>ZCplayground</a>
+            </li>
+          
+        </ul>
+  		
+    	</section>
     
 
     
