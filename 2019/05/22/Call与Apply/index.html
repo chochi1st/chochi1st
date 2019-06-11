@@ -8,18 +8,18 @@
   <link rel="dns-prefetch" href="http://yoursite.com">
   <title>ECMA5 CALL APPLY 模拟 | chochi&#39;s workshop</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="概念 每个函数都包括两个非继承而来的方法 apply call 在特定的作用域中调用函数，实际上等于设置函数体内this对象的值 看出 call 和 apply 是为了动态改变 this 而出现的区别   apply() 接受两个参数，第一个是运行函数的作用域，第二个是参数数组，参数数组可以用arrary实例，也可以是arguments对象。   call() 参数必须逐个列出来    call">
+  <meta name="description" content="概念 190611 更新bind参数问题   每个函数都包括两个非继承而来的方法 apply call  在特定的作用域中调用函数，实际上等于设置函数体内this对象的值  看出 call 和 apply 是为了动态改变 this 而出现的">
 <meta name="keywords" content="JS">
 <meta property="og:type" content="article">
 <meta property="og:title" content="ECMA5 CALL APPLY 模拟">
 <meta property="og:url" content="http://yoursite.com/2019/05/22/Call与Apply/index.html">
 <meta property="og:site_name" content="chochi&#39;s workshop">
-<meta property="og:description" content="概念 每个函数都包括两个非继承而来的方法 apply call 在特定的作用域中调用函数，实际上等于设置函数体内this对象的值 看出 call 和 apply 是为了动态改变 this 而出现的区别   apply() 接受两个参数，第一个是运行函数的作用域，第二个是参数数组，参数数组可以用arrary实例，也可以是arguments对象。   call() 参数必须逐个列出来    call">
+<meta property="og:description" content="概念 190611 更新bind参数问题   每个函数都包括两个非继承而来的方法 apply call  在特定的作用域中调用函数，实际上等于设置函数体内this对象的值  看出 call 和 apply 是为了动态改变 this 而出现的">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-06-11T07:10:42.740Z">
+<meta property="og:updated_time" content="2019-06-11T07:12:49.897Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="ECMA5 CALL APPLY 模拟">
-<meta name="twitter:description" content="概念 每个函数都包括两个非继承而来的方法 apply call 在特定的作用域中调用函数，实际上等于设置函数体内this对象的值 看出 call 和 apply 是为了动态改变 this 而出现的区别   apply() 接受两个参数，第一个是运行函数的作用域，第二个是参数数组，参数数组可以用arrary实例，也可以是arguments对象。   call() 参数必须逐个列出来    call">
+<meta name="twitter:description" content="概念 190611 更新bind参数问题   每个函数都包括两个非继承而来的方法 apply call  在特定的作用域中调用函数，实际上等于设置函数体内this对象的值  看出 call 和 apply 是为了动态改变 this 而出现的">
   
     <link rel="alternative" href="/atom.xml" title="chochi&#39;s workshop" type="application/atom+xml">
   
@@ -165,10 +165,17 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="概念"><a href="#概念" class="headerlink" title="概念"></a>概念</h1><ul>
-<li>每个函数都包括两个非继承而来的方法 apply call</li>
-<li>在特定的作用域中调用函数，实际上等于设置函数体内this对象的值</li>
-<li>看出 call 和 apply 是为了动态改变 this 而出现的<h4 id="区别"><a href="#区别" class="headerlink" title="区别"></a>区别</h4></li>
+        <h1 id="概念"><a href="#概念" class="headerlink" title="概念"></a>概念</h1><blockquote>
+<p>190611 更新bind参数问题</p>
+</blockquote>
+<ul>
+<li><p>每个函数都包括两个非继承而来的方法 apply call</p>
+</li>
+<li><p>在特定的作用域中调用函数，实际上等于设置函数体内this对象的值</p>
+</li>
+<li><p>看出 call 和 apply 是为了动态改变 this 而出现的</p>
+<a id="more"></a>
+<h4 id="区别"><a href="#区别" class="headerlink" title="区别"></a>区别</h4></li>
 </ul>
 <ol>
 <li>apply()<ul>
@@ -184,7 +191,6 @@
 <li>参数一一对应(没有做一些错误机制的判断处理)</li>
 </ul>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">Function</span>.prototype.myCall = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">   </span><br><span class="line">    <span class="keyword">let</span> args = <span class="built_in">Array</span>.from(<span class="built_in">arguments</span>);</span><br><span class="line"></span><br><span class="line">    <span class="keyword">const</span> context = args.shift() || <span class="built_in">window</span>;  <span class="comment">// null -&gt; window</span></span><br><span class="line">    context.callFun = <span class="keyword">this</span>; <span class="comment">// 将函数设置为该对象的一个属性</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">let</span> result = !args ?context.callFun() : context.callFun(...args); </span><br><span class="line">    <span class="keyword">delete</span> context.callFun;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> result;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<a id="more"></a>
 <blockquote>
 <p>190611 更新</p>
 </blockquote>
@@ -258,8 +264,8 @@
     </a>
   
   
-    <a href="/2019/05/22/5 标准库/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">ECMA5 标准库</div>
+    <a href="/2019/05/22/2 字符串/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">ECMA5 字符串</div>
       <i class="icon-circle-right"></i>
     </a>
   
