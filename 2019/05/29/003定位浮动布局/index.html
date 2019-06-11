@@ -8,17 +8,17 @@
   <link rel="dns-prefetch" href="http://yoursite.com">
   <title>定位、浮动 布局 | chochi&#39;s workshop</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="1 position position 的可选值有四个：static、relative、absolute、fixed，tricky 是被定位的元素层次(z-index)会得到提高 元素脱离文档流后不会撑开父元素高度  1.1 static 如果元素 position 属性值为 static（或者未设 position 属性），该元素出现在正常的流中（忽略 top, bottom, left, ri">
+  <meta name="description" content="1 position position 的可选值有四个：static、relative、absolute、fixed，tricky 是被定位的元素层次(z-index)会得到提高 元素脱离文档流后不会撑开父元素高度">
 <meta property="og:type" content="article">
 <meta property="og:title" content="定位、浮动 布局">
 <meta property="og:url" content="http://yoursite.com/2019/05/29/003定位浮动布局/index.html">
 <meta property="og:site_name" content="chochi&#39;s workshop">
-<meta property="og:description" content="1 position position 的可选值有四个：static、relative、absolute、fixed，tricky 是被定位的元素层次(z-index)会得到提高 元素脱离文档流后不会撑开父元素高度  1.1 static 如果元素 position 属性值为 static（或者未设 position 属性），该元素出现在正常的流中（忽略 top, bottom, left, ri">
+<meta property="og:description" content="1 position position 的可选值有四个：static、relative、absolute、fixed，tricky 是被定位的元素层次(z-index)会得到提高 元素脱离文档流后不会撑开父元素高度">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-06-01T03:31:51.333Z">
+<meta property="og:updated_time" content="2019-06-11T07:26:20.594Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="定位、浮动 布局">
-<meta name="twitter:description" content="1 position position 的可选值有四个：static、relative、absolute、fixed，tricky 是被定位的元素层次(z-index)会得到提高 元素脱离文档流后不会撑开父元素高度  1.1 static 如果元素 position 属性值为 static（或者未设 position 属性），该元素出现在正常的流中（忽略 top, bottom, left, ri">
+<meta name="twitter:description" content="1 position position 的可选值有四个：static、relative、absolute、fixed，tricky 是被定位的元素层次(z-index)会得到提高 元素脱离文档流后不会撑开父元素高度">
   
     <link rel="alternative" href="/atom.xml" title="chochi&#39;s workshop" type="application/atom+xml">
   
@@ -167,14 +167,14 @@
         <h1 id="1-position"><a href="#1-position" class="headerlink" title="1 position"></a>1 position</h1><ul>
 <li><strong>position</strong> 的可选值有四个：<strong>static</strong>、<strong>relative</strong>、<strong>absolute</strong>、<strong>fixed</strong>，<strong>tricky</strong></li>
 <li>是被定位的元素层次(z-index)会得到提高</li>
-<li>元素脱离文档流后不会撑开父元素高度</li>
+<li>元素脱离文档流后不会撑开父元素高度 <a id="more"></a></li>
 </ul>
 <h2 id="1-1-static"><a href="#1-1-static" class="headerlink" title="1.1 static"></a>1.1 static</h2><ul>
 <li>如果元素 <strong>position</strong> 属性值为 <strong>static</strong>（或者未设 <strong>position</strong> 属性），该元素出现在正常的流中（忽略 <strong>top</strong>, <strong>bottom</strong>, <strong>left</strong>, <strong>right</strong> 或者 <strong>z-index</strong> 声明）。</li>
 </ul>
 <h2 id="1-2-relative"><a href="#1-2-relative" class="headerlink" title="1.2 relative"></a>1.2 relative</h2><ul>
 <li>首先按默认方式（<strong>static</strong>）生成一个元素。</li>
-<li>然后相对于static生成的位置位置移动，移动的方向和幅度由 <strong>left</strong>、<strong>right</strong>、<strong>top</strong>、<strong>bottom</strong> 属性确定，<strong>其他的元素的位置则不会受该元素的影响发生位置改变来弥补它偏离后剩下的空隙</strong>（即保持文档流）。<a id="more"></a></li>
+<li>然后相对于static生成的位置位置移动，移动的方向和幅度由 <strong>left</strong>、<strong>right</strong>、<strong>top</strong>、<strong>bottom</strong> 属性确定，<strong>其他的元素的位置则不会受该元素的影响发生位置改变来弥补它偏离后剩下的空隙</strong>（即保持文档流）。</li>
 </ul>
 <h2 id="1-3-absolute"><a href="#1-3-absolute" class="headerlink" title="1.3 absolute"></a>1.3 absolute</h2><ul>
 <li><p>绝对定位的元素使用 <strong>left</strong>、<strong>right</strong>、<strong>top</strong>、<strong>bottom</strong> 属性相对于其最接近的一个具有定位属性的父元素祖先类的 <strong>border</strong> 进行绝对定位。</p>
